@@ -5,7 +5,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const router = require('./router');
-const {addUser, deleteUser, getUser, getUserInRoom} = require('./users');
+const {addUser, deleteUser, getUser, getUsersInRoom} = require('./users');
 
 const PORT = process.env.PORT || 5000;
 
@@ -30,9 +30,10 @@ io.on('connection', (socket) =>{
         
         socket.emit('message', {user: 'admin', text: `Welcome, ${user.name}!`});
 
-        socket.broadcast.to(user.room).emit('message', {user:'admin', text: `${user.name}, has joine`});
+        socket.broadcast.to(user.room).emit('message', {user:'admin', text: `${user.name}, has joined the room`});
         socket.join(user.room);
 
+        io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
         callback();
     });
 
@@ -57,6 +58,12 @@ io.on('connection', (socket) =>{
     //user disconnected
     socket.on('disconnect', ()=>{
     console.log('Goodbye traveler of the WWW');
+    const user = deleteUser(socket.id);
+
+      if(user) {
+      io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
+      io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)});
+    }
 
     });
 })
