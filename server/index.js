@@ -1,13 +1,25 @@
-//using socket.io instead of http request
-//becuase they are faster
-
 const express = require('express');
+
+//Socket.IO and ClientSide
 const socketio = require('socket.io');
 const http = require('http');
 const router = require('./router');
 const {addUser, deleteUser, getUser, getUsersInRoom} = require('./users');
 
 const PORT = process.env.PORT || 5000;
+
+
+//Connecting to the MongodbAtlas
+const mongoose = require('mongoose');
+const dbConnectionString ="mongodb+srv://admin:test1234@cluster0-yz77d.mongodb.net/test?retryWrites=true&w=majority";
+
+mongoose.connect(dbConnectionString, {useNewUrlParser:true, useUnifiedTopology: true}, () => {
+    console.log('connected to database');
+});
+
+var db = mongoose.connection;
+
+
 
 //Setting up Socket.io
 const app = express();
@@ -47,13 +59,6 @@ io.on('connection', (socket) =>{
         callback();
 
     });
-
-
-
-
-
-
-
 
     //user disconnected
     socket.on('disconnect', ()=>{

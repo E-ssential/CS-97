@@ -7,6 +7,7 @@ const ChatInfoBar = ({room}) => {
 
     return(
     <div className='chatInfoBar'>
+        
         <div className="leftInnerContainer">
             <img src={onlineIcon} alt="online-Image" className="onlineIcon"/>
             <h3>{room}</h3>
