@@ -2,15 +2,33 @@
 
 ### For the client side (cs-97-react)
 
+Initialize
+
 ```
 cd cs-97-react
-npm install --save react-router-dom socket.io-client react-scroll-to-bottom react-emoji query-string
-
-
+npm install 
 ```
+
+To start the client. The client is defauled to run at localhost:3000
+```
+cd cs-97-react
+npm start
+```
+
 
 ### For the server side (server)
+
+Initialize
 ```
 cd server
-npm install --save cors nodemon express socket.io
+npm install
 ```
+
+To start the server. The server is defaulted to run at localhost:5000
+```
+cd cs-97-react
+npm start
+```
+
+### Note
+Make sure the server is up and running for the clients to work. 
