@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import JoinRoom from './components/JoinRoom/JoinRoom';
 import Chat from './components/Chat/Chat';
@@ -34,7 +34,7 @@ const App = () => (
 
         <Route path='/Login' render={() => <SignUp type='login'/>}/>
         <Route path='/SignUp' render={() => <SignUp type='signUp'/>}/>
-        
+
     </Router>
     
 )
