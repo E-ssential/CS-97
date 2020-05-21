@@ -41,4 +41,4 @@ userSchema.methods.validPassword = (password) => {
 
 
 
-module.exports = mongoose.model('UserModsadel', userSchema);
+module.exports = mongoose.model('users', userSchema);

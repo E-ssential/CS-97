@@ -9,9 +9,9 @@ import NavBar from './components/NavBar/NavBar';
 import About from './components/About/About';
 import SignUp from './components/SignUp/SignUp';
 
-const App = () => (
+const App = () => {
     
-
+    return(
     <Router>
         <NavBar />
 
@@ -24,10 +24,10 @@ const App = () => (
         <Route path='/chat' component={Chat}/>
         <Route path='/listing' component={ListingForm}/>
 
-        <Route path='/login' render={() => <SignUp type='login'/>}/>
-        <Route path='/signUp' render={() => <SignUp type='signUp'/>}/>
+        <Route path='/login' render={() => <SignUp isSignUp={false}/>}/>
+        <Route path='/signUp' render={() => <SignUp isSignUp={true}/>}/>
     </Router>
-    
-)
+    );
+}
 
 export default App;
