@@ -1,0 +1,29 @@
+html{
+    background-color: #e0f1ff;
+}
+
+.outer-about{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.about-header{
+    position: relative;
+    color: #5a5858;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.about-welcome{
+    position: relative;
+    font-size: x-large;
+    text-align: center;
+}
+
+.about-body{
+    position: relative;
+    padding-top: 2px;
+}
