@@ -11,14 +11,25 @@ const PORT = process.env.PORT || 5000;
 
 //Connecting to the MongodbAtlas
 const mongoose = require('mongoose');
+const UserModel= require('./userSchema.js');
 const dbConnectionString ="mongodb+srv://admin:test1234@cluster0-yz77d.mongodb.net/test?retryWrites=true&w=majority";
+
 
 mongoose.connect(dbConnectionString, {useNewUrlParser:true, useUnifiedTopology: true}, () => {
     console.log('connected to database');
 });
-
+mongoose.set('useCreateIndex', true);
 var db = mongoose.connection;
 
+const dummyUser = new UserModel({
+    username: 'henry',
+    password: 'test1234',
+    email: 'bla@gas.jj'
+})
+
+dummyUser.save((err) =>{
+    console.log(err);
+})
 
 
 //Setting up Socket.io
