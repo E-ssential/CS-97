@@ -82,6 +82,12 @@ io.on('connection', (socket) =>{
     }
 
     });
+
+       //event handler for listings
+    
+       socket.on('newListing', (data) => {
+        console.log(data);
+      });
 })
 
 
