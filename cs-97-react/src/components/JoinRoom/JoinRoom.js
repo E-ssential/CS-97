@@ -1,10 +1,10 @@
 import React, { useState }from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './JoinRoom.css';
 
 
 
-const Login = () => {
+const JoinRoom = () => {
     const [name, setName] = useState("");
     const [room, setRoom] = useState("");
 
@@ -18,7 +18,7 @@ const Login = () => {
                 
                 
                 <Link onClick ={(event) => (!name || !room) ? event.preventDefault() : null} to={`/chat/?name=${name}&room=${room}`} >
-                    <button className="button" type='submit'>Sign In</button>
+                    <button className="button" type='submit'>JoinRoom</button>
                 </Link>
                 
             </div>
@@ -26,4 +26,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default JoinRoom;
