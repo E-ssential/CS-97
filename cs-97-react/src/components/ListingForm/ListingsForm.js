@@ -1,13 +1,14 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
+import io from 'socket.io-client';
 
 
 class ListingsForm extends React.Component {
     constructor(props) {
       super(props);
       var labels = ["name", "item", "quantity", "address"];
-      const labelsToVals= labels.map((label)=>{return ("")});  
-      this.state = {data: labels, changes:0};
+      var labelsToVals= labels.map((label)=>{return ("")});  
+      this.state = {data: labelsToVals, changes:0};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +17,7 @@ class ListingsForm extends React.Component {
      handleChange(event, label) {
       //var labelToVals = this.state.data;
        this.state.data[label] = event.target.value;
-        
+       
 
     }
   
@@ -33,7 +34,12 @@ class ListingsForm extends React.Component {
             +'\nA address was submitted: ' + this.state.data["address"]);
 
 
-        
+            const ENDPOINT = 'localhost:5000';
+            // const socket = openSocket(ENDPOINT);
+            let socket;
+            socket = io(ENDPOINT);
+            socket.emit('newListing', JSON.stringify(this.state.data));
+     
 
         event.preventDefault();
       
