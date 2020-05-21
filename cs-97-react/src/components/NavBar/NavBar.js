@@ -23,7 +23,7 @@ const NavBar = () => {
 
             <div className='nav-end'>
                 <Link to='/signUp' >
-                        <button className="button" type='submit'>SignUp</button>
+                        <button className="button" type='submit'>Sign Up</button>
                 </Link>
 
                 <Link to='/Login' >
