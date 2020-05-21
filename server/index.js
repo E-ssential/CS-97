@@ -21,15 +21,15 @@ mongoose.connect(dbConnectionString, {useNewUrlParser:true, useUnifiedTopology: 
 mongoose.set('useCreateIndex', true);
 var db = mongoose.connection;
 
-// const dummyUser = new UserModel({
-//     username: 'henry',
-//     password: 'test1234',
-//     email: 'bla@gas.jj'
-// })
+const dummyUser = new UserModel({
+    username: 'henry',
+    password: 'test1234',
+    email: 'bla@gas.jj'
+})
 
-// dummyUser.save((err) =>{
-//     console.log(err);
-// })
+dummyUser.save((err) =>{
+    console.log(err);
+})
 
 
 //Setting up Socket.io
