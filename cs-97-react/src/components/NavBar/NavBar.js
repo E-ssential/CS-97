@@ -11,7 +11,7 @@ const NavBar = () => {
                         <button className="button" type='submit'>Home Page</button>
                 </Link>
 
-                <Link to='/listing' >
+                <Link to='/listingsForm' >
                         <button className="button" type='submit'>Listing</button>
                 </Link>
 
@@ -22,11 +22,8 @@ const NavBar = () => {
             </div>
 
             <div className='nav-end'>
-                <Link to='/signUp' >
-                        <button className="button" type='submit'>Sign Up</button>
-                </Link>
 
-                <Link to='/Login' >
+                <Link to='/login' >
                         <button className="button" type='submit'>Login</button>
                 </Link>
 

@@ -12,7 +12,7 @@ const JoinRoom = () => {
     return(
         <div className = 'LoginOuterContainer'>
             <div className="LoginInnerContainer">
-                <h1 className="heading">Join</h1>
+                <h1 className="heading">Join a room</h1>
                 <div><input placeholder='Username' className='joinInput' type='text' onChange={(event) => setName(event.target.value)}/></div>
                 <div><input placeholder='Room' className='joinInput' type='text' onChange={(event) => setRoom(event.target.value)}/></div>
                 
