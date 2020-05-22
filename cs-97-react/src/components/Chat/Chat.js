@@ -28,7 +28,7 @@ const Chat = ({location}) => {
         setSetName(name);
         setRoom(room);
 
-        socket.emit('login', {name: name, room: room}, ()=>
+        socket.emit('joinRoom', {name: name, room: room}, ()=>
         {
             
         });

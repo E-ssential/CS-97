@@ -1,7 +1,7 @@
 import React, { useState }from 'react';
 import { Link } from 'react-router-dom';
-import io from 'socket.io-client';
 import './SignUp.css';
+import bcryptjs from 'bcryptjs';
 
 let socket;
 const SignUp = ({isSignUp}) => {
@@ -14,17 +14,8 @@ const SignUp = ({isSignUp}) => {
     // console.log(email);
     // console.log(password);
 
-    const sendForm = (event) => {
-        event.preventDefault();
-        socket.emit("sendRegister", {username: username, email: email, password: password}, () =>{
-            setName('');
-            setEmail('');
-            setPassword('');
-            console.log({username: username, email: email, password: password})
-        }
 
-        );
-    }
+    
     return(
         isSignUp ?
         (
@@ -44,11 +35,20 @@ const SignUp = ({isSignUp}) => {
                 </div>
                 <div>
                     <input type="password" id="password" placeholder="password" required
-                    onChange={(event) => setPassword(event.target.value)}
+                    onChange={async (event) =>   setPassword(event.target.value)}
                     minLength="8"
                     />
                 </div>
-                <button type="submit">Sign Up</button>
+                <button type="submit" onClick={async (event) => {
+                    event.preventDefault();
+                    console.log(username, email, password);
+                    const salt = await bcryptjs.genSalt();
+                    const hashedPassword = await bcryptjs.hash(password, salt);
+                    console.log(salt);
+                    console.log(hashedPassword);
+
+
+                }}>Sign Up</button>
             </form>
             <Link to='/login' >
                         Login
