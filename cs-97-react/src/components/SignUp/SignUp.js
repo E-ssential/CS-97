@@ -20,25 +20,31 @@ const SignUp = ({isSignUp}) => {
         isSignUp ?
         (
         <div className='sign-up-page'>
+            <div className='SignUp-box'>
+            <div className="sign">
             <h1>Sign Up</h1>
+            </div>
             <form>
+                
                 <div>
                     <input type="text" id="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
                     minLength="8"
                     />
                 </div>   
+                
                 <div>
                     <input  type="email" id="email" placeholder='Email' required
                     onChange={(event) => setEmail(event.target.value)}
                     />
                 </div>
                 <div>
-                    <input type="password" id="password" placeholder="password" required
+                    <input type="password" id="password" placeholder="Password" required
                     onChange={async (event) =>   setPassword(event.target.value)}
                     minLength="8"
                     />
                 </div>
+                
                 <button type="submit" onClick={async (event) => {
                     event.preventDefault();
                     console.log(username, email, password);
@@ -49,10 +55,13 @@ const SignUp = ({isSignUp}) => {
 
 
                 }}>Sign Up</button>
+                
             </form>
             <Link to='/login' >
                         Login
             </Link>
+           
+        </div>
         </div>
         )
 

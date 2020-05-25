@@ -1,0 +1,42 @@
+
+html{
+    background-color: #e0f1ff;
+}
+
+.sign-up-page{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.about-header{
+    position: relative;
+    color: #5a5858;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.sign{
+    position: relative;
+    font-size: x-large;
+    text-align: center;
+    text-shadow: aqua;
+}
+
+.about-body{
+    position: relative;
+    padding-top: 2px;
+}
+
+.SignUp-box{
+    X: 770px;
+    Y: 400px;
+    width: 242px;
+    height: 371px;
+    background-color: lightgrey
+   /* // X Constraint: L\eft;
+    //Y Constraint: Top; */
+}
+
