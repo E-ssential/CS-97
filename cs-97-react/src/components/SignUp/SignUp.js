@@ -1,7 +1,7 @@
 import React, { useState }from 'react';
 import { Link } from 'react-router-dom';
 import './SignUp.css';
-import bcryptjs from 'bcryptjs';
+import axios from "axios";
 
 let socket;
 const SignUp = ({isSignUp}) => {
@@ -14,41 +14,51 @@ const SignUp = ({isSignUp}) => {
     // console.log(email);
     // console.log(password);
 
+    const submitData = e => {
+        e.preventDefault();
+        const userData = {
+            username,
+            password,
+            email
+        };
 
+        axios.post('http://localhost:5000/register-login', userData)
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
+            console.log(err.response);
+        })
+
+        console.log(userData);
+        }
+    
     
     return(
         isSignUp ?
         (
         <div className='sign-up-page'>
             <h1>Sign Up</h1>
-            <form>
+            <form  onSubmit={submitData}> 
                 <div>
-                    <input type="text" id="username" placeholder='Username' required
+                    <input type="text" name="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
-                    minLength="8"
+                    
                     />
                 </div>   
                 <div>
-                    <input  type="email" id="email" placeholder='Email' required
+                    <input  type="email" name="email" placeholder='Email' required
                     onChange={(event) => setEmail(event.target.value)}
                     />
                 </div>
                 <div>
-                    <input type="password" id="password" placeholder="password" required
+                    <input type="password" name="password" placeholder="password" required
                     onChange={async (event) =>   setPassword(event.target.value)}
                     minLength="8"
                     />
                 </div>
-                <button type="submit" onClick={async (event) => {
-                    event.preventDefault();
-                    console.log(username, email, password);
-                    const salt = await bcryptjs.genSalt();
-                    const hashedPassword = await bcryptjs.hash(password, salt);
-                    console.log(salt);
-                    console.log(hashedPassword);
-
-
-                }}>Sign Up</button>
+                <button type="submit" >Sign Up</button>
             </form>
             <Link to='/login' >
                         Login

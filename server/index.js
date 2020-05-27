@@ -1,28 +1,29 @@
 const express = require('express');
-
-//Socket.IO and ClientSide
+var session = require('express-session')
+const MongoStore = require("connect-mongo")(session);
 const socketio = require('socket.io');
 const http = require('http');
-const userRouter = require('./routes/user-router');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const chatRoomManager = require('./chatRoomManager')
+
+//passport
+const passport = require('./passport/authenticateUser');
+const auth = require('./routes/auth-router');
+//functionality files
+
 
 const PORT = process.env.PORT || 5000;
 
 
 //Connecting to the MongodbAtlas
 const mongoose = require('mongoose');
-const authenticate = require('./authenticate.js');
-const dbConnectionString ="mongodb+srv://admin:test1234@cluster0-yz77d.mongodb.net/test?retryWrites=true&w=majority";
+const dbConfig = require('./database');
 
-mongoose.connect(dbConnectionString, {useNewUrlParser:true, useUnifiedTopology: true}, () => {
-    console.log('connected to userDatabase');
-});
+mongoose.connect(dbConfig.url, {useNewUrlParser:true, useUnifiedTopology: true})
+        .then(console.log('connected to userDatabase'))
+        .catch(err => console.log(err));
+
 mongoose.set('useCreateIndex', true);
-var db = mongoose.connection;
-
-// authenticate.addNewUser();
 
 
 //Setting up Socket.io
@@ -30,12 +31,36 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+//chatroom functionality
+const chatRoomManager = require('./chatRoom/chatRoomManager')
 chatRoomManager.chatRoomManager(io);
 
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+//setting up the different routes
 app.use(cors());
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+//expression session
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }))
+
+  //testing section
+//   const testing = require('./authenticate.js');
+//   testing.addNewUser();
+
+//passport 
+app.use(passport.initialize());
+app.use(passport.session());
+//express-router
+const userRouter = require('./routes/user-router');
+const defaultRouter = require('./routes/auth-router');
+
+app.use('/',defaultRouter);
 app.use('/users',userRouter);
 
 

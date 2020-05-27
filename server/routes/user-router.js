@@ -1,12 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const passport = require("passport");
 const router = express.Router();
 
 const User = require('../schemes/User.js');
 
-router.get('/', (req,res) => {
-    res.send('server is up and running');
-});
 
 router.route('/create')
 .post((req,res,next) =>{
