@@ -1,42 +1,64 @@
-
-html{
-    background-color: #e0f1ff;
-}
-
 .sign-up-page{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    /* background: rgba(0, 0, 0, 0.801);
+    box-sizing: border-box; */
+    background-color: #333;
+    border-radius: 20px;
+    width: 320px;
+    height: 420px;
+    box-sizing: border-box;
+    padding: 70px 30px;
 }
 
-.about-header{
-    position: relative;
-    color: #5a5858;
-    text-align: center;
-    padding-top: 1%;
+.sign-up-heading{
+    margin: 0;
+    padding: 0 0 15px;
+    color: whitesmoke;
+    font-family: 'Optima';
 }
 
-.sign{
-    position: relative;
-    font-size: x-large;
-    text-align: center;
-    text-shadow: aqua;
+.sign-up-page input[type="text"], input[type="password"], input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #333;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 200px;
+    color: whitesmoke;
+    font-size: 15px;
+    font-family: 'Optima';
 }
 
-.about-body{
-    position: relative;
-    padding-top: 2px;
+.sign-up-page button[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 200px;
+    background: #58a2df;
+    color: whitesmoke;
+    font-size: 14px;
+    border-radius: 20px;
+    font-family: 'Optima';
 }
 
-.SignUp-box{
-    X: 770px;
-    Y: 400px;
-    width: 242px;
-    height: 371px;
-    background-color: lightgrey
-   /* // X Constraint: L\eft;
-    //Y Constraint: Top; */
+.sign-up-page button[type="submit"]:hover{
+    cursor: pointer;
+    background: #64aeeb;
+    /* background: #4c9ed3; */
+    color: whitesmoke;
 }
 
+.sign-up-page a{
+    font-size: 14px;
+    text-decoration: underline;
+    color: whitesmoke;
+    line-height: 50px;
+}
+
+.sign-up-page a:hover{
+    color: #f5f5f5d3;
+}
