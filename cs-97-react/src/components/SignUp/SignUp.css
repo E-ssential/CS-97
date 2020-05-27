@@ -4,12 +4,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
     /* background: rgba(0, 0, 0, 0.801);
     box-sizing: border-box; */
     background-color: #333;
-    border-radius: 20px;
+    border-radius: 30px;
     width: 320px;
-    height: 420px;
+    height: 400px;
     box-sizing: border-box;
     padding: 70px 30px;
 }
@@ -19,6 +23,7 @@
     padding: 0 0 15px;
     color: whitesmoke;
     font-family: 'Optima';
+    font-size: 18px;
 }
 
 .sign-up-page input[type="text"], input[type="password"], input[type="email"]{
