@@ -1,6 +1,6 @@
 
-const UserModel= require('./userSchema.js');
-
+const User= require('./schemes/User.js');
+const mongoose = require('mongoose');
 
 
 const addNewUser = () =>{
