@@ -33,11 +33,18 @@ class ListingsForm extends React.Component {
             +'\nA address was submitted: ' + this.state.data["address"]);
 
 
-            const ENDPOINT = 'localhost:5000';
-            // const socket = openSocket(ENDPOINT);
-            let socket;
-            socket = io(ENDPOINT);
-            socket.emit('newListing', JSON.stringify(this.state.data));
+            const requestOptions = {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(
+                    {name:this.state.data["name"], 
+                    item:this.state.data["item"], 
+                    quantity:this.state.data["quantity"], 
+                    address:this.state.data["address"]})
+              };
+              fetch('/listings', requestOptions)
+                  .then(response => response.json())
+                  .then(response => this.setState({ apiResponse: response}));
      
 
         event.preventDefault();
@@ -46,9 +53,70 @@ class ListingsForm extends React.Component {
     render() {
       return (
 
+        <p>
+          . 
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          ...............................................................................
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+          .
+        
         <form onSubmit={this.handleSubmit}>
 
           <div>   
+
           <label>
             Name :                 
             <input type="text" value={this.state.data['name']} onChange={(e) => this.handleChange(e, 'name')} />
@@ -85,6 +153,7 @@ class ListingsForm extends React.Component {
 
 
         </form>
+        </p>
       );
     }
   }

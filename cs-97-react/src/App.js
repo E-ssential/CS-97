@@ -8,6 +8,7 @@ import ListingForm from './components/ListingForm/ListingsForm';
 import NavBar from './components/NavBar/NavBar';
 import About from './components/About/About';
 import SignUp from './components/SignUp/SignUp';
+import ListingsPage from './components/ListingsPage'
 
 const App = () => {
     
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='/joinRoom' component={JoinRoom}/>
         <Route path='/chat' component={Chat}/>
         <Route path='/listingsForm' component={ListingForm}/>
+        <Route path='/ListingsPage' component={ListingsPage}/>
 
         <Route path='/login' render={() => <SignUp isSignUp={false}/>}/>
         <Route path='/signUp' render={() => <SignUp isSignUp={true}/>}/>
