@@ -35,11 +35,18 @@ class ListingsForm extends React.Component {
             +'\nA address was submitted: ' + this.state.data["address"]);
 
 
-            const ENDPOINT = 'localhost:5000';
-            // const socket = openSocket(ENDPOINT);
-            let socket;
-            socket = io(ENDPOINT);
-            socket.emit('newListing', JSON.stringify(this.state.data));
+            const requestOptions = {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(
+                    {name:this.state.data["name"], 
+                    item:this.state.data["item"], 
+                    quantity:this.state.data["quantity"], 
+                    address:this.state.data["address"]})
+              };
+              fetch('/listings', requestOptions)
+                  .then(response => response.json())
+                  .then(response => this.setState({ apiResponse: response}));
      
 
         event.preventDefault();
@@ -47,14 +54,23 @@ class ListingsForm extends React.Component {
     }
     render() {
       return (
+
         <div className='outer-listing'>
           
           <div className='listing-heading'>
               <h1> Listing Form</h1>
           <div className='listingBut'> 
-          <form onSubmit={this.handleSubmit}>
+          {/* <form onSubmit={this.handleSubmit}> */}
          
-          <div className='sample'>   
+           
+
+
+ 
+         <form onSubmit={this.handleSubmit}>
+
+          <div>   
+
+
           <label>
             Name                  
             <input type="text" value={this.state.data['name']} onChange={(e) => this.handleChange(e, 'name')} />
@@ -70,7 +86,7 @@ class ListingsForm extends React.Component {
           
           </div>     
 
-          <div className='sample'>     
+          <div >     
           <label>
             Quantity      
             <input type="integer" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'quantity')} />
@@ -97,15 +113,24 @@ class ListingsForm extends React.Component {
 
           <div> or </div>
 
+
           <div>
           <Link to='/signUp' >
                         Don't have an account? Sign Up
           </Link>
           </div>
-         </form>
-         </div>
-         </div>
-        </div>  
+         
+         
+          </form>
+          
+          
+         
+          </div>
+          </div>
+         
+
+        </div>
+
       );
     }
   }
