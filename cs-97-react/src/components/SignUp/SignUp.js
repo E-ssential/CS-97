@@ -44,9 +44,10 @@ const SignUp = ({isSignUp}) => {
                 <div>
                     <input type="text" name="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
-                    
+                    // minLength="8"
                     />
                 </div>   
+                
                 <div>
                     <input  type="email" name="email" placeholder='Email' required
                     onChange={(event) => setEmail(event.target.value)}
@@ -55,13 +56,13 @@ const SignUp = ({isSignUp}) => {
                 <div>
                     <input type="password" name="password" placeholder="password" required
                     onChange={async (event) =>   setPassword(event.target.value)}
-                    minLength="8"
+                    // minLength="8"
                     />
                 </div>
                 <button type="submit" >Sign Up</button>
             </form>
             <Link to='/login' >
-                        Login
+                        Already have an account? Login
             </Link>
         </div>
         )
@@ -71,7 +72,9 @@ const SignUp = ({isSignUp}) => {
         (
 
         <div className='sign-up-page'>
-            <h1>Login</h1>
+            <div className='sign-up-heading'>
+                <h1>Login</h1>
+            </div>
             <form>
             <div>
                     <input type="text" id="username" placeholder='Username' required
@@ -80,7 +83,7 @@ const SignUp = ({isSignUp}) => {
                     />
                 </div>  
                 <div>
-                    <input type="password" id="password" placeholder="password" required
+                    <input type="password" id="password" placeholder="Password" required
                     onChange={(event) => setPassword(event.target.value)}
                     minLength="8"
                     />
@@ -88,7 +91,7 @@ const SignUp = ({isSignUp}) => {
                 <button type="submit">Login</button>
             </form>
             <Link to='/signUp' >
-                        Sign Up
+                        Don't have an account? Sign Up
             </Link>
         </div>
         )

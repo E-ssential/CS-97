@@ -6,25 +6,25 @@ import './NavBar.css';
 const NavBar = () => {
     return(
         <div className='nav-bar'>
-            <div className='nav-start'>
+            <div className='nav-left'>
                 <Link to='/' >
-                        <button className="button" type='submit'>Home Page</button>
+                        <button className="nav-button" type='submit'>Home Page</button>
                 </Link>
 
                 <Link to='/listingsForm' >
-                        <button className="button" type='submit'>Listing</button>
+                        <button className="nav-button" type='submit'>Listing Form</button>
                 </Link>
 
                 <Link to='/joinRoom' >
-                        <button className="button" type='submit'>Chat</button>
+                        <button className="nav-button" type='submit'>Chat</button>
                 </Link>
 
             </div>
 
-            <div className='nav-end'>
+            <div className='nav-right'>
 
                 <Link to='/login' >
-                        <button className="button" type='submit'>Login</button>
+                        <button className="nav-button" type='submit'>Login</button>
                 </Link>
 
             </div>

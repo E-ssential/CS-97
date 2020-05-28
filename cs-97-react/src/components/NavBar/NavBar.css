@@ -1,8 +1,32 @@
 .nav-bar{
-    padding-top: 10px;
     text-align: center;
+    position: fixed;
+    background-color: #333;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    left: 0;
 }
 
-.button{
-    font-size: large;
+.nav-left{
+    float: left;
+}
+
+.nav-right{
+    float: right;
+}
+
+.nav-button{
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #333;
+    border-color: #333;
+}
+
+.nav-button:hover{
+    background-color: black;
+    color: white;
 }

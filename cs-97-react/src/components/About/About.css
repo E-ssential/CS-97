@@ -1,3 +1,4 @@
+
 html{
     background-color: #e0f1ff;
 }
@@ -8,6 +9,13 @@ html{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    
+}
+.back{
+    background-image: url("../../icons/About.png");
+    width: 6000;
+    height: 1000;
+    /* opacity: .8; */
 }
 
 .about-header{
