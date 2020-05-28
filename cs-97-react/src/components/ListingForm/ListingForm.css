@@ -8,7 +8,7 @@
     /* background: rgba(0, 0, 0, 0.801);
     box-sizing: border-box; */
     background-color: #333;
-    border-radius: 20px;
+    border-radius: 30px;
     width: 320px;
     height: 420px;
     box-sizing: border-box;
@@ -23,13 +23,15 @@
 }
 
 .outer-listing input[type="text"], input[type="password"], input[type="email"]{
-    border: none;
+    /* border: none; */
     border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    border-radius: 30;
     /* background: transparent; */
     outline: none;
     height: 20px;
     width: 200px;
-    color: whitesmoke;
+    color: purple;
     font-size: 15px;
     font-family: 'Optima';
 }
@@ -41,7 +43,7 @@
     width: 200px;
     background: #58a2df;
     color: whitesmoke;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 20px;
     font-family: 'Optima';
 }

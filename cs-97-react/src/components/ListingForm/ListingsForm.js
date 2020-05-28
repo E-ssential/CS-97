@@ -59,12 +59,11 @@ class ListingsForm extends React.Component {
           
           <div className='listing-heading'>
               <h1> Listing Form</h1>
+          </div>
           <div className='listingBut'> 
           {/* <form onSubmit={this.handleSubmit}> */}
          
-           
-
-
+          
  
          <form onSubmit={this.handleSubmit}>
 
@@ -86,7 +85,7 @@ class ListingsForm extends React.Component {
           
           </div>     
 
-          <div >     
+          <div>     
           <label>
             Quantity      
             <input type="integer" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'quantity')} />
@@ -94,11 +93,11 @@ class ListingsForm extends React.Component {
           
           </div>     
 
-          <div className="listings-info">     
-           <label>
+          <div>     
+          <label>
             Address     
             <input type="text" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'address')} />
-           </label>
+          </label>
           
           </div>     
           
@@ -125,7 +124,7 @@ class ListingsForm extends React.Component {
           
           
          
-          </div>
+          {/* </div> */}
           </div>
          
 
