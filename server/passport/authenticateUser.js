@@ -62,13 +62,16 @@ passport.use(
                 
                 let attemptPassword = password;
                 if(!user){
-                    console.log("Username is not in the database");
+                    return done(null, false, {message:'This username/password does not exist'})
                 }
                 else{
                     console.log("will verify now");
                     
                     user.comparePassword(attemptPassword, function(err, isMatch) {
-                        if (err) throw err;
+                        if (err){
+                            console.log('hihi');
+                            return done(null, false, {message:'This username/password does not exist'})
+                        }
                         console.log(attemptPassword, isMatch); // -> Password123: true
                     });
                 }
