@@ -5,6 +5,7 @@ const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 
 //passport
 const passport = require('./passport/authenticateUser');
@@ -37,9 +38,9 @@ chatRoomManager.chatRoomManager(io);
 
 //setting up the different routes
 app.use(cors());
-
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(flash());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //expression session
 app.use(session({
@@ -57,11 +58,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 //express-router
-const userRouter = require('./routes/user-router');
-const defaultRouter = require('./routes/auth-router');
+const authRouter = require('./routes/auth-router');
 
-app.use('/',defaultRouter);
-app.use('/users',userRouter);
+app.use('/users',authRouter);
 
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));

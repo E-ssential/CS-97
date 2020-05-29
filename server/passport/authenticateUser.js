@@ -17,24 +17,65 @@ passport.deserializeUser((id, done) => {
 
 passport.use(
     new LocalStrategy(
+        
+        {
+            usernameField: 'username',
+            passwordField: 'password',
+            passReqToCallback: true
+        },
 
-        (username, password, done) =>{
-        console.log(username);
-        User.findOne({username: username})
+        (req, username, password, done) =>{
+
+        // console.log(username, password);
+        console.log(req.body);
+        //For Register  
+        if(req.body.isSignUp){
+            //determine it is a register attempt
+            const newUser = new User({
+            username: username,
+            password: password,
+            email: req.body.email
+            });
+            
+            
+            
+            newUser.save()
+            .then(
+                user => {
+                    
+                    return done(null,user);
+                }
+            )
+            .catch(
+                err => {
+                    console.log('there is error');
+                    console.log(err);
+                    return done(null, false, {message:err});
+                }
+            )
+        }
+        
+        //For Login
+        else{
+            User.findOne({username: username})
             .then(user => {
-                console.log(user);
+                
+                let attemptPassword = password;
                 if(!user){
-                    console.log("User not found");
+                    console.log("Username is not in the database");
                 }
-
                 else{
-                    console.log("User found");
+                    console.log("will verify now");
+                    
+                    user.comparePassword(attemptPassword, function(err, isMatch) {
+                        if (err) throw err;
+                        console.log(attemptPassword, isMatch); // -> Password123: true
+                    });
                 }
-            }
 
-
-    
-    )}
+            })
+        }
+    }  
 ));
 
 module.exports = passport;

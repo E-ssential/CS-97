@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './SignUp.css';
 import axios from "axios";
 
-let socket;
 const SignUp = ({isSignUp}) => {
 
     const [username, setName] = useState('');
@@ -19,15 +18,16 @@ const SignUp = ({isSignUp}) => {
         const userData = {
             username,
             password,
-            email
+            email, 
+            isSignUp
         };
-
-        axios.post('http://localhost:5000/register-login', userData)
+        axios.post('http://localhost:5000/users/register-login', userData)
         .then(res => {
             console.log(res);
         })
         .catch(err => {
             console.log(err);
+            console.log('what the fuck');
             console.log(err.response);
         })
 
@@ -75,17 +75,17 @@ const SignUp = ({isSignUp}) => {
             <div className='sign-up-heading'>
                 <h1>Login</h1>
             </div>
-            <form>
+            <form onSubmit={submitData}>
             <div>
                     <input type="text" id="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
-                    minLength="8"
+                    
                     />
                 </div>  
                 <div>
                     <input type="password" id="password" placeholder="Password" required
                     onChange={(event) => setPassword(event.target.value)}
-                    minLength="8"
+                    
                     />
                 </div>
                 <button type="submit">Login</button>
