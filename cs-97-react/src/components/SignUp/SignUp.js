@@ -21,18 +21,30 @@ const SignUp = ({isSignUp}) => {
             email, 
             isSignUp
         };
+
         axios.post('http://localhost:5000/users/register-login', userData)
         .then(res => {
             console.log(res);
+            console.log('hello');
+            axios.get('http://localhost:5000/chat')
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.response);
+            })
         })
         .catch(err => {
             console.log(err);
-            console.log('what the fuck');
             console.log(err.response);
         })
 
         console.log(userData);
-        }
+
+       
+    }
+    
     
     
     return(

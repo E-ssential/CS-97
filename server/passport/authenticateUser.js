@@ -50,7 +50,7 @@ passport.use(
                 err => {
                     console.log('there is error');
                     console.log(err);
-                    return done(null, false, {message:err});
+                    return done(null, false, {message:err.message});
                 }
             )
         }
@@ -70,9 +70,14 @@ passport.use(
                     user.comparePassword(attemptPassword, function(err, isMatch) {
                         if (err){
                             console.log('hihi');
+                            
+                            return done(null, false, {message:err})
+                        }
+                        if(!isMatch){
+                            
                             return done(null, false, {message:'This username/password does not exist'})
                         }
-                        console.log(attemptPassword, isMatch); // -> Password123: true
+                        return done(null, user), {message:'Successfully Logged In'};
                     });
                 }
 

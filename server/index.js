@@ -38,29 +38,26 @@ chatRoomManager.chatRoomManager(io);
 
 //setting up the different routes
 app.use(cors());
-app.use(flash());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//expression session
+//express session
 app.use(session({
     secret: 'secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    store: new MongoStore({mongooseConnection:mongoose.connection})
   }))
-
-  //testing section
-//   const testing = require('./authenticate.js');
-//   testing.addNewUser();
 
 //passport 
 app.use(passport.initialize());
 app.use(passport.session());
 //express-router
 const authRouter = require('./routes/auth-router');
+const userRouter = require('./routes/user-router');
 
 app.use('/users',authRouter);
+app.use('/chat',userRouter);
 
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));

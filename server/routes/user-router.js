@@ -1,20 +1,26 @@
 const express = require('express');
-const passport = require("passport");
 const router = express.Router();
-
-const User = require('../schemes/User.js');
-
-
-router.route('/create')
-.post((req,res,next) =>{
-    res.send("Created Posted");
-    console.log('create Posted');
-}
-).get((req,res,next) =>{
-    res.send("Get Request to create");
-});
+const passport = require("passport");
 
 
+router.get('/', (req, res, next) =>{
+    // passport.authenticate('local', 
+    // (err, user, info) => {
+    //     if(!user){
+                        
+    //         return res.status(400).json({errors:info});
+    //     }
+    //     else{   
+    //         console.log(user);
+    //         return res.status(200).json({success: `created ${user.username}`});
+    //     }
 
+
+
+    // })(req, res, next);
+    res.send('hello');
+    console.log("someone broke in");
+
+})
 
 module.exports = router;
