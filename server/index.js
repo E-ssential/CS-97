@@ -1,40 +1,80 @@
 const express = require('express');
-
-//Socket.IO and ClientSide
+var session = require('express-session')
+const MongoStore = require("connect-mongo")(session);
 const socketio = require('socket.io');
 const http = require('http');
-const router = require('./router');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 
-const chatRoomManager = require('./chatRoomManager')
 
 const PORT = process.env.PORT || 5000;
+const app = express();
 
+//basic function requirement
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 //Connecting to the MongodbAtlas
 const mongoose = require('mongoose');
-const UserModel= require('./userSchema.js');
-const authenticate = require('./authenticate.js');
-const dbConnectionString ="mongodb+srv://admin:test1234@cluster0-yz77d.mongodb.net/test?retryWrites=true&w=majority";
+const dbConfig = require('./data/database');
 
-mongoose.connect(dbConnectionString, {useNewUrlParser:true, useUnifiedTopology: true}, () => {
-    console.log('connected to userDatabase');
-});
+mongoose.connect(dbConfig.url, {useNewUrlParser:true, useUnifiedTopology: true})
+        .then(console.log('connected to userDatabase'))
+        .catch(err => console.log(err));
 mongoose.set('useCreateIndex', true);
-var db = mongoose.connection;
 
-authenticate.addNewUser();
-
-
-//Setting up Socket.io
-const app = express();
+//Setting up Socket.io (CHAT ROOM FUNCTIONALITY)
 const server = http.createServer(app);
 const io = socketio(server);
 
+const chatRoomManager = require('./chatRoom/chatRoomManager')
 chatRoomManager.chatRoomManager(io);
 
 
 
+//HTTP Header 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  if ('OPTIONS' == req.method) {
+       res.send(200);
+   } else {
+       next();
+   }
+  });
+  
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoStore({mongooseConnection:mongoose.connection})
+  }))
+
+//passport 
+const passport = require('./passport/authenticateUser');
+app.use(passport.initialize());
+app.use(passport.session());
 
 
-app.use(router);
+//express-router
+const authRouter = require('./routes/auth-router');
+const listRouter = require('./routes/list-router');
+
+app.use('/users',authRouter);
+app.use('/listings', listRouter);
+
+//TESTING
+const testRouter = require('./routes/test-router');
+app.use('/',testRouter);
+
+
+
+
+
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));

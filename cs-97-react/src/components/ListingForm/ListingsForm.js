@@ -1,7 +1,7 @@
 import React from 'react';
-import io from 'socket.io-client';
 import './ListingForm.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 class ListingsForm extends React.Component {
@@ -23,33 +23,25 @@ class ListingsForm extends React.Component {
     }
   
     handleSubmit(event) {   
-            alert('A name was submitted: ' + this.state.data["name"]
-        
-        
-            +'\nAn item was submitted: ' + this.state.data["item"]
-    
-        
-            +'\nA quantity was submitted: ' + this.state.data["quantity"]
-       
-        
-            +'\nA address was submitted: ' + this.state.data["address"]);
+        // alert('A name was submitted: ' + this.state.data["name"]
+        // +'\nAn item was submitted: ' + this.state.data["item"]
+        // +'\nA quantity was submitted: ' + this.state.data["quantity"]
+        // +'\nA address was submitted: ' + this.state.data["address"]);
 
-
-            const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(
-                    {name:this.state.data["name"], 
-                    item:this.state.data["item"], 
-                    quantity:this.state.data["quantity"], 
-                    address:this.state.data["address"]})
-              };
-              fetch('/listings', requestOptions)
-                  .then(response => response.json())
-                  .then(response => this.setState({ apiResponse: response}));
-     
-
-        event.preventDefault();
+        const requestOptions = 
+        {user:this.state.data["name"], 
+        item:this.state.data["item"], 
+        quantity:this.state.data["quantity"], 
+        address:this.state.data["address"]};
+            
+        axios.post('/listings', requestOptions)
+              .then(res => {
+                  console.log(res);
+              })
+              .catch(err => {
+                  console.log(err);
+        })
+      event.preventDefault();
       
     }
     render() {
@@ -71,7 +63,7 @@ class ListingsForm extends React.Component {
 
 
           <label>
-            Name                  
+            User               
             <input type="text" value={this.state.data['name']} onChange={(e) => this.handleChange(e, 'name')} />
           </label>
           

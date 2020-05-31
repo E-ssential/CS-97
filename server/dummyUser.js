@@ -1,10 +1,10 @@
 
-const UserModel= require('./userSchema.js');
-
+const User= require('./schemes/User.js');
+const mongoose = require('mongoose');
 
 
 const addNewUser = () =>{
-    const dummyUser = new UserModel({
+    const dummyUser = new User({
         username: 'henryff',
         password: 'test1234',
         email: 'blgas@jojj.com'

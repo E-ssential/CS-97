@@ -1,6 +1,5 @@
-const socketio = require('socket.io');
-const express = require('express');
-const {addUser, deleteUser, getUser, getUsersInRoom} = require('./users');
+
+const {addUser, deleteUser, getUser, getUsersInRoom} = require('./chatUser');
 
 
 const chatRoomManager = (io) => {

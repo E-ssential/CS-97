@@ -1,60 +1,72 @@
 import React, { useState }from 'react';
 import { Link } from 'react-router-dom';
 import './SignUp.css';
-import bcryptjs from 'bcryptjs';
+import axios from "axios";
 
-let socket;
 const SignUp = ({isSignUp}) => {
 
     const [username, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [status, setStatus] = useState('');
 
-    // console.log(username);
-    // console.log(email);
-    // console.log(password);
+    
 
+    const submitData = e => {
+        e.preventDefault();
+        // console.log(username);
+        // console.log(email);
+        // console.log(password);
+        // console.log(status);
+        const userData = {
+            username,
+            password,
+            email, 
+            isSignUp
+        };
 
+        //TODO
+        //SET STATUS TEXT AND STORE USERNAME
+        axios.post('users/register-login', userData)
+        .then(res => {
+            console.log(status);
+            
+            
+        })
+        .catch(err => {
+            console.log(status);
+        })
+       
+    }
+    
+    
     
     return(
         isSignUp ?
         (
         <div className='sign-up-page'>
-            <div className="sign-up-heading">
-                <h1>Sign Up</h1>
-            </div>
-            <form>
+            <h1>Sign Up</h1>
+            <form  onSubmit={submitData}> 
                 
                 <div>
-                    <input type="text" id="username" placeholder='Username' required
+                    <input type="text" name="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
-                    minLength="8"
+                    // minLength="8"
                     />
                 </div>   
                 
                 <div>
-                    <input type="email" id="email" placeholder='Email' required
+                    <input  type="email" name="email" placeholder='Email' required
                     onChange={(event) => setEmail(event.target.value)}
                     />
                 </div>
                 <div>
-                    <input type="password" id="password" placeholder="Password" required
+                    <input type="password" name="password" placeholder="password" required
                     onChange={async (event) =>   setPassword(event.target.value)}
-                    minLength="8"
+                    // minLength="8"
                     />
                 </div>
-                
-                <button type="submit" onClick={async (event) => {
-                    event.preventDefault();
-                    console.log(username, email, password);
-                    const salt = await bcryptjs.genSalt();
-                    const hashedPassword = await bcryptjs.hash(password, salt);
-                    console.log(salt);
-                    console.log(hashedPassword);
-
-
-                }}>Sign Up</button>
-                
+                <button type="submit" >Sign Up</button>
             </form>
             <Link to='/login' >
                         Already have an account? Login
@@ -70,17 +82,18 @@ const SignUp = ({isSignUp}) => {
             <div className='sign-up-heading'>
                 <h1>Login</h1>
             </div>
-            <form>
+            <form onSubmit={submitData}>
+            <p>{status}</p>
             <div>
                     <input type="text" id="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
-                    minLength="8"
+                    
                     />
                 </div>  
                 <div>
                     <input type="password" id="password" placeholder="Password" required
                     onChange={(event) => setPassword(event.target.value)}
-                    minLength="8"
+                    
                     />
                 </div>
                 <button type="submit">Login</button>
