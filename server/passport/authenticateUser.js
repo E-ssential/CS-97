@@ -5,6 +5,7 @@ const LocalStrategy = require('passport-local');
 
 passport.serializeUser((user,done) =>{
     done(null,user.id);
+    
 })
 
 passport.deserializeUser((id, done) => {
@@ -27,7 +28,6 @@ passport.use(
         (req, username, password, done) =>{
 
         // console.log(username, password);
-        console.log(req.body);
         //For Register  
         if(req.body.isSignUp){
             //determine it is a register attempt
@@ -36,8 +36,6 @@ passport.use(
             password: password,
             email: req.body.email
             });
-            
-            
             
             newUser.save()
             .then(

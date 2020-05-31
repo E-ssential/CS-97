@@ -2,16 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require("passport");
 
-router.route('/')
-.post((req, res, next) => {
-    console.log("body parsing", req.body);
-    res.send("hello there");
 
-})
-.get((req, res, next) =>{
-    res.send("stealing from me huh");
-    console.log("someone broke in");
-})
 
 router.post("/register-login",
             //this section checks the authentication
@@ -19,7 +10,8 @@ router.post("/register-login",
             
             passport.authenticate('local'
             ,   
-            {   successRedirect: '/',
+            { 
+                successRedirect: '/',
                 failureRedirect: '/listingsForm'
             }
             ,
@@ -35,11 +27,16 @@ router.post("/register-login",
                         return res.status(400).json({errors:info});
                     }
                     else{   
-                        
+                        req.login(user, (err)=>{
+                            if(err){
+                                throw err;
+                            }
+                        });
                         return res.status(200).json({success: `created ${user.username}`});
                     }
                 }
                 else{
+                    console.log(req.user);
                     if(err){
                         return res.status(400).json({errors:err});
                     }
@@ -47,12 +44,12 @@ router.post("/register-login",
                         return res.status(400).json({errors:info});
                     }
                     else{
-                        console.log(user.id);
                         req.login(user, (err)=>{
                             if(err){
                                 throw err;
                             }
                         });
+                        
                         return res.status(200).json({success:`Welcome back ${user.username}`});
                     }
                 }

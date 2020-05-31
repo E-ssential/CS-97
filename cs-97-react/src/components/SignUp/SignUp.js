@@ -8,13 +8,16 @@ const SignUp = ({isSignUp}) => {
     const [username, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [status, setStatus] = useState('');
 
-    // console.log(username);
-    // console.log(email);
-    // console.log(password);
+    
 
     const submitData = e => {
         e.preventDefault();
+        // console.log(username);
+        // console.log(email);
+        // console.log(password);
+        // console.log(status);
         const userData = {
             username,
             password,
@@ -22,26 +25,17 @@ const SignUp = ({isSignUp}) => {
             isSignUp
         };
 
-        axios.post('http://localhost:5000/users/register-login', userData)
+        //TODO
+        //SET STATUS TEXT AND STORE USERNAME
+        axios.post('users/register-login', userData)
         .then(res => {
-            console.log(res);
-            console.log('hello');
-            axios.get('http://localhost:5000/chat')
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => {
-                console.log(err);
-                console.log(err.response);
-            })
+            console.log(status);
+            
+            
         })
         .catch(err => {
-            console.log(err);
-            console.log(err.response);
+            console.log(status);
         })
-
-        console.log(userData);
-
        
     }
     
@@ -53,6 +47,7 @@ const SignUp = ({isSignUp}) => {
         <div className='sign-up-page'>
             <h1>Sign Up</h1>
             <form  onSubmit={submitData}> 
+                
                 <div>
                     <input type="text" name="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}
@@ -88,6 +83,7 @@ const SignUp = ({isSignUp}) => {
                 <h1>Login</h1>
             </div>
             <form onSubmit={submitData}>
+            <p>{status}</p>
             <div>
                     <input type="text" id="username" placeholder='Username' required
                     onChange={(event) => setName(event.target.value)}

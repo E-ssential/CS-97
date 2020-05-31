@@ -1,19 +1,18 @@
 
-express = require('express');
+const express = require('express');
 var bodyParser = require('body-parser')
 
 
 
-const jsonfile = require('jsonfile');
-const file = './listings.json';
-var listings = jsonfile.readFileSync(file);
+
+
 
 (async () => {
   const app = express(); 
   const port = 8082; 
   
   
-  app.use(bodyParser.json()); 
+  // app.use(bodyParser.json()); 
 
 
   app.get( "/", ( req, res) => {
