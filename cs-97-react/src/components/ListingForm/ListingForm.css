@@ -9,31 +9,47 @@
     box-sizing: border-box; */
     background-color: #333;
     border-radius: 30px;
+    color: whitesmoke;
     width: 320px;
     height: 420px;
     box-sizing: border-box;
     padding: 70px 30px;
+    
 }
 
 .listing-heading{
     margin: 0;
-    padding: 0 0 15px;
+    margin-top: 0px;
+    padding: 0 0 10px;
     color: whitesmoke;
     font-family: 'Optima';
 }
 
-.outer-listing input[type="text"], input[type="password"], input[type="email"]{
+.listing-text-user{
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.listing-text-quantity{
+    color: whitesmoke;
+    /* margin-left: none; */
+}
+
+.outer-listing input[type="text"], input[type="integer"]{
     /* border: none; */
     border-bottom: 1px solid #333;
     box-sizing: border-box;
-    border-radius: 30;
+    border-radius: 8px;
     /* background: transparent; */
-    outline: none;
+    outline:none;
     height: 20px;
     width: 200px;
+    margin-left: 4px;
+    margin-bottom: 8px;
     color: purple;
     font-size: 15px;
     font-family: 'Optima';
+    padding: 10px 50px;
 }
 
 .listingBut button[type="submit"]{
@@ -57,9 +73,10 @@
 
 .outer-listing a{
     font-size: 14px;
+    padding: 10px 0px 0px;
     text-decoration: underline;
     color: whitesmoke;
-    line-height: 50px;
+    line-height: 10px;
 }
 
 .outer-listing a:hover{

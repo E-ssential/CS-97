@@ -59,7 +59,7 @@ class ListingsForm extends React.Component {
  
          <form onSubmit={this.handleSubmit}>
 
-          <div>   
+          <div className="listing-text-user">    
 
 
           <label>
@@ -69,15 +69,17 @@ class ListingsForm extends React.Component {
           
           </div>     
 
-          <div>     
+          
+          <div className="listing-text-user">     
           <label>
             Item      
             <input type="text" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'item')} />
           </label>
           
           </div>     
+        {/* </div> */}
 
-          <div>     
+          <div className="listing-text-quantity">     
           <label>
             Quantity      
             <input type="integer" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'quantity')} />
