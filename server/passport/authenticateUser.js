@@ -5,6 +5,7 @@ const LocalStrategy = require('passport-local');
 
 passport.serializeUser((user,done) =>{
     done(null,user.id);
+    
 })
 
 passport.deserializeUser((id, done) => {
@@ -17,24 +18,70 @@ passport.deserializeUser((id, done) => {
 
 passport.use(
     new LocalStrategy(
+        
+        {
+            usernameField: 'username',
+            passwordField: 'password',
+            passReqToCallback: true
+        },
 
-        (username, password, done) =>{
-        console.log(username);
-        User.findOne({username: username})
+        (req, username, password, done) =>{
+
+        // console.log(username, password);
+        //For Register  
+        if(req.body.isSignUp){
+            //determine it is a register attempt
+            const newUser = new User({
+            username: username,
+            password: password,
+            email: req.body.email
+            });
+            
+            newUser.save()
+            .then(
+                user => {
+                    
+                    return done(null,user);
+                }
+            )
+            .catch(
+                err => {
+                    console.log('there is error');
+                    console.log(err);
+                    return done(null, false, {message:err.message});
+                }
+            )
+        }
+        
+        //For Login
+        else{
+            User.findOne({username: username})
             .then(user => {
-                console.log(user);
+                
+                let attemptPassword = password;
                 if(!user){
-                    console.log("User not found");
+                    return done(null, false, {message:'This username/password does not exist'})
                 }
-
                 else{
-                    console.log("User found");
+                    console.log("will verify now");
+                    
+                    user.comparePassword(attemptPassword, function(err, isMatch) {
+                        if (err){
+                            console.log('hihi');
+                            
+                            return done(null, false, {message:err})
+                        }
+                        if(!isMatch){
+                            
+                            return done(null, false, {message:'This username/password does not exist'})
+                        }
+                        return done(null, user), {message:'Successfully Logged In'};
+                    });
                 }
-            }
 
-
-    
-    )}
+            })
+        }
+    }  
 ));
 
 module.exports = passport;

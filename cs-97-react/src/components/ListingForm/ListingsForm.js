@@ -1,5 +1,7 @@
 import React from 'react';
-import io from 'socket.io-client';
+import './ListingForm.css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 class ListingsForm extends React.Component {
@@ -21,36 +23,48 @@ class ListingsForm extends React.Component {
     }
   
     handleSubmit(event) {   
-            alert('A name was submitted: ' + this.state.data["name"]
-        
-        
-            +'\nAn item was submitted: ' + this.state.data["item"]
-    
-        
-            +'\nA quantity was submitted: ' + this.state.data["quantity"]
-       
-        
-            +'\nA address was submitted: ' + this.state.data["address"]);
+        // alert('A name was submitted: ' + this.state.data["name"]
+        // +'\nAn item was submitted: ' + this.state.data["item"]
+        // +'\nA quantity was submitted: ' + this.state.data["quantity"]
+        // +'\nA address was submitted: ' + this.state.data["address"]);
 
-
-            const ENDPOINT = 'localhost:5000';
-            // const socket = openSocket(ENDPOINT);
-            let socket;
-            socket = io(ENDPOINT);
-            socket.emit('newListing', JSON.stringify(this.state.data));
-     
-
-        event.preventDefault();
+        const requestOptions = 
+        {user:this.state.data["name"], 
+        item:this.state.data["item"], 
+        quantity:this.state.data["quantity"], 
+        address:this.state.data["address"]};
+            
+        axios.post('/listings', requestOptions)
+              .then(res => {
+                  console.log(res);
+              })
+              .catch(err => {
+                  console.log(err);
+        })
+      event.preventDefault();
       
     }
     render() {
       return (
 
-        <form onSubmit={this.handleSubmit}>
+        <div className='outer-listing'>
+          
+          <div className='listing-heading'>
+              <h1> Listing Form</h1>
+          <div className='listingBut'> 
+          {/* <form onSubmit={this.handleSubmit}> */}
+         
+           
+
+
+ 
+         <form onSubmit={this.handleSubmit}>
 
           <div>   
+
+
           <label>
-            Name :                 
+            User               
             <input type="text" value={this.state.data['name']} onChange={(e) => this.handleChange(e, 'name')} />
           </label>
           
@@ -58,33 +72,57 @@ class ListingsForm extends React.Component {
 
           <div>     
           <label>
-            Item :    
+            Item      
             <input type="text" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'item')} />
           </label>
           
           </div>     
 
-          <div>     
+          <div >     
           <label>
-            Quantity :    
+            Quantity      
             <input type="integer" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'quantity')} />
           </label>
           
           </div>     
 
-          <div>     
-          <label>
-            Address :    
+          <div className="listings-info">     
+           <label>
+            Address     
             <input type="text" value={this.state.data["item"]} onChange={(e) => this.handleChange(e, 'address')} />
-          </label>
+           </label>
           
           </div>     
+          
+          <button type="submit">Submit
+          {/* <input type="submit" value="Submit" />  */}
+          </button>
+          <div>
+          <Link to='/login' >
+                        Already have an account? Login
+          </Link>
+          </div>
+
+          <div> or </div>
 
 
-          <input type="submit" value="Submit" />
+          <div>
+          <Link to='/signUp' >
+                        Don't have an account? Sign Up
+          </Link>
+          </div>
+         
+         
+          </form>
+          
+          
+         
+          </div>
+          </div>
+         
 
+        </div>
 
-        </form>
       );
     }
   }

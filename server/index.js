@@ -4,64 +4,77 @@ const MongoStore = require("connect-mongo")(session);
 const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-
-//passport
-const passport = require('./passport/authenticateUser');
-const auth = require('./routes/auth-router');
-//functionality files
+const flash = require('connect-flash');
 
 
 const PORT = process.env.PORT || 5000;
+const app = express();
 
+//basic function requirement
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 //Connecting to the MongodbAtlas
 const mongoose = require('mongoose');
-const dbConfig = require('./database');
+const dbConfig = require('./data/database');
 
 mongoose.connect(dbConfig.url, {useNewUrlParser:true, useUnifiedTopology: true})
         .then(console.log('connected to userDatabase'))
         .catch(err => console.log(err));
-
 mongoose.set('useCreateIndex', true);
 
-
-//Setting up Socket.io
-const app = express();
+//Setting up Socket.io (CHAT ROOM FUNCTIONALITY)
 const server = http.createServer(app);
 const io = socketio(server);
 
-//chatroom functionality
 const chatRoomManager = require('./chatRoom/chatRoomManager')
 chatRoomManager.chatRoomManager(io);
 
-//setting up the different routes
-app.use(cors());
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 
-//expression session
+//HTTP Header 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  if ('OPTIONS' == req.method) {
+       res.send(200);
+   } else {
+       next();
+   }
+  });
+  
 app.use(session({
     secret: 'secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    store: new MongoStore({mongooseConnection:mongoose.connection})
   }))
 
-  //testing section
-//   const testing = require('./authenticate.js');
-//   testing.addNewUser();
-
 //passport 
+const passport = require('./passport/authenticateUser');
 app.use(passport.initialize());
 app.use(passport.session());
-//express-router
-const userRouter = require('./routes/user-router');
-const defaultRouter = require('./routes/auth-router');
 
-app.use('/',defaultRouter);
-app.use('/users',userRouter);
+
+//express-router
+const authRouter = require('./routes/auth-router');
+const listRouter = require('./routes/list-router');
+
+app.use('/users',authRouter);
+app.use('/listings', listRouter);
+
+//TESTING
+const testRouter = require('./routes/test-router');
+app.use('/',testRouter);
+
+
+
 
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
