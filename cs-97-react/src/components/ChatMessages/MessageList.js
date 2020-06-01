@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 
 import './MessageList.css';
 import ChatMessage from './ChatMessage';
@@ -7,6 +7,12 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 
 
 const MessageList = ({messages, name}) =>{
+
+
+
+
+
+
 return(
     <ScrollToBottom className='MessageList'>
         {messages.map((message,i) =>
@@ -25,4 +31,4 @@ return(
 
 }
 
-export default MessageList
+export default MessageList;

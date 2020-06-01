@@ -32,7 +32,8 @@ const ListingsForm = ({isAuth, userData}) => {
                   console.log(status);
               })
               .catch(err => {
-                  setStatus(err.response.data);
+                console.log(err.response);
+                setStatus(err.response.data);
         })
         
       
@@ -57,7 +58,7 @@ const ListingsForm = ({isAuth, userData}) => {
           <div>     
           <label>
             Item      
-            <input type="text"  onChange={(event) => setItem(event.target.value)} />
+            <input type="text"  onChange={(event) => setItem(event.target.value)} required />
           </label>
           
           </div>     
@@ -65,7 +66,7 @@ const ListingsForm = ({isAuth, userData}) => {
           <div >     
           <label>
             Quantity      
-            <input type="integer"  onChange={(event) => setQuantity(event.target.value)} />
+            <input type="number"  min="0" step="1" onChange={(event) => setQuantity(event.target.value)} required />
           </label>
           
           </div>     
@@ -73,7 +74,7 @@ const ListingsForm = ({isAuth, userData}) => {
           <div className="listings-info">     
            <label>
             Address     
-            <input type="text"  onChange={(event) => setAddress(event.target.value)} />
+            <input type="text"  onChange={(event) => setAddress(event.target.value)} required />
            </label>
           
           </div>     

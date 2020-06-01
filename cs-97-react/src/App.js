@@ -9,7 +9,9 @@ import ListingsForm from './components/Listings/ListingsForm';
 import NavBar from './components/NavBar/NavBar';
 import About from './components/About/About';
 import SignUp from './components/SignUp/SignUp';
-import ListingsPage from './components/Listings/ListingsPage'
+import ViewListings from './components/Listings/ViewListings'
+
+import './page-view.css';
 
 const App = () => {
     
@@ -46,16 +48,19 @@ const App = () => {
     <Router>
 
         <NavBar isAuth={isAuth} userData={userData} setAuth={setAuth}/>
+
+        <div className="page-view">
         <Route path='/' exact render={()=> <About isAuth={isAuth} userData={userData}/> }/>
 
         
         <Route path='/joinRoom' render={() => <JoinRoom isAuth={isAuth} userData={userData} setAuth={setAuth}/>}/>
         <Route path='/chat' component={Chat} />
         <Route path='/listingsForm' render={() => <ListingsForm isAuth={isAuth} userData={userData}/>} />
-        <Route path='/Listingspage' component={ListingsPage}/>
+        <Route path='/Listingspage' component={ViewListings}/>
 
         <Route path='/login' render={() => <SignUp isSignUp={false} isAuth={isAuth} setAuth={setAuth}/>}/>
         <Route path='/signUp' render={() => <SignUp isSignUp={true} isAuth={isAuth} setAuth={setAuth}/>}/>
+        </div>
     </Router>
     );
 }

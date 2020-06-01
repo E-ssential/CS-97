@@ -63,7 +63,7 @@ const SignUp = ({isSignUp, isAuth, setAuth}) => {
 
             :
 
-        
+        (
         isSignUp ?
         (
         <div className='sign-up-page'>
@@ -128,6 +128,8 @@ const SignUp = ({isSignUp, isAuth, setAuth}) => {
         )
     
         
+    )
+    
     );
 }
 

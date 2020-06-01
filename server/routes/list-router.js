@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const jsonfile = require('jsonfile');
-
+const Listing = require('../schemes/Listing');
+const mongoose = require('mongoose');
 //Listing storage
 const file = './data/listings.json';
 var listings = jsonfile.readFileSync(file);
@@ -11,34 +12,43 @@ var listings = jsonfile.readFileSync(file);
 router.post( "/add", ( req , res  ) => {
     
     const { user, item, quantity, address } = req.body;
-    console.log(req.body);
-    console.log(user);
-    console.log(item);
-    console.log(quantity);
-    console.log(address);
-  if (!user || !quantity || !item || !address ) {
-    return res.status(400).send("All fields must be filled out");        
-  }  
 
-  const newListing = {user:"test1234", item:"AKAK", quantity:3, address:"Space"};
-  listings.push(newListing);
-
-  jsonfile.writeFileSync(file, listings, 
-    (err) => {
-    if (err){
-      res.status(500).send("Oops, there seems to be some trouble on the server side");
-    }
-     
+  const newListing = new Listing({
+    username:user,
+    item:item,
+    quantity:quantity,
+    address: address
   });
-  
-  return res.status(200).send(`You added ${quantity} ${item}`);
+
+  newListing.save()
+  .then(
+    listing => {
+      return res.status(200).send(`You successfully added ${quantity} ${item}`);
+    }
+  )
+  .catch(
+    err => {
+      console.log(err);
+      var errStr = err.message.split(': ')[2];
+      return res.status(400).send(errStr);
+    }
+  )
+
 } );
 
 router.get('/all', (req, res) => {
-    listingsArr = jsonfile.readFileSync(file);  
-    console.log(listingsArr);
-    return res.status(200)
-      .send(listingsArr);
+     Listing.find({})
+     .then(
+       (listings) => {
+         for(let i = 0; i < listings.length; i++){
+           listings[i] = JSON.stringify(listings[i]);
+           console.log(listings[i]);
+         }
+         return res.status(200).json(listings);
+       }
+     )
+    
+    
 }
 )
 
