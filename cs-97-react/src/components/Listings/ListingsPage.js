@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { stringify } from 'query-string';
-
+import axios from 'axios';
 class ListingsPage extends React.Component{
 
     constructor(props)
@@ -13,25 +13,24 @@ class ListingsPage extends React.Component{
 
     componentDidMount()
     {
-            fetch('/listings/')
-                .then(response => response.json())
-                .then(response => {
-                    this.setState({ listingsArray: response});
-                    console.log(this.state.listingsArray[0].name);
-                });
-
-            console.log(this.state.listingsArray)
+        axios.get('http://localhost:5000/listings/all',  {withCredentials:true})
+              .then(response => {
+                this.setState({ listingsArray: response});
+              })
+              .catch(err => {
+                  console.log(err);
+        })
     
     }
 
     render(){
        const rows = []; 
-       if(this.state.listingsArray)
-       {
-        this.state.listingsArray.forEach(element => {
-            rows.push(<Listing item={element}> </Listing>);
-        });
-       }
+    //    if(this.state.listingsArray)
+    //    {
+    //     this.state.listingsArray.forEach(element => {
+    //         rows.push(<Listing item={element}> </Listing>);
+    //     });
+    //    }
 
        return (<div>{rows}</div>);
     }

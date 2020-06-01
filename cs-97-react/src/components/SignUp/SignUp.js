@@ -1,17 +1,17 @@
 import React, { useState }from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './SignUp.css';
 import axios from "axios";
 
-const SignUp = ({isSignUp}) => {
 
+const SignUp = ({isSignUp, isAuth, setAuth}) => {
     const [username, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [status, setStatus] = useState('');
 
-    
-
+    //TODO
+    //What is this ding dong? How can I make this better
     const submitData = e => {
         e.preventDefault();
         // console.log(username);
@@ -24,24 +24,46 @@ const SignUp = ({isSignUp}) => {
             email, 
             isSignUp
         };
-
+        
         //TODO
         //SET STATUS TEXT AND STORE USERNAME
-        axios.post('users/register-login', userData)
+        axios.post('http://localhost:5000/users/register-login', userData, {withCredentials: true})
         .then(res => {
-            console.log(status);
-            
-            
+            setAuth(true);
         })
         .catch(err => {
-            console.log(status);
+            //TODO SET STATUS after 
+            if(isSignUp){
+                var errStr = err.response.data;
+                setStatus(errStr);
+            }
+            else{
+                setStatus("Invalid username/password combination");
+            }
         })
-       
+
+        // axios.post('/users/register-login', userData)
+        // .then(res => {
+        //     window.location.replace('/');
+        // })
+        // .catch(err => {
+        //     alert("Incorrect username/password combination");
+            
+        // })
+
     }
     
     
     
     return(
+
+        isAuth ? (
+            <Redirect to="/" />            
+        )
+
+            :
+
+        
         isSignUp ?
         (
         <div className='sign-up-page'>
@@ -102,7 +124,9 @@ const SignUp = ({isSignUp}) => {
                         Don't have an account? Sign Up
             </Link>
         </div>
+
         )
+    
         
     );
 }

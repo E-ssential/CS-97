@@ -1,5 +1,5 @@
 
-const User= require('./schemes/User.js');
+const User= require('../schemes/User.js');
 const mongoose = require('mongoose');
 
 

@@ -46,8 +46,6 @@ passport.use(
             )
             .catch(
                 err => {
-                    console.log('there is error');
-                    console.log(err);
                     return done(null, false, {message:err.message});
                 }
             )
@@ -67,7 +65,6 @@ passport.use(
                     
                     user.comparePassword(attemptPassword, function(err, isMatch) {
                         if (err){
-                            console.log('hihi');
                             
                             return done(null, false, {message:err})
                         }

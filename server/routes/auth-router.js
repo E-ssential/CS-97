@@ -9,12 +9,7 @@ router.post("/register-login",
         (req, res, next) =>{
             
             passport.authenticate('local'
-            ,   
-            { 
-                successRedirect: '/',
-                failureRedirect: '/listingsForm'
-            }
-            ,
+            ,             
             //this will be called if authenticate was successful
             (err, user, info) => {
                 if(req.body.isSignUp){
@@ -24,7 +19,8 @@ router.post("/register-login",
                     }
                     if(!user){
                         
-                        return res.status(400).json({errors:info});
+                        var errStr = info.message.split(': ')[1];
+                        return res.status(400).send(errStr + " is already taken");
                     }
                     else{   
                         req.login(user, (err)=>{
@@ -32,7 +28,7 @@ router.post("/register-login",
                                 throw err;
                             }
                         });
-                        return res.status(200).json({success: `created ${user.username}`});
+                        return res.status(200).json({success: user.username});
                     }
                 }
                 else{
@@ -50,14 +46,27 @@ router.post("/register-login",
                             }
                         });
                         
-                        return res.status(200).json({success:`Welcome back ${user.username}`});
+                        return res.status(200).json({success:user.username});
                     }
                 }
             })(req,res,next)
         }
-
-
-
-
 );
+
+//Check if the user is logged in
+router.get('/isLoggedIn', (req, res) => {
+    if(!req.user){
+        res.status(400).json({errors:"User is not signed in"});
+    }
+    else{
+        console.log("This user is logged in");
+        res.status(200).json({id:req.user._id, username: req.user.username, email: req.user.username});
+    }
+})
+
+//sign the user out
+router.get('/logout', (req, res)=>{
+    req.logout();
+    res.status(200).send("successfully logged out");
+})
 module.exports = router;

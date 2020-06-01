@@ -13,10 +13,14 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 //basic function requirement
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000'],
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser()); 
 
 //Connecting to the MongodbAtlas
 const mongoose = require('mongoose');
@@ -33,21 +37,6 @@ const io = socketio(server);
 
 const chatRoomManager = require('./chatRoom/chatRoomManager')
 chatRoomManager.chatRoomManager(io);
-
-
-
-//HTTP Header 
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Origin', req.headers.origin);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-  if ('OPTIONS' == req.method) {
-       res.send(200);
-   } else {
-       next();
-   }
-  });
   
 app.use(session({
     secret: 'secret',

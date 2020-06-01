@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     }
 }, {timestap: true})
 
-userSchema.plugin(uniqueValidator, {message: '{PATH} is already taken.'});
+userSchema.plugin(uniqueValidator, {message: '{PATH}'});
 
 
 //encrypt the password
