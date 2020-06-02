@@ -32,7 +32,7 @@ router.post("/register-login",
                     }
                 }
                 else{
-                    console.log(req.user);
+                    
                     if(err){
                         return res.status(400).json({errors:err});
                     }
@@ -59,7 +59,6 @@ router.get('/isLoggedIn', (req, res) => {
         res.status(400).json({errors:"User is not signed in"});
     }
     else{
-        console.log("This user is logged in");
         res.status(200).json({id:req.user._id, username: req.user.username, email: req.user.username});
     }
 })

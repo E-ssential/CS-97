@@ -36,31 +36,47 @@ router.post( "/add", ( req , res  ) => {
 
 } );
 
-router.get('/all', (req, res) => {
-     Listing.find({})
+router.post('/searchItems', (req, res) => {
+     Listing.find(req.body)
      .then(
        (listings) => {
          for(let i = 0; i < listings.length; i++){
            listings[i] = JSON.stringify(listings[i]);
-           console.log(listings[i]);
          }
          return res.status(200).json(listings);
        }
      )
-    
-    
+     .catch( err => {
+      console.log(err);
+       return res.status(400).send("No Result");
+     }) 
 }
 )
 
-router.get("/:item", (req, res) => {
-    let { item } = req.params;
+router.post('/deleteItem', (req, res) => {
+  Listing.findById(req.body.ID)
+  .remove()
+  .then(
+    ok => {
+      return res.status(200).send('Item Successfully Removed');
+    }
+  )
+  .catch(
+    err => {
+      console.log(err);
+      return res.status(400).send("ID Not Found");
+    }
+  )
+  
+  
 
-    let targetItem = listings.find( (v) => v.item.toString() == item);
 
 
-    return res.status(200)
-              .json(item);
+
+
 
 })
+
+
 
 module.exports = router;

@@ -1,20 +1,35 @@
-import React, { useState }from 'react';
-import { Link, Redirect} from 'react-router-dom';
-import axios from "axios";
+import React, { useState, useEffect }from 'react';
+import { Link} from 'react-router-dom';
+
 import './JoinRoom.css';
 
 
 
 
-const JoinRoom = ({isAuth, userData, setAuth}) => {
+const JoinRoom = ({ userData, checkLogin}) => {
     const [name, setName] = useState(userData[1]);
     const [room, setRoom] = useState("");
+    const [isFetch, setFetch] = useState(false);
 
     
     // submitData();
+    const onJoinRoom = async (e) => {
+        if(!name || !room){
+            e.preventDefault();
+            await console.log('hello');
+            await checkLogin();
+            await setFetch(true);
+        }
+        
+    }
+
+    useEffect( () => {
+        
+    }, [isFetch])
+
+
     return(
 
-        isAuth ? (
         <div className = 'LoginOuterContainer'>
             <div className="LoginInnerContainer">
                 <h1 className="heading">Join a room</h1>
@@ -22,18 +37,13 @@ const JoinRoom = ({isAuth, userData, setAuth}) => {
                 <div><input placeholder='Room' className='joinInput' type='text' onChange={(event) => setRoom(event.target.value)}/></div>
                 
                 
-                <Link onClick ={(event) => (!name || !room) ? event.preventDefault() : null} to={`/chat/?name=${name}&room=${room}`} >
+                <Link onClick={onJoinRoom} to={`/chat/?name=${name}&room=${room}`} >
                     <button className="button" type='submit'>JoinRoom</button>
                 </Link>
                 
             </div>
         </div>    
-        )
-        :
-        (
-            <Redirect to="/" /> 
-            
-        )
+        
     )
 }
 

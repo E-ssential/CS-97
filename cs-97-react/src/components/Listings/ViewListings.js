@@ -9,21 +9,22 @@ import './ViewListings.css'
 
 const ListingsPage = ({isAuth, userData}) => {
     const [listings, setListings] = useState([]);
-    const [status, setStatus] = useState('Fetching Data');
     const [isFetch, setFetch] = useState(true);
     var timer;
     //START HERE TOMORROW
 
-        const fetchListings = async () =>{
+        const fetchListings = async (request) =>{
             
-            let res = await axios.get('http://localhost:5000/listings/all',  {withCredentials:true})
-            .catch(err => {
-                console.log(err);
-            });
+            await axios.post('http://localhost:5000/listings/searchItems', request, {withCredentials:true})
+            .then(async res =>{
+                await setListings(res.data);
+                await setFetch(false);
 
-            await setListings(res.data);
-            await setFetch(false);
-            
+            })
+            .catch(async err => {
+                await setFetch(false);
+            });
+ 
         }
         
         useEffect( () => {
@@ -32,20 +33,6 @@ const ListingsPage = ({isAuth, userData}) => {
         }, [isFetch])
 
 
-        // useEffect( () => {
-        //     axios.get('http://localhost:5000/listings/all',  {withCredentials:true})
-        //         .then(res => {
-        //         res.data.map((object, i) =>{
-        //             console.log(JSON.stringify(object));
-        //             setListings([...listings, JSON.stringify(object)]);
-        //             console.log(listings);
-        //         })
-        //         })
-        //         .catch(err => {
-        //             console.log(err);
-        //         }
-        //         )
-        // }, [listings])
 
         return(
 
@@ -53,8 +40,7 @@ const ListingsPage = ({isAuth, userData}) => {
 
             (
                 <div className="viewListings">
-                    {/* <ListingSearch /> */}
-                    <p>{status}</p>
+                    <p>'Please wait, Fetching Data...'</p>
                  </div>
             )
 
@@ -63,8 +49,8 @@ const ListingsPage = ({isAuth, userData}) => {
             (
 
             <div className="viewListings">
-                {/* <ListingSearch /> */}
-                <ListingList allListings={listings} userData={userData}/>
+                <ListingSearch fetchListings={fetchListings}/>
+                <ListingList allListings={listings}/>
                 
             </div>
 

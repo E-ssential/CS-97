@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import axios from 'axios';
 
 
-const NavBar = ({isAuth, username, setAuth}) => {
+const NavBar = ({isAuth, username, setAuth, checkLogin}) => {
+    
 
     const logOut = () =>{
-        axios.get('/users/logout')
+        axios.get('http://localhost:5000/users/logout', {withCredentials:true})
         .then(res => {
             setAuth(false);
         })
@@ -17,6 +18,12 @@ const NavBar = ({isAuth, username, setAuth}) => {
         })
         
     }
+
+    useEffect( () => {
+        if(!username){
+            checkLogin();
+        }
+    }, [])
 
     return(
 
@@ -42,7 +49,9 @@ const NavBar = ({isAuth, username, setAuth}) => {
             </div>
 
             <div className='nav-right'>
-
+                <Link to='/profile'>
+                    <button className='nav-button'>Profile</button>
+                </Link>
                 <Link to='/' >
                         <button className="nav-button" onClick={logOut}>Log Out</button>
                 </Link>

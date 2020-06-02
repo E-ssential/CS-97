@@ -38,7 +38,7 @@ const SignUp = ({isSignUp, isAuth, setAuth}) => {
                 setStatus(errStr);
             }
             else{
-                setStatus("Invalid username/password combination");
+                setStatus("Invalid username/password");
             }
         })
 
@@ -64,71 +64,71 @@ const SignUp = ({isSignUp, isAuth, setAuth}) => {
             :
 
         (
-        isSignUp ?
-        (
-        <div className='sign-up-page'>
-            <h1>Sign Up</h1>
-            <form  onSubmit={submitData}> 
-                
-                <div>
-                    <input type="text" name="username" placeholder='Username' required
-                    onChange={(event) => setName(event.target.value)}
-                    // minLength="8"
-                    />
-                </div>   
-                
-                <div>
-                    <input  type="email" name="email" placeholder='Email' required
-                    onChange={(event) => setEmail(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <input type="password" name="password" placeholder="password" required
-                    onChange={async (event) =>   setPassword(event.target.value)}
-                    // minLength="8"
-                    />
-                </div>
-                <button type="submit" >Sign Up</button>
-            </form>
-            <Link to='/login' >
-                        Already have an account? Login
-            </Link>
-        </div>
-        )
-
-        :
-
-        (
-
-        <div className='sign-up-page'>
-            <div className='sign-up-heading'>
-                <h1>Login</h1>
+            isSignUp ?
+            (
+            <div className='sign-up-page'>
+                <h1>Sign Up</h1>
+                <form  onSubmit={submitData}> 
+                <p>{status}</p>
+                    <div>
+                        <input type="text" name="username" placeholder='Username' required
+                        onChange={(event) => setName(event.target.value)}
+                        // minLength="8"
+                        />
+                    </div>   
+                    
+                    <div>
+                        <input  type="email" name="email" placeholder='Email' required
+                        onChange={(event) => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <input type="password" name="password" placeholder="password" required
+                        onChange={async (event) =>   setPassword(event.target.value)}
+                        // minLength="8"
+                        />
+                    </div>
+                    <button type="submit" >Sign Up</button>
+                </form>
+                <Link to='/login' >
+                            Already have an account? Login
+                </Link>
             </div>
-            <form onSubmit={submitData}>
-            <p>{status}</p>
-            <div>
-                    <input type="text" id="username" placeholder='Username' required
-                    onChange={(event) => setName(event.target.value)}
-                    
-                    />
-                </div>  
-                <div>
-                    <input type="password" id="password" placeholder="Password" required
-                    onChange={(event) => setPassword(event.target.value)}
-                    
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-            <Link to='/signUp' >
-                        Don't have an account? Sign Up
-            </Link>
-        </div>
+            )
 
-        )
-    
+            :
+
+            (
+
+            <div className='sign-up-page'>
+                <div className='sign-up-heading'>
+                    <h1>Login</h1>
+                </div>
+                <form onSubmit={submitData}>
+                <p>{status}</p>
+                <div>
+                        <input type="text" id="username" placeholder='Username' required
+                        onChange={(event) => setName(event.target.value)}
+                        
+                        />
+                    </div>  
+                    <div>
+                        <input type="password" id="password" placeholder="Password" required
+                        onChange={(event) => setPassword(event.target.value)}
+                        
+                        />
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <Link to='/signUp' >
+                            Don't have an account? Sign Up
+                </Link>
+            </div>
+
+            )
         
-    )
+            
+        )
     
     );
 }

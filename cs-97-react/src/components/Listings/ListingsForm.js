@@ -9,11 +9,6 @@ const ListingsForm = ({isAuth, userData}) => {
     const [quantity, setQuantity] = useState(0);
     const [address, setAddress] = useState('');
     const [status, setStatus] = useState('');
-    useEffect( () => {
-      console.log(isAuth);
-      console.log(userData);
-
-  }, [])
 
     const onSubmit = (e) => {   
       e.preventDefault();
@@ -24,12 +19,9 @@ const ListingsForm = ({isAuth, userData}) => {
         quantity, 
         address};
         
-
-        //TODO put the axios config in a different folder
         axios.post('http://localhost:5000/listings/add', requestOptions, {withCredentials:true})
               .then(res => {
                   setStatus(res.data);
-                  console.log(status);
               })
               .catch(err => {
                 console.log(err.response);
