@@ -49,9 +49,17 @@ const ListingsPage = ({isAuth, userData}) => {
             (
 
             <div className="viewListings">
-                <ListingSearch fetchListings={fetchListings}/>
-                <ListingList allListings={listings}/>
                 
+
+                <div className="searchBar">Looking for an Item?</div>
+                <ListingSearch fetchListings={fetchListings}/>
+
+                <div className="Listing-head">Essential Goods Currently Available</div>                
+                <div >
+                <ListingList allListings={listings}/>
+                </div>
+
+
             </div>
 
 

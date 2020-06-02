@@ -16,3 +16,26 @@
     align-items:center;
     justify-content:center;
 }
+
+.searchBar{
+    font-weight: 700;
+    padding: 10px;
+    padding-bottom: 5px;
+    text-shadow: blue;
+    
+}
+
+.listingSearch{
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.Listing-head{
+    text-align: center;
+    color: tomato;
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration:underline;
+    padding: 10px;
+    
+}
