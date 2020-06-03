@@ -25,14 +25,12 @@ const SignUp = ({isSignUp, isAuth, setAuth}) => {
             isSignUp
         };
         
-        //TODO
-        //SET STATUS TEXT AND STORE USERNAME
         axios.post('http://localhost:5000/users/register-login', userData, {withCredentials: true})
         .then(res => {
             setAuth(true);
         })
         .catch(err => {
-            //TODO SET STATUS after 
+            
             if(isSignUp){
                 var errStr = err.response.data;
                 setStatus(errStr);

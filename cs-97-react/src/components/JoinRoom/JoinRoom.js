@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import { Link} from 'react-router-dom';
-
+import axios from 'axios';
 import './JoinRoom.css';
 
 
@@ -16,11 +16,29 @@ const JoinRoom = ({ userData, checkLogin}) => {
     const onJoinRoom = async (e) => {
         if(!name || !room){
             e.preventDefault();
-            await console.log('hello');
             await checkLogin();
             await setFetch(true);
         }
+
+        else{
+            const data = {
+                newRoom : room
+            }
+
+            await addRoomToProfile(data);
+        }
         
+        
+    }
+
+    const addRoomToProfile = async (data) => {
+        await axios.post('http://localhost:5000/users/addRoom', data, {withCredentials: true})
+            .then(async res => {
+                console.log(res.body);
+             })
+             .catch(async err =>{
+                 console.log(err.response);
+             })
     }
 
     useEffect( () => {
