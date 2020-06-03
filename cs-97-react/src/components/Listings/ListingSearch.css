@@ -1,10 +1,11 @@
 .listingSearch {
   margin-left: 670px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .listingSearch [placeholder="Item"] {
-  margin-left: 35px;
+  margin-left: 15px;
+  text-align: center;
   font-size: 17px;
   border-radius: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

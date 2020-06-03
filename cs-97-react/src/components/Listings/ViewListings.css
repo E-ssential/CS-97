@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .Item-Container{
     box-sizing: content-box;
     height:30px;
@@ -7,7 +7,7 @@
     flex-direction:row;
     align-items: center;
     justify-content: space-around;
-    color: black;
+    color: whitesmoke;
     /* column-count: 3; */
 }
 
@@ -23,8 +23,13 @@
 .searchBar{
     font-weight: 700;
     padding: 10px;
+    text-align: left;
+    font-size: larger;
+    margin-left: 715px;
+   margin-top: 50px;
+    /* margin-left: 20px; */
     padding-bottom: 5px;
-    text-shadow: blue;
+    color: red;
     
 }
 
@@ -46,14 +51,13 @@
 
 .Listing-head{
     text-align: center;
-    color: tomato;
+    color: whitesmoke;
     font-size: xx-large;
     font-weight: bold;
     text-decoration:underline;
     padding: 10px;
     
 }
-=======
 .Item-Container {
   box-sizing: content-box;
   height: 30px;
@@ -83,4 +87,4 @@
   margin-left: 200px;
   background-color: #1f3f47;
 }
->>>>>>> 2546bc1cd42bc7fa7ff1a2005b3af87076124c06
+

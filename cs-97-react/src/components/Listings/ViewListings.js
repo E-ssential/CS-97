@@ -1,83 +1,81 @@
-<<<<<<< HEAD
-import React, {useState, useEffect } from 'react';
-import axios from 'axios';
+
+// import React, {useState, useEffect } from 'react';
+// import axios from 'axios';
 
 
-import ListingSearch from './ListingSearch.js';
-import ListingList from './ListingList';
-import './ViewListings.css'
+// import ListingSearch from './ListingSearch.js';
+// import ListingList from './ListingList';
+// import './ViewListings.css'
 
 
-const ListingsPage = ({isAuth, userData}) => {
-    const [listings, setListings] = useState([]);
-    const [isFetch, setFetch] = useState(true);
-    var timer;
-    //START HERE TOMORROW
+// const ListingsPage = ({isAuth, userData}) => {
+//     const [listings, setListings] = useState([]);
+//     const [isFetch, setFetch] = useState(true);
+//     var timer;
+//     //START HERE TOMORROW
 
-        const fetchListings = async (request) =>{
+//         const fetchListings = async (request) =>{
             
-            await axios.post('http://localhost:5000/listings/searchItems', request, {withCredentials:true})
-            .then(async res =>{
-                await setListings(res.data);
-                await setFetch(false);
+//             await axios.post('http://localhost:5000/listings/searchItems', request, {withCredentials:true})
+//             .then(async res =>{
+//                 await setListings(res.data);
+//                 await setFetch(false);
 
-            })
-            .catch(async err => {
-                await setFetch(false);
-            });
+//             })
+//             .catch(async err => {
+//                 await setFetch(false);
+//             });
  
-        }
+//         }
         
-        useEffect( () => {
+//         useEffect( () => {
             
-            fetchListings();
-        }, [isFetch])
+//             fetchListings();
+//         }, [isFetch])
 
 
 
-        return(
+//         return(
 
-            isFetch ?
+//             isFetch ?
 
-            (
-                <div className="viewListings">
-                    <p>'Please wait, Fetching Data...'</p>
-                 </div>
-            )
+//             (
+//                 <div className="viewListings">
+//                     <p>'Please wait, Fetching Data...'</p>
+//                  </div>
+//             )
 
-            :
+//             :
 
-            (
+//             (
 
-            <div className="viewListings">
+//             <div className="viewListings">
                 
 
-                <div className="searchBar">Looking for an Item?</div>
-                <ListingSearch fetchListings={fetchListings}/>
+//                 <div className="searchBar">Looking for an Item?</div>
+//                 <ListingSearch fetchListings={fetchListings}/>
 
-                <div className="Listing-head">Essential Goods Currently Available</div>                
-                <div >
-                <ListingList allListings={listings}/>
-                </div>
-
-
-            </div>
+//                 <div className="Listing-head">Essential Goods Currently Available</div>                
+//                 <div >
+//                 <ListingList allListings={listings}/>
+//                 </div>
 
 
-            )
-        )
+//             </div>
 
 
-}
+//             )
+//         )
 
 
+// }
 
-
+// export default ListingsPage;
 
 
 
-export default ListingsPage;
-=======
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -113,11 +111,13 @@ const ListingsPage = () => {
     </div>
   ) : (
     <div className="viewListings">
+      <div className="searchBar">Looking for an Item?</div>
       <ListingSearch fetchListings={fetchListings} />
+      <div className="Listing-head">Essential Goods Currently Available</div>
       <ListingList allListings={listings} />
     </div>
   );
 };
 
 export default ListingsPage;
->>>>>>> 2546bc1cd42bc7fa7ff1a2005b3af87076124c06
+
