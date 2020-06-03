@@ -39,13 +39,19 @@ const ViewProfile = ({ userData, checkLogin }) => {
     </div>
   ) : (
     <div className="profile-page">
-      <UserInfo userData={userData} />
-      <UserListing userListings={listings} setFetch={setFetch} />
-      <UserDeleteItem
-        setStatus={setStatus}
-        setFetch={setFetch}
-        statusMessage={status}
-      />
+      <div className="info">
+        <UserInfo userData={userData} />
+      </div>
+      <div className="mylist">
+        <UserListing userListings={listings} setFetch={setFetch} />
+      </div>
+      <div className="delete-butt">
+        <UserDeleteItem
+          setStatus={setStatus}
+          setFetch={setFetch}
+          statusMessage={status}
+        />
+      </div>
     </div>
   );
 };
