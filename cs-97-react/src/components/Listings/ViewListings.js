@@ -7,11 +7,11 @@ import ListingList from './ListingList';
 import './ViewListings.css'
 
 
-const ListingsPage = ({isAuth, userData}) => {
+const ListingsPage = () => {
+    
     const [listings, setListings] = useState([]);
     const [isFetch, setFetch] = useState(true);
-    var timer;
-    //START HERE TOMORROW
+   
 
         const fetchListings = async (request) =>{
             
@@ -40,7 +40,7 @@ const ListingsPage = ({isAuth, userData}) => {
 
             (
                 <div className="viewListings">
-                    <p>'Please wait, Fetching Data...'</p>
+                    <p>Please wait, Fetching Data...</p>
                  </div>
             )
 

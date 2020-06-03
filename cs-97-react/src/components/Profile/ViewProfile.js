@@ -17,11 +17,9 @@ const ViewProfile = ({ userData, checkLogin}) =>{
     const [status, setStatus] = useState('');
     
 
+
     const fetchUserListings = async (request) =>{
-        if(!userData[1]){
-            await checkLogin();
-        }
-        else{
+        
             await axios.post('http://localhost:5000/listings/searchItems', request, {withCredentials:true})
             .then(async res =>{
                 await setListings(res.data);
@@ -31,7 +29,6 @@ const ViewProfile = ({ userData, checkLogin}) =>{
             .catch(async err => {
                 await setFetch(false);
             });
-        }
         
     }
 
@@ -59,7 +56,7 @@ const ViewProfile = ({ userData, checkLogin}) =>{
             
             <div className="profile-page">
                 <UserInfo userData={userData}/>
-                <UserListing userListings={listings} /> 
+                <UserListing userListings={listings} setFetch={setFetch}/> 
                 <p>{status}</p>
                 <UserDeleteItem setStatus={setStatus} setFetch={setFetch}/>
                 

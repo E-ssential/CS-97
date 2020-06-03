@@ -2,9 +2,8 @@ import React, { useState, useEffect }from 'react';
 import './ListingForm.css';
 import axios from 'axios';
 
-const ListingsForm = ({isAuth, userData}) => {
-
-    const [user, setUser] = useState(userData[1]);
+const ListingsForm = ({userData}) => {
+    const user = userData[1];
     const [item, setItem] = useState('');
     const [quantity, setQuantity] = useState(0);
     const [address, setAddress] = useState('');
