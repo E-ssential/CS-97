@@ -30,8 +30,8 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
           <img
             src={Logo}
             alt="Essential-logo"
-            width="500"
-            height="400"
+            width="105"
+            height="80"
             className="EssentialLogo"
           />
         </Link>
@@ -62,15 +62,20 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
     <div className="nav-bar">
       <div className="nav-left">
         <Link to="/">
-          <button className="nav-button">Home Page</button>
-        </Link>
-
-        <Link to="/listingspage">
-          <button className="nav-button">View Items</button>
+          <img
+            src={Logo}
+            alt="Essential-logo"
+            width="105"
+            height="80"
+            className="EssentialLogo"
+          />
         </Link>
       </div>
 
       <div className="nav-right">
+        <Link to="/listingspage">
+          <button className="nav-button">View Items</button>
+        </Link>
         <Link to="/login">
           <button className="nav-button">Login</button>
         </Link>
