@@ -6,6 +6,8 @@
     flex-direction:row;
     align-items: center;
     justify-content: space-around;
+    color: black;
+    /* column-count: 3; */
 }
 
 .ListingItem{
@@ -25,6 +27,17 @@
     
 }
 
+.row:after{
+    content: "";
+  display: table;
+  clear: both;
+}
+.column{
+    float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px;
+}
 .listingSearch{
     margin-left: 10px;
     margin-top: 0px;
