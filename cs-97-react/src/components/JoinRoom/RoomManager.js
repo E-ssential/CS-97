@@ -35,12 +35,13 @@ const RoomManager = ({ userData, checkLogin }) => {
   ) : (
     <div className="container">
       <div className="username">
-        <p></p>
+        <p>
+          {" "}
+          <p>{userName} ,please select a room</p>
+        </p>
       </div>
       <div className="room-manager">
-        <div className="user-info">
-          <p>{userName} ,please select a room</p>
-        </div>
+        <div className="user-info"></div>
 
         <div className="rooms">
           <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />

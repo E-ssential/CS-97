@@ -1,5 +1,4 @@
 .room-manager {
-  background-color: white;
   width: 400px;
   margin-top: 6px;
   margin-left: 500px;
@@ -13,12 +12,14 @@
 }
 
 .username {
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1px;
-  font-size: 27px;
-  width: 188px;
-  margin-left: 610px;
+  font-size: 22px;
+  width: 30%;
+  margin-left: 510px;
   margin-top: 90px;
+  border-radius: 30px;
   align-items: center;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

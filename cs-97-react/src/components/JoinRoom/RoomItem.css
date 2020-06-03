@@ -1,9 +1,9 @@
 .room-button {
-  background-color: white;
-  border-color: #1f3f47;
+  background-color: #1f3f47;
+  border-color: white;
   border-width: 1mm;
   font-size: 14px;
-  color: #1f3f47;
+  color: white;
   margin-bottom: 12px;
   padding: 13px;
   text-align: center;
@@ -14,9 +14,10 @@
 }
 
 .room-button:hover {
-  background-color: white;
-  color: black;
-  border-color: white;
+  color: white;
   font-weight: bold;
+  border-top: #1f3f47;
+  border-right: #1f3f47;
+  border-left: #1f3f47;
   border-bottom: solid;
 }
