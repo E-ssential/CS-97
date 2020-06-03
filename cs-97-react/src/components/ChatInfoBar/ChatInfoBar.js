@@ -15,7 +15,7 @@ const ChatInfoBar = ({room}) => {
 
         <div className="RightInnerContainer">
             {/* click this to leave */}
-            <a href="/"><img src={closeIcon} alt="close-btn"/></a>
+            <a href="/selectRoom"><img src={closeIcon} alt="close-btn"/></a>
         </div>
 
     </div>

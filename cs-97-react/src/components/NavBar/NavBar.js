@@ -43,7 +43,7 @@ const NavBar = ({isAuth, username, setAuth, checkLogin}) => {
                 <Link to='/listingspage' >
                         <button className="nav-button" >View Items</button>
                 </Link>
-                <Link to='/joinRoom' >
+                <Link to='/selectRoom' >
                         <button className="nav-button" >Chat</button>
                 </Link>
             </div>

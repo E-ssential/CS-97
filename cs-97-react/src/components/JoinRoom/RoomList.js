@@ -1,19 +1,26 @@
 import React from 'react';
-import './JoinRoom.css';
+import './RoomManager.css';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import RoomItem from './RoomItem';
 
-const RoomList = ({allListings}) => {
-    const isValid = allListings.length > 0;
+
+const RoomList = ({allRooms, setRoom, userName}) => {
+    const isValid = allRooms.length > 0;
 
     return(
         isValid ? 
 
         (
             <div className="room-list">
+                <ScrollToBottom>
+                    {allRooms.map( (room, i) => 
+                    <div className="room-item" key={i}>
+                        <RoomItem userName={userName} roomName={room}/>
+                    </div>
 
+                    )}
 
-                <p>{allListings}</p>
+                </ScrollToBottom>
             </div>
 
 
