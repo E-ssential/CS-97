@@ -1,9 +1,10 @@
 .room-button {
-  background-color: goldenrod;
+  background-color: white;
+  border-color: #1f3f47;
+  border-width: 1mm;
   font-size: 14px;
-  color: black;
+  color: #1f3f47;
   margin-bottom: 12px;
-  border-radius: 50%;
   padding: 13px;
   text-align: center;
   margin-left: 160px;
@@ -14,6 +15,8 @@
 
 .room-button:hover {
   background-color: white;
-  color: #1f3f47;
+  color: black;
   border-color: white;
+  font-weight: bold;
+  border-bottom: solid;
 }

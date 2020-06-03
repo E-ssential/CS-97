@@ -1,13 +1,14 @@
 .room-manager {
   background-color: white;
-  border-radius: 50px;
   width: 400px;
   margin-top: 6px;
-  margin-left: 499px;
+  margin-left: 500px;
+  border-radius: 50px;
+  border-width: 1mm;
+  border-color: black;
   padding: 24px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
   font-size: 22px;
 }
 
