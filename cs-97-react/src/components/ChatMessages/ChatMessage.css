@@ -1,0 +1,29 @@
+.messageContainer {
+  color: white;
+  font-size: 11px;
+}
+
+.sentText {
+  margin-left: -150px;
+  margin-top: -14px;
+}
+.messageBox {
+  background-color: aqua;
+  border-bottom-right-radius: 30px;
+  margin-left: -66px;
+  width: 340px;
+  font-size: 15px;
+  color: black;
+  border-top-right-radius: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.messageContainerUser {
+  background-color: yellowgreen;
+  border-bottom-left-radius: 30px;
+  margin-left: 310px;
+  width: 340px;
+  border-top-left-radius: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
