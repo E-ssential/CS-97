@@ -1,0 +1,11 @@
+.room-button {
+  background-color: #1f3f47;
+  font-size: 13px;
+  color: white;
+  margin-bottom: 12px;
+  padding: 13px;
+}
+
+.room-button:hover {
+  background-color: navy;
+}

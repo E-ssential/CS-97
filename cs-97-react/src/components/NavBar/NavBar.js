@@ -31,7 +31,7 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
             src={Logo}
             alt="Essential-logo"
             width="105"
-            height="80"
+            height="82"
             className="EssentialLogo"
           />
         </Link>
@@ -58,7 +58,6 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
       </div>
     </div>
   ) : (
-    // NOT AUTHORIZED
     <div className="nav-bar">
       <div className="nav-left">
         <Link to="/">
