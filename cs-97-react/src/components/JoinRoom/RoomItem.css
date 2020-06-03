@@ -4,6 +4,7 @@
   border-width: 1mm;
   font-size: 14px;
   color: white;
+  display: table-cell;
   margin-bottom: 12px;
   padding: 13px;
   text-align: center;
