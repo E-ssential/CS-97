@@ -1,45 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import './ChatMessage.js';
+import "./ChatMessage.js";
+import "./ChatMessage.css";
 
-const ChatMessage = ({message:{user, text}, name}) =>
-{
-    let isFromCurrentUser = false;
-    const trimmedName = name.trim().toLowerCase();
+const ChatMessage = ({ message: { user, text }, name }) => {
+  let isFromCurrentUser = false;
+  const trimmedName = name.trim().toLowerCase();
 
-    if(user === trimmedName){
-        isFromCurrentUser = true;
-    }
+  if (user === trimmedName) {
+    isFromCurrentUser = true;
+  }
 
-    return(
-        isFromCurrentUser ? 
-
-        (
-            <div className='messageContainer justifyEnd'>
-                <p className='sentText pr-10'>{trimmedName}</p>
-                <div className='messageBox backgroundBlue'>
-                    <p className='messageText colorWhite'>{text}</p>
-                </div>
-            </div>
-        )
-        :
-        (
-            <div className='messageContainer justifyStart'>
-                <p className='sentText pl-10'>From: {user}</p>
-                <div className='messageBox backgroundLight'>
-                    <p className='messageText colorDark'>{text}</p>
-                </div>
-                
-
-            </div>
-
-        )
-
-
-    );
-
-
-
-}
+  return isFromCurrentUser ? (
+    <div className="messageContainerUser justifyEnd">
+      <div className="messageBoxUser">
+        <p className="messageText colorWhite">{text}</p>
+      </div>
+    </div>
+  ) : (
+    <div className="messageContainer justifyStart">
+      <div className="messageBox">
+        <p className="messageText colorDark">{text}</p>
+      </div>
+      <p className="sentText">{user}</p>
+    </div>
+  );
+};
 
 export default ChatMessage;
