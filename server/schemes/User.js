@@ -27,7 +27,10 @@ const userSchema = new mongoose.Schema({
         match:[/\S+@\S+\.\S+/, 'is an invalid email'],
         index: true, 
         uniqueCaseInsensitive: true
-    }
+    }, 
+    rooms: [
+        {type: String}
+    ]
 }, {timestap: true})
 
 userSchema.plugin(uniqueValidator, {message: '{PATH}'});
@@ -48,7 +51,7 @@ bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
         if (err) return next(err);
 
         // override the cleartext password with the hashed one
-        console.log("hashedPassword stored");
+        console.log("Hashing password...");
         user.password = hash;
         next();
     });

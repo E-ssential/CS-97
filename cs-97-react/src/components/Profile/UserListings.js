@@ -1,4 +1,4 @@
-import React , { useState}from 'react';
+import React , { useEffect}from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import UserItem from './UserItem';
 
@@ -9,6 +9,7 @@ import "./ViewProfile.css";
 
 const UserListings = ({userListings}) => {
     const isValid = userListings.length > 0;
+
     return(
 
         isValid ?
