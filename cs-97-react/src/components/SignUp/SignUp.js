@@ -24,9 +24,6 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
       isSignUp,
     };
 
-    //TODO
-<<<<<<< HEAD
-    //SET STATUS TEXT AND STORE USERNAME
     axios
       .post("http://localhost:5000/users/register-login", userData, {
         withCredentials: true,
@@ -35,45 +32,13 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
         setAuth(true);
       })
       .catch((err) => {
-        //TODO SET STATUS after
         if (isSignUp) {
           var errStr = err.response.data;
           setStatus(errStr);
-          console.log(errStr);
         } else {
           setStatus("Invalid username/password");
         }
       });
-=======
-    //What is this ding dong? How can I make this better
-    const submitData = e => {
-        e.preventDefault();
-        // console.log(username);
-        // console.log(email);
-        // console.log(password);
-        // console.log(status);
-        const userData = {
-            username,
-            password,
-            email, 
-            isSignUp
-        };
-        
-        axios.post('http://localhost:5000/users/register-login', userData, {withCredentials: true})
-        .then(res => {
-            setAuth(true);
-        })
-        .catch(err => {
-            
-            if(isSignUp){
-                var errStr = err.response.data;
-                setStatus(errStr);
-            }
-            else{
-                setStatus("Invalid username/password");
-            }
-        })
->>>>>>> 458212688ac66184f5303354507a30180703d6d5
 
     // axios.post('/users/register-login', userData)
     // .then(res => {
