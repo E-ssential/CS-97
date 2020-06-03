@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-const UserDeleteItem = ({setStatus, setFetch}) =>{
+const UserDeleteItem = ({setStatus, setFetch, statusMessage}) =>{
 
     const [deleteID, setDeleteID] = useState('');
 
@@ -26,10 +26,14 @@ const UserDeleteItem = ({setStatus, setFetch}) =>{
     }
 
     return(
+        <div className='delete-item'>
+            <p>{statusMessage}</p>
         <form className='delete-Listing' onSubmit={deleteItem}>
             <input type='text' placeholder='Listing ID' onChange={(e) => {setDeleteID(e.target.value)}} required/>
             <button type='submit'>Delete</button>
         </form>
+
+        </div>
     )
 
 }

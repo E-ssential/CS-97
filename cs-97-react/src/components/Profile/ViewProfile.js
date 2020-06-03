@@ -114,8 +114,7 @@ const ViewProfile = ({ userData, checkLogin}) =>{
             <div className="profile-page">
                 <UserInfo userData={userData}/>
                 <UserListing userListings={listings} setFetch={setFetch}/> 
-                <p>{status}</p>
-                <UserDeleteItem setStatus={setStatus} setFetch={setFetch}/>
+                <UserDeleteItem setStatus={setStatus} setFetch={setFetch} statusMessage={status}/>
                 
             </div>
         )

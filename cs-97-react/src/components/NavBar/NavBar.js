@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../icons/oklogo.png";
 import "./NavBar.css";
 import axios from "axios";
 
@@ -27,26 +26,21 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
     <div className="nav-bar">
       <div className="nav-left">
         <Link to="/">
-          <img
-            src={Logo}
-            alt="Essential-logo"
-            width="90"
-            height="75"
-            className="EssentialLogo"
-          />
+          <button className="nav-button">Home Page</button>
         </Link>
-      </div>
 
-      <div className="nav-right">
         <Link to="/listingsForm">
           <button className="nav-button">Listing Form</button>
         </Link>
         <Link to="/listingspage">
           <button className="nav-button">View Items</button>
         </Link>
-        <Link to="/joinRoom">
+        <Link to="/selectRoom">
           <button className="nav-button">Chat</button>
         </Link>
+      </div>
+
+      <div className="nav-right">
         <Link to="/profile">
           <button className="nav-button">Profile</button>
         </Link>

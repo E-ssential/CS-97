@@ -34,8 +34,7 @@ passport.use(
             const newUser = new User({
             username: username,
             password: password,
-            email: req.body.email, 
-            rooms: ['', 'a']
+            email: req.body.email
             });
             
             newUser.save()

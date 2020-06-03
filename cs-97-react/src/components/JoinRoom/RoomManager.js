@@ -1,18 +1,23 @@
 import React , { useState, useEffect }from 'react';
 import axios from 'axios';
 import RoomList from './RoomList';
-import './JoinRoom.css';
+import CreateRoom from  './CreateRoom';
+import Chat from '../Chat/Chat';
+import './RoomManager.css';
 
 const RoomManager = ({userData, checkLogin}) => {
 
-    const [roomList ,setRooms] = useState([]);
+    const [roomList ,setRoomList] = useState([]);
     const [isFetch, setFetch] = useState(true);
+    const [Room, setRoom] = useState('None');
+    const [status, setStatus] = useState('');
+    const userName = userData[1];
+
 
     const fetchRooms = async() => {
         await axios.get('http://localhost:5000/users/getRooms', {withCredentials:true})
         .then(async res => {
-            console.log(res.data);
-            await setRooms(res.data);
+            await setRoomList(res.data.sort());
             await setFetch(false);
         })
         .catch(async err => {
@@ -22,7 +27,6 @@ const RoomManager = ({userData, checkLogin}) => {
 
     useEffect( () => {
         fetchRooms();
-
     }, [isFetch])
 
 
@@ -41,10 +45,11 @@ const RoomManager = ({userData, checkLogin}) => {
             <div className="room-manager">
 
                 <div className="user-info">
-                    <p>{userData[1]}</p>
+                    <p>{userName}</p>
+                    <p>Please select a room</p>
                 </div>
-                <p>Gimme like thirty min</p> 
-                <RoomList allListings={roomList}/>
+                <RoomList userName={userName} allRooms={roomList} setRoom={setRoom}/>
+                <CreateRoom setFetch={setFetch} setStatus={setStatus} statusMessage={status}/>
             </div>
 
         )

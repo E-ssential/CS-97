@@ -9,14 +9,15 @@ const chatRoomManager = (io) => {
     
         //on the login event
         socket.on('joinRoom', ({name, room}, callback) => {
+            console.log(name, room);
             const {error, user} = addUser({id:socket.id, name, room});
             if(error){
                 return callback(error);
             }
             
-            socket.emit('message', {user: 'admin', text: `Welcome, ${user.name}!`});
+            socket.emit('message', {user: 'admin', text: `Welcome ${user.name}!`});
     
-            socket.broadcast.to(user.room).emit('message', {user:'admin', text: `${user.name}, has joined the room`});
+            socket.broadcast.to(user.room).emit('message', {user:'admin', text: `${user.name} has joined the room`});
             socket.join(user.room);
     
             io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });

@@ -3,7 +3,6 @@ import React, { useState, useEffect  }from 'react';
 import axios from "axios";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import JoinRoom from './components/JoinRoom/JoinRoom';
 import Chat from './components/Chat/Chat';
 import ListingsForm from './components/Listings/ListingsForm';
 import NavBar from './components/NavBar/NavBar';
@@ -65,7 +64,7 @@ const App = () => {
         <Route path='/' exact render={()=> <About isAuth={isAuth} userData={userData}/> }/>
 
         
-        <Route path='/joinRoom' render={() => <RoomManager userData={userData} checkLogin={checkLogIn}/>}/>
+        <Route path='/selectRoom' render={() => <RoomManager userData={userData} checkLogin={checkLogIn}/>}/>
         <Route path='/chat' component={Chat} />
         <Route path='/listingsForm' render={() => <ListingsForm isAuth={isAuth} userData={userData}/>} />
         <Route path='/Listingspage' component={ViewListings}/>
