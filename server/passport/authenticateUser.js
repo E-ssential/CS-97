@@ -34,18 +34,20 @@ passport.use(
             const newUser = new User({
             username: username,
             password: password,
-            email: req.body.email
+            email: req.body.email, 
+            rooms: ['', 'a']
             });
             
             newUser.save()
             .then(
                 user => {
-                    
+                    console.log(`User: ${user.username} is successfully created`)
                     return done(null,user);
                 }
             )
             .catch(
                 err => {
+                    console.log(err);
                     return done(null, false, {message:err.message});
                 }
             )
