@@ -1,0 +1,23 @@
+.room-button {
+  background-color: black;
+  border-color: white;
+  border-width: 1mm;
+  width: 10em;
+  font-size: 14px;
+  color: white;
+  display: table-cell;
+  margin-bottom: 12px;
+  padding: 13px;
+  text-align: center;
+  margin-left: 130px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.room-button:hover {
+  color: white;
+  background-color: navy;
+  font-weight: bold;
+  border-bottom: solid;
+}

@@ -40,12 +40,13 @@ passport.use(
             newUser.save()
             .then(
                 user => {
-                    
+                    console.log(`User: ${user.username} is successfully created`)
                     return done(null,user);
                 }
             )
             .catch(
                 err => {
+                    console.log(err);
                     return done(null, false, {message:err.message});
                 }
             )

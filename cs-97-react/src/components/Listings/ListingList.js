@@ -5,7 +5,7 @@ import ListingItem from './ListingItem';
 
 
 
-const ListingList = ({allListings, userData}) => {
+const ListingList = ({allListings}) => {
 const isValid = allListings.length > 0;
     return(
         isValid ?

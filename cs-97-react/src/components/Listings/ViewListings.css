@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Item-Container{
     box-sizing: content-box;
     height:30px;
@@ -52,3 +53,34 @@
     padding: 10px;
     
 }
+=======
+.Item-Container {
+  box-sizing: content-box;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ListingItem {
+  width: 100%;
+  height: 40px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theListings {
+  width: 1000px;
+  margin-left: 188px;
+  margin-top: 23px;
+  position: relative;
+}
+
+.searcher {
+  margin-left: 200px;
+  background-color: #1f3f47;
+}
+>>>>>>> 2546bc1cd42bc7fa7ff1a2005b3af87076124c06

@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect } from 'react';
 import './ViewListings.css';
 
@@ -42,3 +43,4 @@ return(
 )
 }
 export default ListingItem;
+

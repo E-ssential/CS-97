@@ -3,7 +3,6 @@ import React, { useState, useEffect  }from 'react';
 import axios from "axios";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import JoinRoom from './components/JoinRoom/JoinRoom';
 import Chat from './components/Chat/Chat';
 import ListingsForm from './components/Listings/ListingsForm';
 import NavBar from './components/NavBar/NavBar';
@@ -11,6 +10,7 @@ import About from './components/About/About';
 import SignUp from './components/SignUp/SignUp';
 import ViewListings from './components/Listings/ViewListings'
 import ViewProfile from './components/Profile/ViewProfile';
+import RoomManager from './components/JoinRoom/RoomManager';
 
 import './page-view.css';
 
@@ -31,6 +31,7 @@ const App = () => {
 
         axios.get('http://localhost:5000/users/isLoggedIn', {withCredentials:true})
         .then(async res => {
+            console.log(res.data.email);
             await setAuth(true);
             await setID(res.data.id);
             await setName(res.data.username);
@@ -44,12 +45,13 @@ const App = () => {
 
     useEffect( () => {
         checkLogIn();
-
+        
     }, [isAuth])
 
     //HOW DO I PACK DATA?
     useEffect( () => {
         setUserData([userID, username, email]);
+        
     },[username, email, userID])
     
     
@@ -62,7 +64,7 @@ const App = () => {
         <Route path='/' exact render={()=> <About isAuth={isAuth} userData={userData}/> }/>
 
         
-        <Route path='/joinRoom' render={() => <JoinRoom userData={userData} checkLogin={checkLogIn}/>}/>
+        <Route path='/selectRoom' render={() => <RoomManager userData={userData} checkLogin={checkLogIn}/>}/>
         <Route path='/chat' component={Chat} />
         <Route path='/listingsForm' render={() => <ListingsForm isAuth={isAuth} userData={userData}/>} />
         <Route path='/Listingspage' component={ViewListings}/>

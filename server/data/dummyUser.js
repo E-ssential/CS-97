@@ -7,7 +7,8 @@ const addNewUser = () =>{
     const dummyUser = new User({
         username: 'henryff',
         password: 'test1234',
-        email: 'blgas@jojj.com'
+        email: 'blgas@jojj.com', 
+        rooms: ['abc', 'def', 'ghi']
     });
     
     dummyUser.save((err) =>{

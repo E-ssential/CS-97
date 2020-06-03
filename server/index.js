@@ -6,7 +6,6 @@ const http = require('http');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const flash = require('connect-flash');
 
 
 const PORT = process.env.PORT || 5000;
@@ -30,6 +29,12 @@ mongoose.connect(dbConfig.url, {useNewUrlParser:true, useUnifiedTopology: true})
         .then(console.log('connected to userDatabase'))
         .catch(err => console.log(err));
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
+
+//THIS IS FOR TESTING PURPOSES
+// const dummyUser = require('./data/dummyUser');
+// dummyUser.addNewUser();
+
 
 //Setting up Socket.io (CHAT ROOM FUNCTIONALITY)
 const server = http.createServer(app);
