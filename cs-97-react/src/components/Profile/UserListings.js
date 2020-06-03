@@ -13,7 +13,7 @@ const UserListings = ({ userListings }) => {
         <h2>My Listings</h2>
       </div>
       <div className="header2">
-        ------------Item ID------------------ Item Name----Quantity----User Name{" "}
+        -----------Item ID------------------ Item Name----Quantity----Username{" "}
       </div>
       {userListings.map((item, i) => (
         <div className="UserListings" key={i}>
