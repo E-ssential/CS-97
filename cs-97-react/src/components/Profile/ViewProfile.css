@@ -1,0 +1,14 @@
+.profile-page {
+  background-color: white;
+  width: 500px;
+  margin-top: 50px;
+  margin-left: 500px;
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 30px;
+}
+
+.profile-page [userData="{userData}"] {
+  color: red;
+}

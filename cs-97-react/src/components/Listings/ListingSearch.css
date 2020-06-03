@@ -1,0 +1,22 @@
+.listingSearch {
+  margin-left: 670px;
+  margin-top: 50px;
+}
+
+.listingSearch [placeholder="Item"] {
+  margin-left: 35px;
+  font-size: 17px;
+  border-radius: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.listingSearch [type="submit"] {
+  color: white;
+  margin-left: 10px;
+  font-size: 10px;
+  background-color: red;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+}

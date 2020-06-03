@@ -1,37 +1,43 @@
-
-html{
-    background-color: #e0f1ff;
+html {
+  background-color: #1f3f47;
 }
 
-.outer-about{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    
+.outer-about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.back{
-    background-image: url("../../icons/About.png");
-    width: 6000;
-    height: 1000;
-    /* opacity: .8; */
+.back {
+  width: 6000;
+  height: 1000;
+  /* opacity: .8; */
 }
 
-.about-header{
-    position: relative;
-    color: #5a5858;
-    text-align: center;
-    padding-top: 1%;
+.about-header {
+  position: relative;
+  color: #5a5858;
+  text-align: center;
+  padding-top: 1%;
+  border-radius: 50%;
 }
 
-.about-welcome{
-    position: relative;
-    font-size: x-large;
-    text-align: center;
+.about-welcome {
+  text-align: center;
+  position: relative;
+  color: white;
+  padding-top: 2px;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.about-body{
-    position: relative;
-    padding-top: 2px;
+.about-body {
+  position: relative;
+  color: white;
+  padding-top: 2px;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

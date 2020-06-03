@@ -1,0 +1,54 @@
+.LoginOuterContainer {
+  margin-top: 80px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  /* background: rgba(0, 0, 0, 0.801);
+        box-sizing: border-box; */
+  background-color: white;
+  border-radius: 50%;
+  width: 320px;
+  height: 400px;
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+.LoginInnerContainer {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: black;
+  margin: 0;
+  padding: 0 0 15px;
+}
+.joinInput {
+  background-color: white;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 200px;
+  color: black;
+  font-size: 15px;
+  border-bottom: 1px solid black;
+}
+.button {
+  background-color: navy;
+  color: white;
+  border-color: navy;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-top: 23px;
+  width: 200px;
+  height: 35px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.button:hover {
+  background-color: #64aeeb;
+  border-color: #64aeeb;
+}
