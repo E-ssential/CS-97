@@ -14,11 +14,7 @@ html, body {
   color: #3e5869; 
 }
 
-#root {
-  height: 100%;
-  display:grid;
-  grid-template-rows: 5fr 5fr;
-}
+
 
 .App {
   display: grid;

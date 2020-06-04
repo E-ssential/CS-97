@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../icons/oklogo.png";
+import ELogo from "../../icons/E-logo.png";
 import "./NavBar.css";
 import axios from "axios";
 
@@ -23,63 +23,71 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
   }, []);
 
   return isAuth ? (
-    // IS AUTHORIZED
     <div className="nav-bar">
       <div className="nav-left">
-        <Link to="/">
-          <img
-            src={Logo}
-            alt="Essential-logo"
-            width="105"
-            height="82"
-            className="EssentialLogo"
-          />
-        </Link>
-      </div>
-
-      <div className="nav-right">
+        <div className='nav-logo'>
+          <Link to="/">
+            <img
+              src={ELogo}
+              alt="Essential-logo"
+              className='e-logo'
+            />
+          </Link>
+          
+        </div>
         <Link to="/listingsForm">
-          <button className="nav-button">Listing Form</button>
+          <div className='nav-button'>Listing Form</div>
         </Link>
         <Link to="/listingspage">
-          <button className="nav-button">View Items</button>
+        <div className='nav-button'>View Listing</div>
         </Link>
         <Link to="/selectRoom">
-          <button className="nav-button">Chat</button>
+        <div className='nav-button'>Chat</div>
         </Link>
+      </div>
+      
+
+      <div className="nav-right">
+        
+        
         <Link to="/profile">
-          <button className="nav-button">Profile</button>
+        <div className='nav-button'>Profile</div>
         </Link>
         <Link to="/">
-          <button className="nav-button" onClick={logOut}>
-            Log Out
-          </button>
+        <div className='nav-button' onClick={logOut}>Sign Out</div>
         </Link>
       </div>
     </div>
+
   ) : (
+
     <div className="nav-bar">
       <div className="nav-left">
-        <Link to="/">
-          <img
-            src={Logo}
-            alt="Essential-logo"
-            width="105"
-            height="80"
-            className="EssentialLogo"
-          />
+        <div className='nav-logo'>
+          <Link to="/">
+            <img
+              src={ELogo}
+              alt="Essential-logo"
+              className='e-logo'
+            />
+          </Link>
+        </div>
+        <Link to="/listingspage">
+          <div className='nav-button'>View Listing</div>
         </Link>
       </div>
 
+
+
+
       <div className="nav-right">
-        <Link to="/listingspage">
-          <button className="nav-button">View Items</button>
-        </Link>
+        
         <Link to="/login">
-          <button className="nav-button">Login</button>
+          <div className='nav-button'>Sign In</div>
         </Link>
       </div>
     </div>
+
   );
 };
 
