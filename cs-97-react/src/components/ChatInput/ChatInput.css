@@ -13,6 +13,7 @@
   background-color: white;
   border-radius: 30px;
   padding-left: 10px;
+  padding-bottom: 1mm;
   border-color: var(--button-blue-color);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
