@@ -8,7 +8,7 @@
   justify-content: center;
   flex-direction: column;
   height: 400px;
-  background-color: white;
+  /* background-color: #696767; */
   box-sizing: border-box;
   border-bottom-left-radius: 30px;
   border-radius: 30px;
@@ -21,14 +21,14 @@
 .sign-up-heading {
   margin: 0;
   padding: 0 0 0px;
-  color: black;
+  color: var(--nav-bar-color);
   font-family: Optima;
   font-size: 22px;
 }
 
 .sign-up-page {
   font-size: 22px;
-  color: black;
+  color: var(--nav-bar-color);
   font-family: Optima;
 }
 
@@ -46,13 +46,17 @@ input[type="email"] {
   font-family: Optima;
 }
 
+/* ::placeholder{
+  color: whitesmoke;
+} */
+
 .sign-up-page button[type="submit"] {
   border: none;
   outline: none;
   margin-top: 10px;
   height: 40px;
   width: 200px;
-  background: navy;
+  background: var(--nav-bar-color);
   color: white;
   font-size: 14px;
   border-radius: 20px;
@@ -61,7 +65,7 @@ input[type="email"] {
 
 .sign-up-page button[type="submit"]:hover {
   cursor: pointer;
-  background: #64aeeb;
+  background: var(--hover-color);
   /* background: #4c9ed3; */
   color: whitesmoke;
 }
@@ -69,10 +73,10 @@ input[type="email"] {
 .sign-up-page a {
   font-size: 14px;
   text-decoration: underline;
-  color: black;
+  color: var(--nav-bar-color);
   line-height: 50px;
 }
 
 .sign-up-page a:hover {
-  color: red;
+  color: var(--hover-color);
 }

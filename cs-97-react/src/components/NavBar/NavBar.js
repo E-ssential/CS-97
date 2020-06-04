@@ -83,7 +83,7 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
       <div className="nav-right">
         
         <Link to="/login">
-          <div className='nav-button'>Sign In</div>
+          <div className='nav-button'>Login</div>
         </Link>
       </div>
     </div>
