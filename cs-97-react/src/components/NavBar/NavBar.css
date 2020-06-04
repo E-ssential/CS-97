@@ -1,18 +1,23 @@
 .nav-bar {
-  text-align: center;
   position: fixed;
-  background-color: white;
+  background-color: var(--nav-button-color);
   overflow: hidden;
-  opacity: 1;
-  top: 0;
   width: 100%;
-  left: 0;
-  z-index: 500;
+ 
+}
+
+.EssentialLogo{
+  height:40px;
+  width:40px;
 }
 .nav-left {
   float: left;
 }
 
+.nav-left > a{
+  height:0px;
+  width:0px;
+}
 .nav-right {
   float: right;
 }
@@ -20,13 +25,10 @@
 .nav-button {
   color: black;
   text-align: center;
-  padding: 30px 16px;
   text-decoration: none;
-  font-size: 17px;
+ 
   background-color: white;
   border-color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .nav-button:hover {
