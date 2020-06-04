@@ -7,6 +7,7 @@ const About = ({ isAuth, userData }) => {
 
   return isAuth ? (
     <div className="about-page">
+      <div className='about-field'>
       <div className='about-welcome'>
         <h1>Welcome to E-ssential, {username}!</h1>
       </div>
@@ -26,13 +27,15 @@ const About = ({ isAuth, userData }) => {
       <div className="about-bold">
         <body><b>This is where we come in.</b></body>
       </div>
-    
+      </div>
     </div>
 
   ) : (
 
     // THIS IS FOR WHEN THE USER ISN"T LOGGED IN
     <div className="about-page">
+
+    <div className='about-field'>
       <div className='about-welcome'>
         <h1>Welcome to E-ssential!</h1>
       </div>
@@ -50,6 +53,7 @@ const About = ({ isAuth, userData }) => {
       <div className="about-bold">
         <body><b>This is where we come in.</b></body>
       </div>
+    </div>
     </div>
     
   );

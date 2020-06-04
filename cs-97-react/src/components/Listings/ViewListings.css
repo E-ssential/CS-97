@@ -1,4 +1,11 @@
-.Item-Container {
+
+.view-list{
+  height:500px;
+  overflow: auto;
+}
+
+
+/* .Item-Container {
   box-sizing: content-box;
   height: 30px;
   width: 100%;
@@ -9,7 +16,6 @@
   color: white;
   background-color: gray;
 
-  /* column-count: 3; */
 }
 
 .item-head {
@@ -55,9 +61,8 @@
   margin-left: 75%;
   margin-top: 50px;
   /* margin-left: 20px; */
-  padding-bottom: 5px;
-  color: #042f3a;
-  
+  /* padding-bottom: 5px;
+  color: white;
 }
 
 .row:after {
@@ -129,4 +134,4 @@
   background-color: goldenrod;
   color: black;
   border-color: goldenrod;
-}
+} */ 

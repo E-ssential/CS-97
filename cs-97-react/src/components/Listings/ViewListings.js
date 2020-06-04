@@ -28,11 +28,11 @@ const ListingsPage = () => {
   }, [isFetch]);
 
   return isFetch ? (
-    <div className="viewListings">
+    <div className="view-page">
       <p>Please wait, Fetching Data...</p>
     </div>
   ) : (
-    <div className="viewListings">
+    <div className="view-page">
       <div className="searchBar">Looking for an Item?</div>
       <ListingSearch fetchListings={fetchListings} />
       <div className="Listing-head">Essential Goods Currently Available</div>
