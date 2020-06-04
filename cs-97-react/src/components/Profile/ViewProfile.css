@@ -15,6 +15,7 @@
   color: red;
 } */
 
+
 .mylist {
   /* background-color: black; */
   color: black;
@@ -64,6 +65,13 @@
     display: flex;
     justify-content: center;
     color: white;
+  }
+
+  .user-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 8%;
   }
 
   .profile-title{
