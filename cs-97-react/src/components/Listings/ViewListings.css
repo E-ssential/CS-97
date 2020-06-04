@@ -52,11 +52,12 @@
   padding: 10px;
   text-align: left;
   font-size: larger;
-  margin-left: 71%;
+  margin-left: 75%;
   margin-top: 50px;
   /* margin-left: 20px; */
   padding-bottom: 5px;
-  color: white;
+  color: #042f3a;
+  
 }
 
 .row:after {
@@ -77,7 +78,7 @@
 
 .Listing-head {
   text-align: center;
-  color: whitesmoke;
+  color: black;
   font-size: xx-large;
   font-weight: bold;
   text-decoration: underline;
@@ -109,7 +110,7 @@
 }
 
 .searcher {
-  margin-left: 200px;
+  margin-left: 20px;
   background-color: #1f3f47;
 }
 
