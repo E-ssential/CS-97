@@ -1,23 +1,22 @@
 :root {
-    --main-color: #13af73;
-    --secondary-color: #ffffff;
-    --main-text-color: #0625af;
-  }
+  --main-color: #13af73;
+  --secondary-color: #ffffff;
+  --main-text-color: #0625af;
+  --nav-button-color: #d4d4d4;
+}
   
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: system-ui;
-    font-weight: 200;
-    color: #122836; 
-  }
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Duru Sans', sans-serif;
+  font-weight: 200;
+  color: #3e5869; 
+}
   
-  #root{
-    height:100%;
-    display:grid;
-  }
-  .page-view{
-    margin-top:50px;
-    height:auto;
-  }
+#root {
+  height: 100%;
+  display:grid;
+  grid-template:50px auto;
+}
+
