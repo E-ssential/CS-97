@@ -38,9 +38,9 @@ const ListingsForm = ({ userData }) => {
             <p>{status}</p>
             <div>
               <label>
-                Item
+                
                 <input
-                  type="text"
+                  type="text"  placeholder="Item"
                   onChange={(event) => setItem(event.target.value)}
                   required
                 />
@@ -49,9 +49,10 @@ const ListingsForm = ({ userData }) => {
 
             <div>
               <label>
-                Quantity
+                {/* Quantity */}
                 <input
                   type="number"
+                  placeholder="Quantity"
                   min="0"
                   step="1"
                   onChange={(event) => setQuantity(event.target.value)}
@@ -62,9 +63,9 @@ const ListingsForm = ({ userData }) => {
 
             <div className="listings-info">
               <label>
-                Address
+                
                 <input
-                  type="text"
+                  type="text" placeholder="Address"
                   onChange={(event) => setAddress(event.target.value)}
                   required
                 />

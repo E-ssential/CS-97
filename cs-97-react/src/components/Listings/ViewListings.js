@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -33,10 +37,16 @@ const ListingsPage = () => {
     </div>
   ) : (
     <div className="viewListings">
+      <div className="searchBar">Looking for an Item?</div>
       <ListingSearch fetchListings={fetchListings} />
+      <div className="Listing-head">Essential Goods Currently Available</div>
       <ListingList allListings={listings} />
     </div>
   );
 };
 
 export default ListingsPage;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c

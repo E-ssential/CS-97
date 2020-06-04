@@ -1,6 +1,20 @@
-
+import axios from "axios";
 import React, {useState, useEffect } from 'react';
 import './ViewListings.css';
+
+function goToChat(listing){
+
+    var room = listing.item+listing.username; 
+    const data = {
+        newRoom: room,
+    };
+    
+    axios.post("http://localhost:5000/users/addRoom", data, {
+        withCredentials: true,
+        });
+      
+    window.location.replace("http://localhost:3000/selectRoom");
+}
 
 const ListingItem = ({listingData}) => {
 
@@ -36,6 +50,7 @@ return(
        
         <p>{parsedData.quantity}</p>
         <p>{parsedData.username}</p>
+        <button type='button' onClick={() => { goToChat(parsedData) }}>chat with {parsedData.username}</button>
         </div>
         
    

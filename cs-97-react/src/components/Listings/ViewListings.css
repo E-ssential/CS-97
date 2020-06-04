@@ -1,3 +1,66 @@
+<<<<<<< HEAD
+=======
+
+.Item-Container{
+    box-sizing: content-box;
+    height:30px;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    color: whitesmoke;
+    /* column-count: 3; */
+}
+
+.ListingItem{
+    width:100%;
+    height:40px;
+    box-sizing: content-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.searchBar{
+    font-weight: 700;
+    padding: 10px;
+    text-align: left;
+    font-size: larger;
+    margin-left: 71%;
+   margin-top: 50px;
+    /* margin-left: 20px; */
+    padding-bottom: 5px;
+    color: white;
+    
+}
+
+.row:after{
+    content: "";
+  display: table;
+  clear: both;
+}
+.column{
+    float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px;
+}
+.listingSearch{
+    margin-left: 10%;
+    margin-top: 0px;
+}
+
+.Listing-head{
+    text-align: center;
+    color: whitesmoke;
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration:underline;
+    padding: 10px;
+    
+}
+>>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c
 .Item-Container {
   box-sizing: content-box;
   height: 30px;
@@ -27,3 +90,17 @@
   margin-left: 200px;
   background-color: #1f3f47;
 }
+<<<<<<< HEAD
+=======
+
+.Item-Container [type= "button"]{
+  color:#1f3f87;
+  margin-left: 10px;
+  font-size: 12px;
+  background-color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 5px;
+}
+
+>>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c
