@@ -45,7 +45,7 @@ const ViewProfile = ({ userData, checkLogin }) => {
   
   (
     <div className="profile-page">
-        <div className='profile-title'> User Profile</div>
+        <div className='profile-title'> <h1>User Profile</h1></div>
         <UserInfo userData={userData} />
         <UserListing userListings={listings} setFetch={setFetch} setStatus={setStatus} status={status}/>
       
