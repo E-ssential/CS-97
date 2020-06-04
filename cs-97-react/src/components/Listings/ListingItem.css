@@ -20,17 +20,6 @@
   max-width:200px;
 }
 
-
-h2{
-  font-size: 1.3rem;
-  line-height: 1.65;
-  color: yellow;
-  letter-spacing: 2px;
-}
-
-body{
-  color: red;
-}
 .container{
   max-width: 1170px;
   width: 100%;

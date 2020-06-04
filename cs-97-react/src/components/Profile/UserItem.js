@@ -2,6 +2,8 @@ import React from 'react';
 import './ViewProfile.css';
 import axios from 'axios';
 
+import Xbutton from "../../icons/clear_24px.png";
+
 
 
 
@@ -29,14 +31,15 @@ const UserItem = ({ItemData, setFetch }) => {
 
     return(
     <div className='Item-Container' >
-        <div className="profile-item-name">
+        <div className="profile-item">
             {parsedData.item}
         </div>
-        <div className="profile-item-quantity">
+        <div className="profile-quantity">
             {parsedData.quantity}
         </div>
-        <div className='profile-item-delete'>
-            <button  onClick={(e) => {deleteItem(e,ItemData)}}>Delete</button>
+        <div className='profile-x-button'>
+            <img src={Xbutton} alt="Delete Item" 
+            onClick={(e) => {deleteItem(e,ItemData)}} />
         </div>
     </div>
 )

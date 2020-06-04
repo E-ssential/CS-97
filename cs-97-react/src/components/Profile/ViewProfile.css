@@ -1,34 +1,98 @@
 .profile-page {
-  background-color: white;
-  width: 500px;
+  /* background-color: white; */
+  width: 100%;
   margin-top: 50px;
-  margin-left: 500px;
+  /* margin-left: 25%; */
   padding: 15px;
-  color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-radius: 30px;
+  /* color: black; */
+  font-family: Optima;
+  /* border-radius: 30px; */
   font-size: 12px;
+  text-align: center;
 }
 
-.info {
+/* .info {
   color: red;
-}
+} */
 
 .mylist {
-  background-color: black;
-  color: white;
-  border-radius: 30px;
+  /* background-color: black; */
+  color: black;
+  /* border-radius: 30px; */
   padding: 5px;
+  box-sizing: border-box;
+  width: 750px;
+  /* height: 423px; */
+  margin: 80px auto;
+  background: rgb(151, 157, 165);
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .delete-butt {
   font-size: 23px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Optima;
   color: black;
 }
 
 .Header {
   text-align: center;
+  height: 60px;
+  border-bottom: 1px solid #5E6977;
+  padding: 20px 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  /* font-family: Optima; */
 }
+
+.Item-Container{
+    /* padding: 10px; */
+    padding: 20px 30px;
+    height: 20px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+    margin: 10px;
+    border-bottom:  1px solid #5E6977;
+  }
+  
+  .profile-item, .profile-quantity, .profile-x-button{
+    max-width: 1px;
+    display: flex;
+    justify-content: center;
+    color: white;
+  }
+
+  .profile-title{
+    color: #5E6977;
+  }
+
+  .profile-x-button{
+    cursor: pointer;
+  }
+
+  .user-label{
+    color: #5E6977;
+  }
+
+  .user-data{
+    color: #5E6977;
+  }
+
+  /* .Item-Container button{
+    border: none;
+    outline: none;
+  } */
+
+  /* .delete-button{
+    display: inline-block;
+    cursor: pointer;
+    width: 18px;
+    height: 17px;
+    background: url(&quot;clear_24px.png&quot;) no-repeat center;
+  } */
+
+  

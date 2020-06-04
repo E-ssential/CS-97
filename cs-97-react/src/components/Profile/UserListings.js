@@ -14,7 +14,7 @@ const UserListings = ({ userListings, setFetch, setStatus, status }) => {
       <div className="Header">
           <h2>My Listings</h2>
       </div>
-      <div className='Item-Container' >
+      {/* <div className='Item-Container' >
         <div className="profile-item-name">
             <p>Item Name</p>
         </div>
@@ -24,7 +24,7 @@ const UserListings = ({ userListings, setFetch, setStatus, status }) => {
         <div className='profile-item-delete'>
             Remove Item
         </div>
-    </div>
+    </div> */}
 
 
       <ScrollToBottom>
@@ -36,7 +36,7 @@ const UserListings = ({ userListings, setFetch, setStatus, status }) => {
 
   ) : (
     <p>
-      Looks like you haven't made any listing yet. Go to Listing Form to submit
+      Looks like you haven't made any listings yet. Go to Listing Form to submit
       a listing!
     </p>
   );
