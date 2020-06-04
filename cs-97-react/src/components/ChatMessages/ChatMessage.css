@@ -1,6 +1,7 @@
 .messageContainer {
   color: white;
   font-size: 11px;
+  padding-right: 5px;
 }
 
 .othername {
@@ -11,7 +12,7 @@
 }
 
 .messageBox {
-  background-color: aqua;
+  background-color: var(--main-background-color);
   border-bottom-right-radius: 30px;
   margin-left: -2px;
   width: 340px;
@@ -23,10 +24,11 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .messageContainerUser {
-  background-color: yellowgreen;
+  background-color: var(--button-green-color);
   border-bottom-left-radius: 30px;
   margin-left: 310px;
-  width: 340px;
+  padding-left: 5px;
+  width: 335px;
   text-align: left;
   border-color: yellowgreen;
   margin-bottom: 1px;

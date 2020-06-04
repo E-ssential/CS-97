@@ -1,73 +1,70 @@
 .nav-bar {
   background-color: var(--nav-bar-color);
   width: 100%;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  font-weight:400;
-}
-
-.nav-left{
-  display:flex;
+  display: flex;
   align-items: center;
-  flex-direction:row;
-  justify-content: flex-start;
-  height:100%;
-  width:400px;
+  justify-content: space-between;
+  font-weight: 400;
 }
 
-.nav-left > a{
-  box-sizing:border-box;
-  height:100%;
-  display:flex;
-  align-items:center;
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  width: 400px;
+}
+
+.nav-left > a {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  justify-content:center;
+  justify-content: center;
   color: var(--nav-text-color);
   padding: 15px;
 }
 
-.nav-logo{
-  height:40px;
-  width:40px;
-  margin-left:10px;
-  margin-right:10px;
+.nav-logo {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.e-logo{
-  box-sizing:border-box;
-  width:40px;
-  height:40px;
+.e-logo {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
 }
 
-
-
-.nav-right{
-  height:100%;
-  width:200px;
-  display:flex;
-  align-items:center;
-  flex-direction:row;
+.nav-right {
+  height: 100%;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   justify-content: flex-end;
 }
 
-.nav-right{
-  height:100%;
+.nav-right {
+  height: 100%;
 }
 
-.nav-right > a{
-  box-sizing:border-box;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.nav-right > a {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: var(--nav-text-color);
   padding: 15px;
 }
 
-
-.nav-right >a:hover, .nav-left> a:hover{
-  background-color: var(--nav-bar-hover) ;
-  
+.nav-right > a:hover,
+.nav-left > a:hover {
+  background-color: var(--nav-bar-hover);
 }

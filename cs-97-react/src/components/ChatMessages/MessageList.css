@@ -1,5 +1,5 @@
 .MessageList {
-  background-color: black;
+  background-color: var(--nav-bar-color);
   width: 650px;
   height: 675px;
   padding: 5px;
