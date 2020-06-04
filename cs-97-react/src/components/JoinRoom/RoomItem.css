@@ -1,5 +1,5 @@
 .room-button {
-  background-color: black;
+  background-color: var(--button-blue-color);
   border-color: white;
   border-width: 1mm;
   width: 10em;
@@ -17,7 +17,5 @@
 
 .room-button:hover {
   color: white;
-  background-color: navy;
-  font-weight: bold;
-  border-bottom: solid;
+  background-color: var(--button-green-color);
 }
