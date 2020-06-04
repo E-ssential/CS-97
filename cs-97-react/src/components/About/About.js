@@ -16,8 +16,15 @@ const About = ({ isAuth, userData }) => {
       </div>
 
       <div className="about-info">
-        <body>We at E-ssential recognize the crisis that the novel coronavirus (COVID-19) has caused, and the burden that it has placed on our fellow humans. One of the most pressing issues since COVID-19 was declared a global pandemic has been the shortage of essential goods. Items like masks, water, and toilet paper have become more needed and more difficult to find than ever.</body>
-        <body><em>This is where we come in.</em></body>
+        <body>We at E-ssential recognize the crisis that the novel coronavirus 
+          (COVID-19) has caused, and the burden that it has placed on our fellow humans. 
+          One of the most pressing issues since COVID-19 was declared a global pandemic 
+          has been the shortage of essential goods. Items like masks, water, and toilet 
+          paper have become more needed and more difficult to find than ever.</body>
+      </div>
+      <br />
+      <div className="about-bold">
+        <body><b>This is where we come in.</b></body>
       </div>
     
     </div>
@@ -33,8 +40,15 @@ const About = ({ isAuth, userData }) => {
         <h2>Your #1 stop for essential goods</h2>
       </div>
       <div className="about-info">
-        <body>We at E-ssential recognize the crisis that the novel coronavirus (COVID-19) has caused, and the burden that it has placed on our fellow humans. One of the most pressing issues since COVID-19 was declared a global pandemic has been the shortage of essential goods. Items like masks, water, and toilet paper have become more needed and more difficult to find than ever.</body>
-        <body><em>This is where we come in.</em></body>
+        <body>We at E-ssential recognize the crisis that the novel coronavirus 
+          (COVID-19) has caused, and the burden that it has placed on our fellow humans. 
+          One of the most pressing issues since COVID-19 was declared a global pandemic 
+          has been the shortage of essential goods. Items like masks, water, and toilet 
+          paper have become more needed and more difficult to find than ever.</body>
+      </div>
+      <br />
+      <div className="about-bold">
+        <body><b>This is where we come in.</b></body>
       </div>
     </div>
     
