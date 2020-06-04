@@ -36,6 +36,13 @@ const ListingsPage = () => {
       <div className="searchBar">Looking for an Item?</div>
       <ListingSearch fetchListings={fetchListings} />
       <div className="Listing-head">Essential Goods Currently Available</div>
+      <div className="Listing-Header">
+        {" "}
+        <p>
+          Item &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List
+        </p>
+      </div>
       <ListingList allListings={listings} />
     </div>
   );
