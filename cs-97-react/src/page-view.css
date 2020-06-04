@@ -24,4 +24,9 @@ html, body {
   grid-template-rows:50px auto;
 }
 
+.about-page{
+  background-color:var(--main-background-color);
+  height:100%;
+  width:100%;
+}
 /* BACKGROUND COLOR ARE DECLARED IN PAGE-VIEW */
