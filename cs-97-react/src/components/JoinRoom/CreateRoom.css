@@ -8,12 +8,12 @@
   border-radius: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-color: #1f3f47;
+  border-color: var(--button-blue-color);
   padding: 3px;
 }
 
 .creator {
-  background-color: navy;
+  background-color: var(--button-blue-color);
   color: white;
   font-size: 13px;
   border-radius: 30px;
@@ -22,5 +22,5 @@
 }
 
 .creator:hover {
-  background-color: red;
+  background-color: var(--button-blue-hover);
 }
