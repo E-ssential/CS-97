@@ -43,11 +43,24 @@ input[type="email"] {
   margin-top: 20px;
 }
 
-.Quantity {
+.outer-listing input[type="text"], input[type="password"], input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #333;
+    /* background: transparent; */
+    outline: none;
+    height: 20px;
+    width: 200px;
+    color: black;
+    font-size: 15px;
+    font-family: 'Optima';
+
+}
+.Quantity{
   margin-left: -10px;
 }
 .Quantity [type="number"] {
   margin-left: 20px;
+
 }
 
 .Item {
