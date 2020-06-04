@@ -11,6 +11,7 @@ const isValid = allListings.length > 0;
         isValid ?
 
         (
+        <div className="view-list">
         <ScrollToBottom>
             {allListings.map((listing, i)=>
 
@@ -24,14 +25,15 @@ const isValid = allListings.length > 0;
 
 
         </ScrollToBottom>
-
+        </div>
         )
 
         :
 
         (
-            <p>No Result Found</p>
-
+            <div className="view-list">
+                <p>No Result Found</p>
+            </div>
 
         )
     )
