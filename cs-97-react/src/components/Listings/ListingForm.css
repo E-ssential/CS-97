@@ -12,6 +12,9 @@
   height: 420px;
   box-sizing: border-box;
   padding: 70px 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .listing-heading {
@@ -22,14 +25,16 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.outer-listing input[type="text"],
-input[type="password"],
-input[type="email"] {
+.outer-listing input[type="text"], [type="number"]{
   border: none;
+  text-align: center;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   border-bottom: 1px solid #333;
   /* background: transparent; */
+  /* border: none; */
+  /* border-bottom: 1px solid black; */
+  background: transparent;
   outline: none;
   height: 20px;
   width: 200px;
@@ -40,31 +45,29 @@ input[type="email"] {
 }
 
 .listings-info {
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-right: 0px;
+  text-align: left;
 }
 
-.outer-listing input[type="text"], input[type="password"], input[type="email"]{
-    border: none;
-    border-bottom: 1px solid #333;
-    /* background: transparent; */
-    outline: none;
-    height: 20px;
-    width: 200px;
-    color: black;
-    font-size: 15px;
-    font-family: 'Optima';
 
-}
 .Quantity{
   margin-left: -10px;
+  border: none;
+  background: transparent;
+
 }
 .Quantity [type="number"] {
   margin-left: 20px;
+  padding:5px;
+  border: none;
+  background: transparent;
 
 }
 
 .Item {
   margin-right: px;
+  text-align: center;
 }
 .listingBut button[type="submit"] {
   border: none;
