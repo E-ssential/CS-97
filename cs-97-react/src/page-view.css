@@ -8,8 +8,10 @@
   --button-green-color: #3dada2;
   --button-green-hover: #41b9ad;
 
-  --listing-background-color1:#f5f5f5;
-  --listing-background-color2:#e6e6e6;
+  --listing-background-item1:#f5f5f5;
+  --listing-background-item2:#e6e6e6;
+  --listing-background-item3:#c4c4c4;
+  --listing-background-color: #0e335a;
 }
   
 html, body {
@@ -27,26 +29,25 @@ html, body {
   display:grid;
   grid-template-rows:50px 1fr ;
   overflow-y:auto;
+  background-color: var(--main-background-color);
 }
 
 .listing-page{
   height:100%;
   width:100%;
-  background-color: var(--main-background-color);
 }
 
 .about-page{
   height:100%;
   width:100%;
-  background-color: var(--main-background-color);
+  
 }
 
 .view-page{
-  
   display: grid;
-  grid-template-rows:70px 1fr 50px;
+  grid-template-rows:30px 1fr 50px;
+  grid-template-columns: 100px 1fr 100px;
   overflow: hidden;
-  
 }
 
 
