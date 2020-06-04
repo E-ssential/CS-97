@@ -38,10 +38,10 @@ const ListingsPage = () => {
       <div className="Listing-head">Essential Goods Currently Available</div>
       <div className="Listing-Header">
         {" "}
-        <p>
-          Item &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List
-        </p>
+        <b className="item-head"> Item </b>
+        <b className="quantity-head"> Quantity </b>
+        <b className="username-head"> UserName</b>
+        <b className="chat-head"> Chat with user </b>
       </div>
       <ListingList allListings={listings} />
     </div>
