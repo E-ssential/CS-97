@@ -3,17 +3,21 @@
   font-size: 11px;
 }
 
-.sentText {
-  margin-left: -150px;
+.othername {
+  margin-left: -615px;
   margin-top: -14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .messageBox {
   background-color: aqua;
   border-bottom-right-radius: 30px;
-  margin-left: -66px;
+  margin-left: -2px;
   width: 340px;
   font-size: 15px;
   color: black;
+  text-align: left;
   border-top-right-radius: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -23,7 +27,17 @@
   border-bottom-left-radius: 30px;
   margin-left: 310px;
   width: 340px;
+  text-align: left;
+  border-color: yellowgreen;
+  margin-bottom: 1px;
+  color: black;
   border-top-left-radius: 30px;
+  font-size: 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.messageText {
+  margin-left: 5px;
+  padding-bottom: 3px;
 }
