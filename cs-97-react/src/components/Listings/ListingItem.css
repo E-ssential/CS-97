@@ -1,5 +1,5 @@
 .Item-Container {
-  color: white;
+  color: rgb(231, 10, 10);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: large;
@@ -47,4 +47,14 @@ body{
 
 .card{
   padding: 15px 25px;
+}
+
+.button{
+  color:#1f3f87;
+  margin-left: 10px;
+  font-size: 12px;
+  background-color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
 }

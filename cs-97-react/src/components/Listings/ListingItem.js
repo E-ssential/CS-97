@@ -50,7 +50,7 @@ return(
        
         <p>{parsedData.quantity}</p>
         <p>{parsedData.username}</p>
-        <button onClick={() => { goToChat(parsedData) }}>chat with {parsedData.username}</button>
+        <button type='button' onClick={() => { goToChat(parsedData) }}>chat with {parsedData.username}</button>
         </div>
         
    
