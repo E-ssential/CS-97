@@ -60,7 +60,7 @@ const App = () => {
 
         <NavBar isAuth={isAuth} userData={userData} setAuth={setAuth} checkLogin={checkLogIn}/>
 
-        <div className="page-view">
+        
         <Route path='/' exact render={()=> <About isAuth={isAuth} userData={userData}/> }/>
 
         
@@ -72,7 +72,7 @@ const App = () => {
         <Route path='/profile' render={() => <ViewProfile userData={userData} checkLogin={checkLogIn}/>} />
         <Route path='/login' render={() => <SignUp isSignUp={false} isAuth={isAuth} setAuth={setAuth}/>}/>
         <Route path='/signUp' render={() => <SignUp isSignUp={true} isAuth={isAuth} setAuth={setAuth}/>}/>
-        </div>
+        
     </Router>
     );
 }

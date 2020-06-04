@@ -19,11 +19,8 @@ html, body {
 #root {
   height: 100%;
   width:100%;
-
   display:grid;
   grid-template-rows:50px auto;
 }
 
-.page-view{
-  background-color: var(--main-background-color);
-}
+/* BACKGROUND COLOR ARE DECLARED IN PAGE-VIEW */

@@ -1,19 +1,7 @@
-.outer-listing {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* background: rgba(0, 0, 0, 0.801);
-    box-sizing: border-box; */
-  background-color: white;
-  border-radius: 50px;
-  width: 320px;
-  height: 420px;
-  box-sizing: border-box;
-  padding: 70px 30px;
-  text-align: center;
+.listing-form {
+  background-color: var(--main-background-color);
   display: flex;
+  text-align: center;
   justify-content: center;
 }
 
@@ -31,9 +19,6 @@
   margin-bottom: 20px;
   margin-left: 10px;
   border-bottom: 1px solid #333;
-  /* background: transparent; */
-  /* border: none; */
-  /* border-bottom: 1px solid black; */
   background: transparent;
   outline: none;
   height: 20px;
