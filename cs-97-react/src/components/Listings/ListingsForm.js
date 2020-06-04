@@ -40,7 +40,7 @@ const ListingsForm = ({ userData }) => {
 
       <div className="form-form">
         <form onSubmit={onSubmit}>
-              <div>
+              <div className="form-field">
                   <input
                     type="text"  placeholder="Item"
                     onChange={(event) => setItem(event.target.value)}
@@ -48,7 +48,7 @@ const ListingsForm = ({ userData }) => {
                   />
               </div>
 
-              <div>
+              <div className="form-field">
                   <input
                     type="number"
                     placeholder="Quantity"
@@ -59,7 +59,7 @@ const ListingsForm = ({ userData }) => {
                   />
               </div>
 
-              <div className="listings-info">
+              <div className="form-field">
                   <input
                     type="text" placeholder="Address"
                     onChange={(event) => setAddress(event.target.value)}
@@ -68,7 +68,9 @@ const ListingsForm = ({ userData }) => {
               </div>
 
               <button type="submit">Submit</button>
-            </form>
+
+              
+        </form>
       </div>
     </div>
   );
