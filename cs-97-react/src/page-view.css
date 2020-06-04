@@ -31,4 +31,15 @@ html, body {
   background-color: var(--main-background-color);
 }
 
+.about-page{
+  height:100%;
+  width:100%;
+  background-color: var(--main-background-color);
+}
+
+.view-page{
+  height:100%;
+  width:100%;
+  background-color: var(--main-background-color);
+}
 /* BACKGROUND COLOR ARE DECLARED IN PAGE-VIEW */

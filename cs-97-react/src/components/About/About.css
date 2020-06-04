@@ -1,17 +1,42 @@
+
 .about-page{
+
+  display:flex;
   text-align: center;
-  margin-top: 12.5%;
-  color: var(--nav-bar-color);
+  justify-content: center ;
+  flex-direction: column;
+  display:grid;
+  grid-template-columns: auto 800px auto;
+  grid-template-rows:.5fr auto .5fr;
+  font-family: Optima;
 }
 
+.about-field{
+  
+  box-sizing: border-box;
+  grid-column-start: 2;
+  grid-row-start:2;
+  display:flex;
+  text-align: center;
+  justify-content: center ;
+  flex-direction: column;
+
+}
 .about-welcome{
   font-size: 20px;
+  
 }
 
+.about-subheading{
+  font-size:15px;
+}
+
+
 .about-info{
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  font-family: Optima;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding:15px;
+  grid-column-start: 2;
 }
 
 
