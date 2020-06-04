@@ -1,4 +1,31 @@
-.Item-Container {
+.quantitybut {
+  text-align: center;
+  width: 33px;
+  margin-left: auto;
+  vertical-align: middle;
+  justify-content: center;
+  background-color: orange;
+  border-radius: 30px;
+  border-color: orange;
+}
+.nm {
+  margin-left: 330px;
+  margin-right: auto;
+  text-align: center;
+  background-color: orange;
+  border-color: black;
+  border-radius: 30px;
+  width: 94px;
+}
+.item {
+  width: 100px;
+  margin-left: 60px;
+  color: black;
+  background-color: orange;
+  border-color: black;
+  border-radius: 30px;
+}
+/*.Item-Container {
   color: rgb(231, 10, 10);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -53,3 +80,4 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 10px;
 }
+*/

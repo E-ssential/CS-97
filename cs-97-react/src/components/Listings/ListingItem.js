@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./ViewListings.css";
+import "./ListingItem.css";
 
 function goToChat(listing) {
   var room = listing.item + listing.username;
@@ -38,10 +39,10 @@ const ListingItem = ({ listingData }) => {
     // </div>
 
     <div className="Item-Container">
-      <p>{parsedData.item}</p>
+      <button className="item">{parsedData.item}</button>
 
-      <p>{parsedData.quantity}</p>
-      <p>{parsedData.username}</p>
+      <button className="quantitybut">{parsedData.quantity}</button>
+      <button className="nm">{parsedData.username}</button>
       <button
         type="button"
         onClick={() => {
