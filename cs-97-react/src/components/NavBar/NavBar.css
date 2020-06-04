@@ -1,36 +1,47 @@
 .nav-bar {
-  position: fixed;
-  background-color: var(--nav-button-color);
-  overflow: hidden;
+  background-color: var(--nav-bar-color);
   width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  font-weight:400;
 }
 
-.EssentialLogo {
-  height: 40px;
-  width: 40px;
-}
-.nav-left {
-  float: left;
+.nav-left{
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-left > a {
-  height: 0px;
-  width: 0px;
+.nav-logo{
+  height:40px;
+  width:40px;
+  margin-left:10px;
+  margin-right:10px;
+  background-color: ;
 }
-.nav-right {
-  float: right;
+
+.e-logo{
+  box-sizing:border-box;
+  width:40px;
+  height:40px;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  flex-direction:row;
+  justify-content:center;
 }
 
 .nav-button {
-  color: black;
+  color: var(--nav-text-color);
   text-align: center;
   text-decoration: none;
-  background-color: white;
-  border-color: white;
+ 
+  background-color: var(--nav-bar-color);
 }
 
 .nav-button:hover {
-  text-decoration: underline;
-  color: #1f3f47;
-  font-weight: bold;
+  font-weight: 600;
 }

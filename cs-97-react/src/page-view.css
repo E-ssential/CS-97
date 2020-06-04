@@ -1,22 +1,28 @@
 :root {
-  --main-color: #13af73;
-  --secondary-color: #ffffff;
-  --main-text-color: #0625af;
-  --nav-button-color: #d4d4d4;
+  --nav-bar-color: rgb(14, 51, 90);
+  --nav-text-color: rgb(255, 255, 255);
+  --main-background-color: rgb(255, 255, 255);
+  
+  
 }
   
- html, body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Duru Sans', sans-serif;
   font-weight: 200;
-  color: #3e5869; 
-}
-  
-#root {
-  height: 100%;
-  display:grid;
-  grid-template:50px auto;
 }
 
+
+#root {
+  height: 100%;
+  width:100%;
+
+  display:grid;
+  grid-template-rows:50px auto;
+}
+
+.page-view{
+  background-color: var(--main-background-color);
+}
