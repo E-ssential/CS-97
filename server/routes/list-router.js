@@ -23,7 +23,7 @@ router.post( "/add", ( req , res  ) => {
   newListing.save()
   .then(
     listing => {
-      return res.status(200).send(`You successfully added ${quantity} ${item}`);
+      return res.status(200).send(`You successfully added ${quantity} ${item}!`);
     }
   )
   .catch(
@@ -58,13 +58,13 @@ router.post('/deleteItem', (req, res) => {
   .remove()
   .then(
     ok => {
-      return res.status(200).send('Item Successfully Removed');
+      return res.status(200).send('Item Successfully Removed.');
     }
   )
   .catch(
     err => {
       console.log(err);
-      return res.status(400).send("ID Not Found");
+      return res.status(400).send("ID Not Found.");
     }
   )
   

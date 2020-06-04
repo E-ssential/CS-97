@@ -35,41 +35,41 @@ const ListingsForm = ({ userData }) => {
       </div>
 
       <div className='form-status'>
-        <p>{status}</p>
+          <p>{status}</p>
       </div>
 
       <div className="form-form">
+        
+        
         <form onSubmit={onSubmit}>
+
               <div className="form-field">
-                  <input
-                    type="text"  placeholder="Item"
-                    onChange={(event) => setItem(event.target.value)}
-                    required
-                  />
+                <input
+                  type="text" placeholder="Item Name"
+                  onChange={(event) => setItem(event.target.value)}
+                  required
+                />
               </div>
 
               <div className="form-field">
                   <input
-                    type="number"
-                    placeholder="Quantity"
-                    min="0"
-                    step="1"
+                    type="number" placeholder="Quantity"
                     onChange={(event) => setQuantity(event.target.value)}
-                    required
+                    min="0" step="1" required
                   />
               </div>
 
               <div className="form-field">
-                  <input
-                    type="text" placeholder="Address"
-                    onChange={(event) => setAddress(event.target.value)}
-                    required
-                  />
+                <input
+                  type="text" placeholder="Address"
+                  onChange={(event) => setAddress(event.target.value)}
+                  required
+                />
               </div>
 
-              <button type="submit">Submit</button>
+              <button className='form-submit' type="submit">Submit</button>
 
-              
+
         </form>
       </div>
     </div>

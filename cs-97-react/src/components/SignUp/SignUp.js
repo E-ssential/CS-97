@@ -52,11 +52,20 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
 
   return isAuth ? (
     <Redirect to="/" />
-  ) : isSignUp ? (
+
+  ) : 
+  
+  isSignUp ? (
     <div className="sign-up-page">
-      <h1>Sign Up</h1>
+      <div className="sign-up-heading">
+        <p>Sign Up</p>
+      </div>
+
+      <div className='sign-up-status'>
+          <p>{status}</p>
+      </div>
       <form onSubmit={submitData}>
-        <p>{status}</p>
+        
         <div>
           <input
             type="text"
@@ -89,15 +98,18 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
         </div>
         <button type="submit">Sign Up</button>
       </form>
-      <Link to="/login">Already have an account? Login</Link>
+      <Link to="/login">Already have an account? Sign In</Link>
     </div>
   ) : (
     <div className="sign-up-page">
       <div className="sign-up-heading">
-        <h1>Login</h1>
+        <p>Sign In</p>
+      </div>
+      <div className='sign-up-status'>
+          <p>{status}</p>
       </div>
       <form onSubmit={submitData}>
-        <p>{status}</p>
+      
         <div>
           <input
             type="text"
