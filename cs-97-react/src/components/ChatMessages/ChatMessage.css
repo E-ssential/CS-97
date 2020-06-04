@@ -30,6 +30,7 @@
   text-align: left;
   border-color: yellowgreen;
   margin-bottom: 1px;
+  color: black;
   border-top-left-radius: 30px;
   font-size: 15px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -38,4 +39,5 @@
 
 .messageText {
   margin-left: 5px;
+  padding-bottom: 3px;
 }

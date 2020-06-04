@@ -3,20 +3,19 @@
   background-color: var(--nav-button-color);
   overflow: hidden;
   width: 100%;
- 
 }
 
-.EssentialLogo{
-  height:40px;
-  width:40px;
+.EssentialLogo {
+  height: 40px;
+  width: 40px;
 }
 .nav-left {
   float: left;
 }
 
-.nav-left > a{
-  height:0px;
-  width:0px;
+.nav-left > a {
+  height: 0px;
+  width: 0px;
 }
 .nav-right {
   float: right;
@@ -26,7 +25,7 @@
   color: black;
   text-align: center;
   text-decoration: none;
- 
+
   background-color: white;
   border-color: white;
 }

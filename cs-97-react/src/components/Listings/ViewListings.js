@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -46,7 +42,3 @@ const ListingsPage = () => {
 };
 
 export default ListingsPage;
-<<<<<<< HEAD
-=======
-
->>>>>>> 4eb1bce8b6019469181d1af4268543c0711bfd5c
