@@ -10,7 +10,21 @@
 .nav-left {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  width: 400px;
+}
+
+.nav-left > a {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   justify-content: center;
+  color: var(--nav-text-color);
+  padding: 15px;
 }
 
 .nav-logo {
@@ -18,7 +32,6 @@
   width: 40px;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: ;
 }
 
 .e-logo {
@@ -28,20 +41,30 @@
 }
 
 .nav-right {
+  height: 100%;
+  width: 200px;
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav-right {
+  height: 100%;
+}
+
+.nav-right > a {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.nav-button {
-  color: var(--nav-text-color);
-  text-align: center;
   text-decoration: none;
-
-  background-color: var(--nav-bar-color);
+  color: var(--nav-text-color);
+  padding: 15px;
 }
 
-.nav-button:hover {
-  font-weight: 600;
+.nav-right > a:hover,
+.nav-left > a:hover {
+  background-color: var(--nav-bar-hover);
 }

@@ -28,7 +28,7 @@ const ListingsForm = ({ userData }) => {
   };
 
   return (
-    <div className="outer-listing">
+    <div className="listing-form">
       <div className="listing-heading">
         <h1> Listing Form</h1>
         <div className="listingBut">

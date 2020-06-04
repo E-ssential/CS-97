@@ -35,26 +35,18 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
           </Link>
           
         </div>
-        <Link to="/listingsForm">
-          <div className='nav-button'>Listing Form</div>
-        </Link>
-        <Link to="/listingspage">
-        <div className='nav-button'>View Listing</div>
-        </Link>
-        <Link to="/selectRoom">
-        <div className='nav-button'>Chat</div>
-        </Link>
+        <Link to="/listingsForm">Listing Form </Link>
+        <Link to="/listingspage">View Listing</Link>
+        <Link to="/selectRoom"> Chat </Link>
       </div>
       
 
       <div className="nav-right">
         
         
-        <Link to="/profile">
-        <div className='nav-button'>Profile</div>
-        </Link>
-        <Link to="/">
-        <div className='nav-button' onClick={logOut}>Sign Out</div>
+        <Link to="/profile"> Profile </Link>
+        <Link to="/" onClick={logOut}>
+        Sign Out
         </Link>
       </div>
     </div>
@@ -72,9 +64,7 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
             />
           </Link>
         </div>
-        <Link to="/listingspage">
-          <div className='nav-button'>View Listing</div>
-        </Link>
+        <Link to="/listingspage">View Listing</Link>
       </div>
 
 
@@ -82,9 +72,7 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
 
       <div className="nav-right">
         
-        <Link to="/login">
-          <div className='nav-button'>Sign In</div>
-        </Link>
+        <Link to="/login">Sign In</Link>
       </div>
     </div>
 
