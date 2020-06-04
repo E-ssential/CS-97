@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./ViewListings.css";
-import "./ListingItem.css";
 
 function goToChat(listing) {
   var room = listing.item + listing.username;

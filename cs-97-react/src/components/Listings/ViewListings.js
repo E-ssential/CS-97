@@ -28,9 +28,19 @@ const ListingsPage = () => {
   }, [isFetch]);
 
   return isFetch ? (
+
     <div className="view-page">
+
+      <div className='view-header'>
+      </div>
+      <div className="view-body">
       <p>Please wait, Fetching Data...</p>
+      </div>
+      <div className='view-footer'></div>
+        
+      
     </div>
+
   ) : (
     <div className="view-page">
 
@@ -38,7 +48,10 @@ const ListingsPage = () => {
       </div>
       <div className="view-body">
         <ListingSearch fetchListings={fetchListings} />
+        
         <ListingList allListings={listings} />
+        
+        
 
       </div>
       <div className='view-footer'></div>
