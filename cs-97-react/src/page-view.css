@@ -4,8 +4,6 @@
   --nav-bar-hover: rgb(8, 35, 63);
   --main-background-color: rgb(255, 255, 255);
   --hover-color: rgb(102, 175, 235);
-  
-  
 }
   
 html, body {
@@ -22,6 +20,12 @@ html, body {
   width:100%;
   display:grid;
   grid-template-rows:50px auto;
+}
+
+.listing-page{
+  height:100%;
+  width:100%;
+  background-color: var(--main-background-color);
 }
 
 /* BACKGROUND COLOR ARE DECLARED IN PAGE-VIEW */
