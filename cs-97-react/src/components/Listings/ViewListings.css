@@ -1,16 +1,43 @@
 .Item-Container {
   box-sizing: content-box;
   height: 30px;
-  width: 550px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   color: white;
-  background-color: black;
+  background-color: gray;
+
   /* column-count: 3; */
 }
 
+.item-head {
+  margin-left: 110px;
+}
+.quantity-head {
+  margin-left: 285px;
+}
+.username-head {
+  margin-left: 290px;
+}
+.chat-head {
+  margin-left: 310px;
+}
+
+.Listing-Header {
+  background-color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  width: 1390px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  font-size: 18px;
+  height: 32px;
+  padding: 15px;
+}
 .ListingItem {
   width: 100%;
   height: 40px;
@@ -87,10 +114,10 @@
 }
 
 .Item-Container [type="button"] {
-  color: black;
+  color: white;
   margin-left: 10px;
   font-size: 12px;
-  background-color: goldenrod;
+  background-color: navy;
   width: 180px;
   border-color: black;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -98,6 +125,7 @@
   border-radius: 5px;
 }
 .Item-Container [type="button"]:hover {
-  background-color: yellow;
+  background-color: goldenrod;
   color: black;
+  border-color: goldenrod;
 }

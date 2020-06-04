@@ -4,26 +4,34 @@
   margin-left: auto;
   vertical-align: middle;
   justify-content: center;
-  background-color: orange;
+  background-color: #1f3f47;
   border-radius: 30px;
-  border-color: orange;
+  border-color: #1f3f47;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .nm {
   margin-left: 330px;
   margin-right: auto;
   text-align: center;
-  background-color: orange;
-  border-color: black;
+  background-color: #1f3f47;
+  border-color: #1f3f47;
+  color: white;
   border-radius: 30px;
   width: 94px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .item {
   width: 100px;
   margin-left: 60px;
-  color: black;
-  background-color: orange;
-  border-color: black;
+  color: white;
+  background-color: #1f3f47;
+  border-color: #1f3f47;
   border-radius: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 /*.Item-Container {
   color: rgb(231, 10, 10);
