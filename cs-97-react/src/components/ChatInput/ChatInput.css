@@ -20,13 +20,13 @@
   font-size: 13px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: orange;
   border-color: black;
   border-radius: 30px;
 }
 
 .chat-send-btn:hover {
-  background-color: orange;
-  color: black;
+  background-color: navy;
+  color: white;
 }

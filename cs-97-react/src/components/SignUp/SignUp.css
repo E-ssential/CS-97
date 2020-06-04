@@ -22,16 +22,14 @@
   margin: 0;
   padding: 0 0 0px;
   color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Optima;
   font-size: 22px;
 }
 
 .sign-up-page {
   font-size: 22px;
   color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Optima;
 }
 
 .sign-up-page input[type="text"],
@@ -45,8 +43,7 @@ input[type="email"] {
   width: 200px;
   color: black;
   font-size: 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Optima;
 }
 
 .sign-up-page button[type="submit"] {
@@ -59,8 +56,7 @@ input[type="email"] {
   color: white;
   font-size: 14px;
   border-radius: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Optima;
 }
 
 .sign-up-page button[type="submit"]:hover {

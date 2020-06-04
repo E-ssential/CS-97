@@ -1,50 +1,45 @@
 .Item-Container {
-  color: white;
+  color: rgb(231, 10, 10);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: large;
   padding: 10px;
   justify-content: space-around;
-  width:100%;
-  
+  width: 100%;
 }
 .item {
-  max-width:5px;
+  max-width: 5px;
   display: flex;
   justify-content: center;
 }
- 
-#overflow{
+
+#overflow {
   overflow-wrap: break-word;
   hyphens: auto;
-  max-width:200px;
+  max-width: 200px;
 }
 
-
-h2{
-  font-size: 1.3rem;
-  line-height: 1.65;
-  color: yellow;
-  letter-spacing: 2px;
-}
-
-body{
-  color: red;
-}
 .container{
   max-width: 1170px;
   width: 100%;
-  margin:0 auto;
+  margin: 0 auto;
   display: flex;
-  
-
 }
 
-.columns{
+.columns {
   margin: 0 15px 25px;
- 
 }
 
-.card{
+.card {
   padding: 15px 25px;
+}
+
+.button {
+  color: black;
+  margin-left: 10px;
+  font-size: 12px;
+  background-color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
 }

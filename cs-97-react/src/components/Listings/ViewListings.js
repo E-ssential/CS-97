@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -43,4 +42,3 @@ const ListingsPage = () => {
 };
 
 export default ListingsPage;
-
