@@ -38,19 +38,19 @@ const ListingItem = ({ listingData }) => {
 
     // </div>
 
-    <div className="Item-Container">
-      <button className="item">{parsedData.item}</button>
+    <div className='view-item'>
+      <div className="item-name">
+        {parsedData.item}
+      </div>
+      <div className="item-quantity">
+        {parsedData.quantity}
+      </div>
+      
+      <div className="item-user" onClick={ (e) => {goToChat(parsedData)}}>
+        {parsedData.username}
+      </div>
 
-      <button className="quantitybut">{parsedData.quantity}</button>
-      <button className="nm">{parsedData.username}</button>
-      <button
-        type="button"
-        onClick={() => {
-          goToChat(parsedData);
-        }}
-      >
-        chat with {parsedData.username}
-      </button>
+        
     </div>
 
     // </body>

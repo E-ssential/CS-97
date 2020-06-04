@@ -33,17 +33,17 @@ const ListingsPage = () => {
     </div>
   ) : (
     <div className="view-page">
-      <div className="searchBar">Looking for an Item?</div>
-      <ListingSearch fetchListings={fetchListings} />
-      <div className="Listing-head">Essential Goods Currently Available</div>
-      <div className="Listing-Header">
-        {" "}
-        <b className="item-head"> Item </b>
-        <b className="quantity-head"> Quantity </b>
-        <b className="username-head"> UserName</b>
-        <b className="chat-head"> Chat with user </b>
+
+      <div className='view-header'>
       </div>
-      <ListingList allListings={listings} />
+      <div className="view-body">
+        <ListingSearch fetchListings={fetchListings} />
+        <ListingList allListings={listings} />
+
+      </div>
+      <div className='view-footer'></div>
+        
+      
     </div>
   );
 };

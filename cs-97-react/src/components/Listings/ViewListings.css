@@ -1,137 +1,49 @@
+.view-body{
+  display:grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 3fr;
+  overflow: hidden;
+}
 
 .view-list{
-  height:500px;
-  overflow: auto;
+  overflow-y:auto;
+  padding:10px;
+  display:grid;
+  grid-template-columns:1fr;
+  
 }
 
-
-/* .Item-Container {
-  box-sizing: content-box;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-  background-color: gray;
-
+.view-item {
+  height:30px;
+  display:grid;
+  grid-template-columns:200px auto 200px auto 200px;
+  box-sizing:border-box;
+  padding:5px;
 }
 
-.item-head {
-  margin-left: 110px;
-}
-.quantity-head {
-  margin-left: 285px;
-}
-.username-head {
-  margin-left: 290px;
-}
-.chat-head {
-  margin-left: 310px;
+.view-item:nth-child(odd){
+  background-color: var(--listing-background-color1);
 }
 
-.Listing-Header {
-  background-color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: white;
-  width: 1390px;
-  margin-left: 10px;
-  margin-right: 10px;
-
-  font-size: 18px;
-  height: 32px;
-  padding: 15px;
+.view-item:nth-child(even){
+  background-color: var(--listing-background-color2);
 }
-.ListingItem {
-  width: 100%;
-  height: 40px;
-  box-sizing: content-box;
-  display: flex;
+.view-item>div{
+  font-size:15px;
+  font-weight:600;
+  display:flex;
   align-items: center;
   justify-content: center;
 }
 
-.searchBar {
-  font-weight: 700;
-  padding: 10px;
-  text-align: left;
-  font-size: larger;
-  margin-left: 75%;
-  margin-top: 50px;
-  /* margin-left: 20px; */
-  /* padding-bottom: 5px;
-  color: white;
+.item-name{
+  grid-column-start:1;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px;
-}
-.listingSearch {
-  margin-left: 10%;
-  margin-top: 0px;
+.item-quantity{
+  grid-column-start:3;
 }
 
-.Listing-head {
-  text-align: center;
-  color: black;
-  font-size: xx-large;
-  font-weight: bold;
-  text-decoration: underline;
-  padding: 10px;
+.item-user{
+  grid-column-start:5;
 }
-.Item-Container {
-  box-sizing: content-box;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.ListingItem {
-  width: 100%;
-  height: 40px;
-  box-sizing: content-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.theListings {
-  width: 1000px;
-  margin-left: 188px;
-  margin-top: 23px;
-  position: relative;
-}
-
-.searcher {
-  margin-left: 20px;
-  background-color: #1f3f47;
-}
-
-.Item-Container [type="button"] {
-  color: white;
-  margin-left: 10px;
-  font-size: 12px;
-  background-color: navy;
-  width: 180px;
-  border-color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-radius: 5px;
-}
-.Item-Container [type="button"]:hover {
-  background-color: goldenrod;
-  color: black;
-  border-color: goldenrod;
-} */ 

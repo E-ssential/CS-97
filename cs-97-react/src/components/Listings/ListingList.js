@@ -12,19 +12,11 @@ const isValid = allListings.length > 0;
 
         (
         <div className="view-list">
-        <ScrollToBottom>
-            {allListings.map((listing, i)=>
-
-                <div className='ListingItem' key={i}>
-
-                    <ListingItem listingData={listing}/>
-                    
-                </div>
+            {allListings.map((listing)=>
+                <ListingItem listingData={listing}/>
 
             )}
 
-
-        </ScrollToBottom>
         </div>
         )
 
