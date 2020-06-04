@@ -32,26 +32,23 @@ const ViewProfile = ({ userData, checkLogin }) => {
     fetchUserListings(data);
   }, [isFetch]);
 
-  return isFetch ? (
+  return isFetch ? 
+  
+  (
     <div className="profile-page">
       <UserInfo userData={userData} />
       <p>'Please wait, Fetching Data...'</p>
     </div>
-  ) : (
+  ) 
+  
+  : 
+  
+  (
     <div className="profile-page">
-      <div className="info">
+        <div className='profile-title'> User Profile</div>
         <UserInfo userData={userData} />
-      </div>
-      <div className="mylist">
-        <UserListing userListings={listings} setFetch={setFetch} />
-      </div>
-      <div className="delete-butt">
-        <UserDeleteItem
-          setStatus={setStatus}
-          setFetch={setFetch}
-          statusMessage={status}
-        />
-      </div>
+        <UserListing userListings={listings} setFetch={setFetch} setStatus={setStatus} status={status}/>
+      
     </div>
   );
 };

@@ -1,26 +1,39 @@
 import React, { useEffect } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import UserItem from "./UserItem";
-
 import "./ViewProfile.css";
 
-const UserListings = ({ userListings }) => {
+const UserListings = ({ userListings, setFetch, setStatus, status }) => {
   const isValid = userListings.length > 0;
 
+
+ 
+
   return isValid ? (
-    <ScrollToBottom>
+    <div className='mylist'>
       <div className="Header">
-        <h2>My Listings</h2>
+          <h2>My Listings</h2>
       </div>
-      <div className="header2">
-        -----------Item ID------------------ Item Name----Quantity----Username{" "}
-      </div>
-      {userListings.map((item, i) => (
-        <div className="UserListings" key={i}>
-          <UserItem ItemData={item} />
+      <div className='Item-Container' >
+        <div className="profile-item-name">
+            <p>Item Name</p>
         </div>
-      ))}
-    </ScrollToBottom>
+        <div className="profile-item-quantity">
+            <p>Amount</p>
+        </div>
+        <div className='profile-item-delete'>
+            Remove Item
+        </div>
+    </div>
+
+
+      <ScrollToBottom>
+        {userListings.map((item, i) => (
+            <UserItem ItemData={item} setFetch={setFetch} key={i}/>
+        ))}
+      </ScrollToBottom>
+    </div>
+
   ) : (
     <p>
       Looks like you haven't made any listing yet. Go to Listing Form to submit
