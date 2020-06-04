@@ -90,7 +90,7 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Password"
             required
             onChange={async (event) => setPassword(event.target.value)}
             // minLength="8"
@@ -128,7 +128,7 @@ const SignUp = ({ isSignUp, isAuth, setAuth }) => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign In</button>
       </form>
       <Link to="/signUp">Don't have an account? Sign Up</Link>
     </div>

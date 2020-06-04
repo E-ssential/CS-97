@@ -1,12 +1,14 @@
-/* .quantitybut {
+.quantitybut {
   text-align: center;
   width: 33px;
   margin-left: auto;
   vertical-align: middle;
   justify-content: center;
-  background-color: #1f3f47;
+  /* background-color: #1f3f47;
+  background-color: #114d5c;
   border-radius: 30px;
-  border-color: #1f3f47;
+  border-color: #35606b;
+  /* border-color: #1f3f47; */
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -15,8 +17,10 @@
   margin-left: 330px;
   margin-right: auto;
   text-align: center;
-  background-color: #1f3f47;
-  border-color: #1f3f47;
+  /* background-color: #1f3f47; */
+  /* background-color: #125b6d; */
+  background-color: #114d5c;
+  border-color: #35606b;
   color: white;
   border-radius: 30px;
   width: 94px;
@@ -27,8 +31,10 @@
   width: 100px;
   margin-left: 60px;
   color: white;
-  background-color: #1f3f47;
-  border-color: #1f3f47;
+  /* background-color: #1f3f47; */
+  background-color: #114d5c;
+  border-color: #35606b;
+  /* border-color: #1f3f47; */
   border-radius: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
