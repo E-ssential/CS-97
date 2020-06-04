@@ -1,17 +1,19 @@
 .chat-form {
   margin-top: -35px;
-  background-color: black;
+  background-color: var(--button-blue-color);
   width: 660px;
   margin-left: 25%;
 }
 
 .chat-form [placeholder="Type a message..."] {
-  border-radius: 30px;
   font-size: 15px;
-  width: 600px;
-  background-color: black;
-  color: white;
-  border-color: black;
+  width: 570px;
+  background-color: var(--button-blue-color);
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  padding-left: 10px;
+  border-color: var(--button-blue-color);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -21,12 +23,12 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black;
-  background-color: orange;
-  border-color: black;
+  background-color: var(--button-green-color);
+  border-color: var(--button-blue-color);
   border-radius: 30px;
 }
 
 .chat-send-btn:hover {
-  background-color: navy;
-  color: white;
+  background-color: var(--button-green-hover);
+  color: var(--button-blue-color);
 }

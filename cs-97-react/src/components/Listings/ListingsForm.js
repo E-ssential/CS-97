@@ -28,53 +28,49 @@ const ListingsForm = ({ userData }) => {
   };
 
   return (
-    <div className="listing-form">
-      <div className="listing-heading">
-        <h1> Listing Form</h1>
-        <div className="listingBut">
-          {/* <form onSubmit={this.handleSubmit}> */}
+    <div className="listing-page">
 
-          <form onSubmit={onSubmit}>
-            <p>{status}</p>
-            <div>
-              <label>
-                
+      <div className="form-header">
+        <h1> Listing Form</h1>
+      </div>
+
+      <div className='form-status'>
+          <p>{status}</p>
+      </div>
+
+      <div className="form-form">
+        
+        
+        <form onSubmit={onSubmit}>
+
+              <div className="form-field">
                 <input
-                  type="text"  placeholder="Item"
+                  type="text" placeholder="Item Name"
                   onChange={(event) => setItem(event.target.value)}
                   required
                 />
-              </label>
-            </div>
+              </div>
 
-            <div>
-              <label>
-                {/* Quantity */}
-                <input
-                  type="number"
-                  placeholder="Quantity"
-                  min="0"
-                  step="1"
-                  onChange={(event) => setQuantity(event.target.value)}
-                  required
-                />
-              </label>
-            </div>
+              <div className="form-field">
+                  <input
+                    type="number" placeholder="Quantity"
+                    onChange={(event) => setQuantity(event.target.value)}
+                    min="0" step="1" required
+                  />
+              </div>
 
-            <div className="listings-info">
-              <label>
-                
+              <div className="form-field">
                 <input
                   type="text" placeholder="Address"
                   onChange={(event) => setAddress(event.target.value)}
                   required
                 />
-              </label>
-            </div>
+              </div>
 
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+              <button className='form-submit' type="submit">Submit</button>
+
+
+        </form>
       </div>
     </div>
   );

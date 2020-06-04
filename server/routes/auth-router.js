@@ -56,7 +56,7 @@ router.post("/register-login",
 //Check if the user is logged in
 router.get('/isLoggedIn', (req, res) => {
     if(!req.user){
-        return res.status(400).json({errors:"User is not signed in"});
+        return res.status(400).json({errors:"User is not signed in!"});
     }
     else{
         return res.status(200).json({id:req.user._id, username: req.user.username, email: req.user.email});
@@ -110,7 +110,7 @@ router.get('/getRooms', (req, res) =>{
         User.findById(req.user._id)
         .then(
             foundUser =>{
-                console.log("Sending the rooms of user");
+                console.log("Sending the rooms of user!");
                 return res.status(200).send(foundUser.rooms);
             }
         )
@@ -127,6 +127,6 @@ router.get('/getRooms', (req, res) =>{
 //sign the user out
 router.get('/logout', (req, res)=>{
     req.logout();
-    return res.status(200).send("successfully logged out");
+    return res.status(200).send("successfully logged out.");
 })
 module.exports = router;

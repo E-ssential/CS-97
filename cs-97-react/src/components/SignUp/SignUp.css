@@ -1,51 +1,65 @@
 .sign-up-page {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 400px;
-  /* background-color: #696767; */
-  box-sizing: border-box;
-  border-bottom-left-radius: 30px;
-  border-radius: 30px;
-  width: 320px;
-  height: 400px;
-  box-sizing: border-box;
-  padding: 70px 30px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+  font-size: 20px;
+  color: var( --button-blue-color);
+  font-weight: 400;
 }
 
 .sign-up-heading {
-  margin: 0;
-  padding: 0 0 0px;
-  color: var(--nav-bar-color);
-  font-family: Optima;
-  font-size: 22px;
+  height:50px;
+  width:100%;
+  font-size:30px;
+  display: flex;
+  text-align:center;
+  justify-content: center;
 }
 
-.sign-up-page {
-  font-size: 22px;
-  color: var(--nav-bar-color);
-  font-family: Optima;
+.sign-up-heading > p{
+  margin:0;
+  box-sizing: border-box;
+  height:100%;
+}
+
+.sign-up-status {
+  height:30px;
+  width:100%;
+  display:flex;
+  text-align:center;
+  justify-content: center;
+
+}
+
+.sign-up-status >p {
+  margin:0;
+  box-sizing: border-box;
+  height:100%;
 }
 
 .sign-up-page input[type="text"],
 input[type="password"],
 input[type="email"] {
   border: none;
-  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--button-blue-color);
   background: transparent;
   outline: none;
   height: 40px;
-  width: 200px;
-  color: black;
-  font-size: 15px;
-  font-family: Optima;
+  width: 300px;
+  color: var(--button-blue-color);
+  margin:5px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
+.sign-up-page input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+
+  border-bottom: 3px solid var(--button-blue-color);
+}
 /* ::placeholder{
   color: whitesmoke;
 } */
@@ -53,30 +67,40 @@ input[type="email"] {
 .sign-up-page button[type="submit"] {
   border: none;
   outline: none;
-  margin-top: 10px;
+  margin-top: 15px;
   height: 40px;
-  width: 200px;
-  background: var(--nav-bar-color);
+  width: 300px;
+  background: var(--button-blue-color);
   color: white;
-  font-size: 14px;
-  border-radius: 20px;
-  font-family: Optima;
+  border-radius: 10px;
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .sign-up-page button[type="submit"]:hover {
   cursor: pointer;
-  background: var(--hover-color);
+  background: var(--button-blue-hover);
   /* background: #4c9ed3; */
   color: whitesmoke;
+  box-shadow: 0 1px 2px rgba(68, 67, 67, 0.61);
 }
+
+.sign-up-page button[type="submit"]:active{
+	transform: translateY(4px);
+}
+
 
 .sign-up-page a {
   font-size: 14px;
   text-decoration: underline;
-  color: var(--nav-bar-color);
+  color: var(--button-blue-color);
   line-height: 50px;
+  margin-top: 30px;
 }
 
 .sign-up-page a:hover {
-  color: var(--hover-color);
+  color: var(--button-blue-hover);
+  font-weight:600;
 }
