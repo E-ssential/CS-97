@@ -1,13 +1,6 @@
 
 
 
-/* .room-item{ */
-    /* grid-column-start:1; */
-    /* order:5;
-    flex-basis: auto;
-    justify-content: space-evenly; 
-    padding: 0%;
-  }  */
 
   .room-list{
     height:60px;
@@ -16,12 +9,6 @@
     /* margin-right: 1px; */
     grid-area: left;
 
-   
-  
-    /* background-color: var(--listing-background-item3);  */
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly; */
   }
 
 

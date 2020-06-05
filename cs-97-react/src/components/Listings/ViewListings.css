@@ -76,7 +76,7 @@
 .view-list-header{
   height:60px;
   display:grid;
-  grid-template-columns:200px auto 200px auto 200px;
+  grid-template-columns:1fr 1fr 1fr;
   box-sizing:border-box;
   background-color: var(--listing-background-item3);
 }
@@ -103,7 +103,7 @@
 .view-item {
   height:60px;
   display:grid;
-  grid-template-columns:200px auto 200px auto 200px;
+  grid-template-columns:1fr 1fr 1fr;
   box-sizing:border-box;
 }
 
@@ -123,30 +123,8 @@
   box-sizing:border-box;
 }
 
-.item-name{
-  grid-column-start:1;
-}
 
-.item-quantity{
-  grid-column-start:3;
-}
-
-.item-user{
-  grid-column-start:5;
-}
-
-.header-name{
-  grid-column-start:1;
-}
-
-.header-quantity{
-  grid-column-start:3;
-}
-
-.header-user{
-  grid-column-start:5;
-}
-.item-user:hover{
+.item-user > a:hover{
   cursor:pointer;
   font-weight:700;
   text-decoration: underline;

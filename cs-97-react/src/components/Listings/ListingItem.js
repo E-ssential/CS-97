@@ -18,24 +18,6 @@ function goToChat(listing) {
 const ListingItem = ({ listingData }) => {
   const parsedData = JSON.parse(listingData);
   return (
-    // <body>
-    // <div className="row">
-    //     <div className="column">
-    //         <h1>Item</h1>
-    //         <p>{parsedData.item}</p>
-    //     </div>
-
-    //     <div className="column">
-    //         <h1>Quantity</h1>
-    //      {/* <p>{parsedData.quantity}</p> */}
-    //     </div>
-
-    //     <div className="column">
-    //         <h1>User</h1>
-    //      {/* <p>{parsedData.quantity}</p> */}
-    //     </div>
-
-    // </div>
 
     <div className='view-item'>
       <div className="item-name">
@@ -45,8 +27,8 @@ const ListingItem = ({ listingData }) => {
         {parsedData.quantity}
       </div>
       
-      <div className="item-user" onClick={ (e) => {goToChat(parsedData)}}>
-        {parsedData.username}
+      <div className="item-user" >
+        <a onClick={ (e) => {goToChat(parsedData)}} > {parsedData.username} </a>
       </div>
 
         
