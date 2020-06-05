@@ -8,7 +8,7 @@ const RoomManager = ({ userData, checkLogin, room, setRoom }) => {
   const [roomList, setRoomList] = useState([]);
   const [isFetch, setFetch] = useState(true);
   
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState(`Hi ${userData[1]}! Join a room or create a new one!`);
   const userName = userData[1];
 
   const fetchRooms = async () => {
@@ -34,7 +34,7 @@ const RoomManager = ({ userData, checkLogin, room, setRoom }) => {
   ) : (
     <div className="room-manager">
       <div className="room-status">
-        <p>{room}</p>
+        <p1>{status}</p1>
       </div>
       <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
         
@@ -42,7 +42,6 @@ const RoomManager = ({ userData, checkLogin, room, setRoom }) => {
       <CreateRoom
       setFetch={setFetch}
       setStatus={setStatus}
-      statusMessage={status}
       />
    </div>
   );

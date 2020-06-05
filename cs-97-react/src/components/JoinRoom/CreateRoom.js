@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./RoomManager.css";
+
 import addIcon from '../../icons/add_circle.png';
 
-const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
+const CreateRoom = ({ setStatus, setFetch}) => {
   const [room, setRoom] = useState("");
 
   // submitData();
@@ -29,7 +30,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
 
   return (
     <div className="room-create">
-      <p1>{statusMessage}</p1>
+      
       <form  onSubmit={addRoom}>
         <input
           required
@@ -40,7 +41,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
         />
         
         
-        <img className="creator" src={addIcon} onClick={addRoom}/>
+        {/* <button><img className="room-create-img" src={addIcon} onClick={addRoom}/></button> */}
         
       </form>
     </div>
