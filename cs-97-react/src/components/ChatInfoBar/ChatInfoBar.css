@@ -1,12 +1,11 @@
 .chatInfoBar {
-  background-color: var(--button-green-color);
+  background-color: var(--listing-background-item3);
+  box-sizing: border-box;
+  border-radius: 8px;
 }
-.leftInnerContainer {
-  font-size: large;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: var(--nav-bar-color);
-}
+
+
+
 
 .gobacktoRoom {
   background-color: var(--button-green-color);

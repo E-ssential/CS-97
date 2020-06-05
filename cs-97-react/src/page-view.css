@@ -12,6 +12,9 @@
   --listing-background-item2:#e6e6e6;
   --listing-background-item3:#c4c4c4;
   --listing-background-color: #0e335a;
+
+  --chat-message-other: rgb(218, 218, 218);
+  --chat-message-user: #6c8eff;
 }
   
 html, body {

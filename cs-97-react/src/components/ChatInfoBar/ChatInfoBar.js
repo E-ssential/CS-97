@@ -7,24 +7,8 @@ import "./ChatInfoBar.css";
 
 const ChatInfoBar = ({ room }) => {
   return (
-    <div className="chatInfoBar">
-      <div className="upperPart">
-        <img src={onlineIcon} alt="online-status" className="onlineIcon" />
-        <h3>Room Number: {room}</h3>
-      </div>
-
-      <div className="lowerPart">
-        {/* click this to leave */}
-        <a href="/selectRoom">
-          <img
-            src={clear}
-            width="20"
-            height="20"
-            className="EssentialLogo"
-            alt="close-btn"
-          />
-        </a>
-      </div>
+    <div className="chatInfoBar">  
+        <h3>{room}</h3>
     </div>
   );
 };

@@ -4,17 +4,18 @@ import Chat from '../Chat/Chat';
 import RoomManager from '../JoinRoom/RoomManager';
 
 const ChatManager = ({userData, checkLogIn}) => {
+    const [room, setRoom] = useState("None");
     
-    
+
+    useEffect(() => {
+        
+      }, [room]);
     return(
         <div className='chat-manager-page'>
-            <RoomManager userData={userData} checkLogin={checkLogIn}/>
-            <div className='chat-rooms'></div>
+            <RoomManager userData={userData} checkLogin={checkLogIn} room={room} setRoom={setRoom}/>
+            <Chat/>
         </div>
     )
-
-
-
 
 }
 
