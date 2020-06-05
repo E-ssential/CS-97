@@ -1,29 +1,17 @@
-.profile-page {
-  /* background-color: white; */
+/* .profile-page {
   width: 100%;
   margin-top: 50px;
-  /* margin-left: 25%; */
   padding: 15px;
-  /* color: black; */
   font-family: Optima;
-  /* border-radius: 30px; */
   font-size: 12px;
   text-align: center;
 }
 
-/* .info {
-  color: red;
-} */
-
-
 .mylist {
-  /* background-color: black; */
   color: black;
-  /* border-radius: 30px; */
   padding: 5px;
   box-sizing: border-box;
   width: 750px;
-  /* height: 423px; */
   margin: 80px auto;
   background: rgb(151, 157, 165);
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -46,11 +34,9 @@
   color: white;
   font-size: 18px;
   font-weight: 300;
-  /* font-family: Optima; */
 }
 
 .Item-Container{
-    /* padding: 10px; */
     padding: 20px 30px;
     height: 20px;
     display: flex;
@@ -88,7 +74,7 @@
 
   .user-data{
     color: #5E6977;
-  }
+  } */
 
   /* .Item-Container button{
     border: none;
@@ -103,4 +89,70 @@
     background: url(&quot;clear_24px.png&quot;) no-repeat center;
   } */
 
+  
+
+  .profile-body{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
+    overflow: hidden;
+  }
+  
+  .mylist{
+    overflow-y:auto;
+    padding:10px;
+    display:grid;
+    grid-template-columns:1fr;
+    
+  }
+  
+  .Item-Container {
+    height:30px;
+    display:grid;
+    grid-template-columns:200px auto 200px auto 200px;
+    box-sizing:border-box;
+    padding:5px;
+  }
+  
+  .Item-Container:nth-child(odd){
+    background-color: var(--listing-background-color1);
+  }
+  
+  .Item-Container:nth-child(even){
+    background-color: var(--listing-background-color2);
+  }
+  .Item-Container>div{
+    font-size:15px;
+    font-weight:600;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-item{
+    grid-column-start:1;
+  }
+  
+  .profile-quantity{
+    grid-column-start:3;
+  }
+  
+  .profile-x-button{
+    grid-column-start:5;
+    cursor: pointer;
+  }
+
+  .profile-title{
+    color: #5E6977;
+    font-size: 15px;
+  }
+
+  .user-info{
+    /* display: flex;
+    flex-direction: column; */
+    text-align: left;
+    /* margin-left: 8%; */
+  }
+
+  
   

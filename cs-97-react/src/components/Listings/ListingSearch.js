@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ViewListings.css";
-import "./ListingSearch.css";
 
 const ListingSearch = ({ fetchListings }) => {
   const [searchItem, setItem] = useState("");

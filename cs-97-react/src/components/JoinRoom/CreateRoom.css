@@ -1,7 +1,10 @@
 .new-room {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin-top: 17px;
+  margin-top: 0px;
+  padding: 0 0;
+  display:grid;
+
 }
 .new-room [placeholder="Create your own room"] {
   font-size: 15px;
@@ -10,6 +13,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-color: var(--button-blue-color);
   padding: 3px;
+  margin-top: 0px;
 }
 
 .creator {

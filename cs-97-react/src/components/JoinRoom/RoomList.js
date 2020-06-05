@@ -9,14 +9,12 @@ const RoomList = ({ allRooms, setRoom, userName }) => {
 
   return isValid ? (
     <div className="room-list">
-      <ScrollToBottom>
-        {allRooms.map((room, i) => (
-          <div className="room-item" key={i}>
+        {allRooms.map((room) => (
+          <div className="room-item">
             <RoomItem userName={userName} roomName={room} />
           </div>
         ))}
-      </ScrollToBottom>
-    </div>
+     </div>
   ) : (
     <div className="room-list">
       <p>
@@ -25,5 +23,20 @@ const RoomList = ({ allRooms, setRoom, userName }) => {
     </div>
   );
 };
+
+
+            //   <div className='view-list-header'>
+            //     <div className="item-name">
+            //         Item Name
+            //     </div>
+            //     <div className="item-quantity">
+            //         Amount
+            //     </div>
+                
+            //     <div className="item-user">
+            //         Posted By
+            //     </div>
+
+            // </div>
 
 export default RoomList;
