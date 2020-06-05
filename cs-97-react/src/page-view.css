@@ -62,7 +62,7 @@ html, body {
 
 .chat-manager-page{
   display:grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 0px 1fr 0px;
   grid-template-columns:1fr 3fr;
 }
 

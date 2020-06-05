@@ -1,0 +1,14 @@
+.room-manager{
+    display:grid;
+    grid-template-rows: 80px 1fr 80px;
+    grid-row-start:2;
+    overflow: hidden;
+    box-sizing:border-box;
+    grid-template-columns:1fr;
+}
+
+.room-list{
+    overflow-y: auto;
+    
+    
+}
