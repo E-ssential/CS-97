@@ -13,16 +13,16 @@ const ChatMessage = ({ message: { user, text }, name }) => {
 
   return isFromCurrentUser ? (
     <div className="messageContainerUser justifyEnd">
-      <div className="messageBoxUser">
+      <div className="messageBoxUser messageBoxUserNext">
         <p className="messageText">{text}</p>
       </div>
     </div>
   ) : (
     <div className="messageContainer justifyStart">
-      <div className="messageBox">
+      <p className="othername">{user}</p>
+      <div className="bubble bubble-bottom-left">
         <p className="messageText">{text}</p>
       </div>
-      <p className="othername">{user}</p>
     </div>
   );
 };
