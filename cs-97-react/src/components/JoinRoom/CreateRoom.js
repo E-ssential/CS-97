@@ -31,7 +31,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
   return (
     <div className="new-room">
       <p1>{statusMessage}</p1>
-      <form className = "roomForm" onSubmit={addRoom}>
+      <form  onSubmit={addRoom}>
         <input
           required
           placeholder="Create your own room"
