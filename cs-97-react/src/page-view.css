@@ -50,6 +50,11 @@ html, body {
   overflow: hidden;
 }
 
+.profile-page{
+  display: grid;
+  grid-template-rows:70px 1fr 50px;
+  overflow: hidden;
+}
 
 
 

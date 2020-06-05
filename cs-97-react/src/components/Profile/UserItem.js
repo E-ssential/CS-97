@@ -2,7 +2,7 @@ import React from 'react';
 import './ViewProfile.css';
 import axios from 'axios';
 
-import Xbutton from "../../icons/clear_24px.png";
+import Xbutton from "../../icons/grayX.png";
 
 
 
