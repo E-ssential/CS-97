@@ -1,0 +1,39 @@
+
+
+
+/* .room-item{ */
+    /* grid-column-start:1; */
+    /* order:5;
+    flex-basis: auto;
+    justify-content: space-evenly; 
+    padding: 0%;
+  }  */
+  
+  .view-body{
+    display:grid;
+    grid-column-start:2;
+    grid-row-start:2;
+    grid-template-rows: 30px auto;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    box-sizing:border-box;
+    
+  }
+
+  .room-list{
+    height:60px;
+    display:grid;
+    grid-template-columns:200px 200px 200px;
+    /* margin-right: 1px; */
+    grid-area: left;
+
+   
+  
+    /* background-color: var(--listing-background-item3);  */
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly; */
+  }
+
+
+  
