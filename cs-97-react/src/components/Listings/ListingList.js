@@ -12,14 +12,14 @@ const isValid = allListings.length > 0;
         (
         <div className="view-listing">
             <div className='view-list-header'>
-                <div className="item-name">
+                <div className="header-name">
                     Item Name
                 </div>
-                <div className="item-quantity">
+                <div className="header-quantity">
                     Amount
                 </div>
                 
-                <div className="item-user">
+                <div className="header-user">
                     Posted By
                 </div>
 
