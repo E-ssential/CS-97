@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import RoomList from "./RoomList";
 import CreateRoom from "./CreateRoom";
-import Chat from "../Chat/Chat";
 import "./RoomManager.css";
 
-const RoomManager = ({ userData, checkLogin }) => {
+const RoomManager = ({ userData, checkLogin, room, setRoom }) => {
   const [roomList, setRoomList] = useState([]);
   const [isFetch, setFetch] = useState(true);
-  const [Room, setRoom] = useState("None");
+  
   const [status, setStatus] = useState("");
   const userName = userData[1];
 
@@ -35,7 +34,7 @@ const RoomManager = ({ userData, checkLogin }) => {
   ) : (
     <div className="room-manager">
       <div className="room-status">
-        <p>{Room}</p>
+        <p>{room}</p>
       </div>
       <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
         

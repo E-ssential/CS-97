@@ -76,11 +76,9 @@ const Chat = () => {
 
         isValid?
         (
-
-            <div className="chatOuterContainer">
-                <div className="chatContainer">
+                <div className="chat-container">
                     <ChatInfoBar room={room}/>
-
+            
                     <MessageList
                         messages={messages}
                         name={name}
@@ -93,7 +91,6 @@ const Chat = () => {
                     />
                 </div>
 
-            </div>
 
 
         )
@@ -101,9 +98,9 @@ const Chat = () => {
         :
 
         (
-
-            <p>THIS IS THE PLACE HOLDER</p>
-
+            <div className="chat-container">
+                <p>THIS IS THE PLACE HOLDER</p>
+            </div>
 
         )
         

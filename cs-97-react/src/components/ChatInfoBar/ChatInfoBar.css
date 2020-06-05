@@ -1,4 +1,5 @@
 .chatInfoBar {
+<<<<<<< HEAD
   background-color: darkcyan;
   width: 910px;
   margin-left: 250px;
@@ -8,7 +9,15 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--nav-bar-color);
+=======
+  background-color: var(--listing-background-item3);
+  box-sizing: border-box;
+  border-radius: 8px;
+>>>>>>> 7c20faa3d8f073dfeb88498aceedea48bd32318a
 }
+
+
+
 
 .gobacktoRoom {
   background-color: var(--button-green-color);
