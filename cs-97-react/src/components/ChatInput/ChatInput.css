@@ -35,3 +35,30 @@
   background-color: aqua;
   color: var(--button-blue-color);
 } */
+
+/* .chat-input{
+  width: 100%;
+} */
+
+.chat-input{
+  display: flex;
+}
+
+.chat-input input[type="text"]{
+  width: 93%;
+  height: 45%;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.chat-input-btn{
+  height: 53%;
+  display: inline-block;
+  align-self: flex-end;
+  border: none;
+  /* width: 100%; */
+}
+
+.chat-input-btn:hover{
+  cursor: pointer;
+}

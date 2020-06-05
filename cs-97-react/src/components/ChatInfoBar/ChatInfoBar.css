@@ -1,28 +1,19 @@
 .chatInfoBar {
-<<<<<<< HEAD
-  background-color: darkcyan;
-  width: 910px;
-  margin-left: 250px;
-}
-.leftInnerContainer {
-  font-size: large;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: var(--nav-bar-color);
-=======
   background-color: var(--listing-background-item3);
   box-sizing: border-box;
   border-radius: 8px;
->>>>>>> 7c20faa3d8f073dfeb88498aceedea48bd32318a
+  text-align: center;
+  height: 60px;
+  line-height: 30px;
 }
 
 
 
 
-.gobacktoRoom {
+/* .gobacktoRoom {
   background-color: var(--button-green-color);
   color: black;
   border-radius: 30px;
   font-size: 18px;
   margin-bottom: 32px;
-}
+} */
