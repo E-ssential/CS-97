@@ -67,7 +67,7 @@ const App = () => {
         <Route path='/selectRoom' render={() => <RoomManager userData={userData} checkLogin={checkLogIn}/>}/>
         <Route path='/chat' component={Chat} />
         <Route path='/listingsForm' render={() => <ListingsForm isAuth={isAuth} userData={userData}/>} />
-        <Route path='/Listingspage' component={ViewListings}/>
+        <Route path='/viewListing' component={ViewListings}/>
 
         <Route path='/profile' render={() => <ViewProfile userData={userData} checkLogin={checkLogIn}/>} />
         <Route path='/login' render={() => <SignUp isSignUp={false} isAuth={isAuth} setAuth={setAuth}/>}/>
