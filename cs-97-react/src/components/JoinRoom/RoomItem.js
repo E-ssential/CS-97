@@ -4,15 +4,11 @@ import { Link } from "react-router-dom";
 
 const RoomItem = ({ roomName, userName }) => {
   return (
-   
+    <div className="room-item">
     <Link to={`/chat/?name=${userName}&room=${roomName}`}>
-      <div className="room">
-      <button className="room-button" type="submit">
         {roomName}
-      </button>
-      </div>
     </Link>
-  
+    </div>
   );
 };
 export default RoomItem;

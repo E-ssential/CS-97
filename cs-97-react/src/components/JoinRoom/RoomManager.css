@@ -1,0 +1,121 @@
+.room-manager{
+    display:grid;
+    /* grid-column-start:2;
+    grid-row-start:2; */
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    box-sizing:border-box;
+  }
+  
+  .room-list{
+    display:grid;
+    /* overflow: hidden; */
+    overflow-y: auto;
+    /* grid-template-rows: 15px; */
+    grid-template-columns:1fr;
+  }
+  
+  /* .mylist-header{
+    height:60px;
+    display:grid;
+    grid-template-columns:200px auto 200px auto 200px;
+    box-sizing:border-box;
+    background-color: var(--listing-background-item3);
+  } */
+  
+  /* .mylist-header>div{
+    font-size:16px;
+    font-weight:600;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  /* .room-list{
+    overflow-y:auto;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-auto-rows:60px;
+  } */
+  
+  .room-list::-webkit-scrollbar {
+    display: none;
+    /* width: 1em; */
+  }
+  
+  .room-item {
+    height:100%;
+    display:grid;
+    grid-template-columns: 1fr;
+    box-sizing:border-box;
+    text-align: center;
+    border-bottom: 1px solid var(--listing-background-item3);
+  }
+
+  .room-item a{
+      color: gray;
+      text-decoration: none;
+      margin: auto;
+      /* height: 100%;
+      width: 100%; */
+  }
+  
+  .room-list:nth-child(even){
+    background-color: var(--listing-background-item2);
+    /* background-color: green; */
+  }
+
+  /* .room-list:nth-child(odd){
+      background-color: var(--listing-background-item1);
+  } */
+
+/* .room-button{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 30px;
+}
+
+.room-button:hover{
+    cursor: pointer;
+} */
+
+  /* .Item-Container>div{
+    font-size:15px;
+    font-weight:500;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  
+  
+  /* .room-create{
+    align-self: center;
+  } */
+
+  /* .creator{
+    align-self: center;
+  } */
+
+  .room-status{
+      margin-left: 10%;
+  }
+
+  .room-create{
+    display: flex;
+    margin: auto;
+  }
+
+  .creator{
+      cursor: pointer;
+  }
+
+  .room-create input[type="text"], .creator{
+      vertical-align: middle;
+  }
+
+  /* .creator{
+      height: 25px;
+  } */
