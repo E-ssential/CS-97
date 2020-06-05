@@ -1,5 +1,7 @@
 .chatInfoBar {
-  background-color: var(--button-green-color);
+  background-color: darkcyan;
+  width: 910px;
+  margin-left: 250px;
 }
 .leftInnerContainer {
   font-size: large;
