@@ -36,7 +36,7 @@ const NavBar = ({ isAuth, username, setAuth, checkLogin }) => {
           
         </div>
         <Link to="/listingsForm">Listing Form </Link>
-        <Link to="/viewListing">View Listing</Link>
+        <Link to="/viewListing">View Listings</Link>
         <Link to="/selectRoom"> Chat </Link>
       </div>
       
