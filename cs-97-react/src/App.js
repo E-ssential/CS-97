@@ -12,6 +12,10 @@ import ViewListings from './components/Listings/ViewListings'
 import ViewProfile from './components/Profile/ViewProfile';
 import RoomManager from './components/JoinRoom/RoomManager';
 
+
+//TESTING ONLY
+
+import ChatManager from './components/ChatManager/ChatManager';
 import './page-view.css';
 
 
@@ -65,7 +69,7 @@ const App = () => {
 
         
         <Route path='/selectRoom' render={() => <RoomManager userData={userData} checkLogin={checkLogIn}/>}/>
-        <Route path='/chat' component={Chat} />
+        <Route path='/chat' render={() => <ChatManager userData={userData} checkLogIn={checkLogIn}/>}/>
         <Route path='/listingsForm' render={() => <ListingsForm isAuth={isAuth} userData={userData}/>} />
         <Route path='/viewListing' component={ViewListings}/>
 

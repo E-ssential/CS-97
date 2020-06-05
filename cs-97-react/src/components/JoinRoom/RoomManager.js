@@ -29,31 +29,17 @@ const RoomManager = ({ userData, checkLogin }) => {
   }, [isFetch]);
 
   return isFetch ? (
-    <div className="room-page">
+    <div className="room-manager">
       <p>Please wait, Loading Chat Rooms...</p>
     </div>
   ) : (
-    <div className="room-page">
-      <div className="container">
-        <div className="username">
-          <p>
-            {" "}
-            <p>{userName}, please select a room</p>
-          </p>
-        </div>
-        <div className="room-manager">
-          <div className="user-info"></div>
-
-          <div className="rooms">
-            <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
-          </div>
-          {/* <CreateRoom
-            setFetch={setFetch}
-            setStatus={setStatus}
-            statusMessage={status}
-          /> */}
-        </div>
+    <div className="room-manager">
+      <div className="room-status">
+        <p>{Room}</p>
       </div>
+      <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
+        
+      
       <CreateRoom
       setFetch={setFetch}
       setStatus={setStatus}

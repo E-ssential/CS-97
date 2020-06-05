@@ -1,7 +1,5 @@
 import React from "react";
 import "./RoomManager.css";
-import "./RoomList.css";
-import ScrollToBottom from "react-scroll-to-bottom";
 import RoomItem from "./RoomItem";
 
 const RoomList = ({ allRooms, setRoom, userName }) => {

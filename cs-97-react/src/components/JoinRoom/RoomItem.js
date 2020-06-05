@@ -1,6 +1,5 @@
 import React from "react";
 import "./RoomManager.css";
-import "./RoomItem.css";
 import { Link } from "react-router-dom";
 
 const RoomItem = ({ roomName, userName }) => {
