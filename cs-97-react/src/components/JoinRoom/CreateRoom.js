@@ -41,7 +41,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
         />
         
         
-        <img className="creator" src={addIcon} type="submit"/>
+        <img className="creator" src={addIcon} onClick={addRoom}/>
         
       </form>
     </div>
