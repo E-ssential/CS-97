@@ -36,8 +36,12 @@ const ViewProfile = ({ userData, checkLogin }) => {
   
   (
     <div className="profile-page">
+      <div className="profile-header"></div>
+      <div className="profile-body">
       <UserInfo userData={userData} />
       <p>'Please wait, Fetching Data...'</p>
+      </div>
+      <div className="profile-footer"></div>
     </div>
   ) 
   
