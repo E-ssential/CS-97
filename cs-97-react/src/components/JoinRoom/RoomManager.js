@@ -33,26 +33,33 @@ const RoomManager = ({ userData, checkLogin }) => {
       <p>Please wait, Loading Chat Rooms...</p>
     </div>
   ) : (
-    <div className="container">
-      <div className="username">
-        <p>
-          {" "}
-          <p>{userName} ,please select a room</p>
-        </p>
-      </div>
-      <div className="room-manager">
-        <div className="user-info"></div>
-
-        <div className="rooms">
-          <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
+    <div>
+      <div className="container">
+        <div className="username">
+          <p>
+            {" "}
+            <p>{userName} ,please select a room</p>
+          </p>
         </div>
-        <CreateRoom
-          setFetch={setFetch}
-          setStatus={setStatus}
-          statusMessage={status}
-        />
+        <div className="room-manager">
+          <div className="user-info"></div>
+
+          <div className="rooms">
+            <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
+          </div>
+          {/* <CreateRoom
+            setFetch={setFetch}
+            setStatus={setStatus}
+            statusMessage={status}
+          /> */}
+        </div>
       </div>
-    </div>
+      <CreateRoom
+      setFetch={setFetch}
+      setStatus={setStatus}
+      statusMessage={status}
+      />
+   </div>
   );
 };
 

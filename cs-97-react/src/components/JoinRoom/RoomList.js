@@ -14,7 +14,7 @@ const RoomList = ({ allRooms, setRoom, userName }) => {
             <RoomItem userName={userName} roomName={room} />
           </div>
         ))}
-    </div>
+     </div>
   ) : (
     <div className="room-list">
       <p>
@@ -23,5 +23,20 @@ const RoomList = ({ allRooms, setRoom, userName }) => {
     </div>
   );
 };
+
+
+            //   <div className='view-list-header'>
+            //     <div className="item-name">
+            //         Item Name
+            //     </div>
+            //     <div className="item-quantity">
+            //         Amount
+            //     </div>
+                
+            //     <div className="item-user">
+            //         Posted By
+            //     </div>
+
+            // </div>
 
 export default RoomList;

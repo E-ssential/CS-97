@@ -2,19 +2,75 @@
   display:grid;
   grid-column-start:2;
   grid-row-start:2;
-  grid-template-rows: 30px auto;
+  grid-template-rows: 40px auto;
   grid-template-columns: 1fr;
   overflow: hidden;
   box-sizing:border-box;
+  grid-gap:10px;
+}
+
+.view-search{
+  display:flex;
+  text-align: center;
+  justify-content:flex-end;
+  box-sizing:border-box;
+}
+
+.view-input{
+  display:flex;
+  text-align:center;
+  justify-content:center;
+
+  box-sizing:border-box;
   
 }
+
+.view-input> input{
+  outline:none;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  border-bottom: 1px solid var(--nav-bar-color);
+
+  display:flex;
+  text-align:center;
+  justify-content:flex-end;
+}
+
+
+.view-input> input:hover , .view-input>input:focus {
+  border-bottom: 3px solid var(--nav-bar-color);
+
+}
+
+.view-input> input:hover + button, .view-input>input:focus + button{
+  border-bottom: 3px solid var(--nav-bar-color);
+}
+.view-input > button{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  height:40px;
+  width: 40px;
+  padding: 5px;
+
+  outline:none;
+  border: none;
+  background:transparent;
+  border-bottom: 1px solid var(--nav-bar-color);
+
+}
+
+.view-input > button:hover{
+  cursor: pointer;
+}
+
 
 .view-listing{
   overflow: hidden;
   display:grid;
   grid-template-rows: 60px;
   grid-template-columns:1fr;
- 
 }
 
 .view-list-header{
@@ -33,7 +89,7 @@
   justify-content: center;
 }
 .view-list{
-  background-color: var(--listing-background-color);
+  
   overflow-y:auto;
   display:grid;
   grid-template-columns:1fr;
@@ -64,6 +120,7 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  box-sizing:border-box;
 }
 
 .item-name{
@@ -77,3 +134,12 @@
 .item-user{
   grid-column-start:5;
 }
+
+.item-user:hover{
+  cursor:pointer;
+  font-weight:700;
+  text-decoration: underline;
+  
+}
+
+

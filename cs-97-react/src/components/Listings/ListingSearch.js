@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ViewListings.css";
-
+import searchIcon from '../../icons/searchIcon.png';
 const ListingSearch = ({ fetchListings }) => {
   const [searchItem, setItem] = useState("");
 
@@ -18,16 +18,19 @@ const ListingSearch = ({ fetchListings }) => {
   };
 
   return (
-    <div className="listingSearch">
+    <div className="view-search">
       <form onSubmit={OnSubmit}>
+        <div className="view-input">
+        
         <input
           type="text"
-          placeholder="Item"
+          placeholder="What are you looking for?"
           onChange={(e) => {
             setItem(e.target.value);
           }}
         />
-        <button type="submit">{searchItem ? "Search" : "Refresh"}</button>
+       <button type="submit"><img src={searchIcon} className='view-icon' /></button>
+        </div>
       </form>
     </div>
   );

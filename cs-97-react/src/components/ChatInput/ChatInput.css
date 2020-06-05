@@ -1,14 +1,18 @@
 .chat-form {
   margin-top: -35px;
-  background-color: var(--button-blue-color);
-  width: 660px;
-  margin-left: 25%;
+  width: 910px;
+  background-color: lightblue;
+  margin-left: 250px;
+  /*border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px; */
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .chat-form [placeholder="Type a message..."] {
   font-size: 15px;
-  width: 570px;
-  background-color: var(--button-blue-color);
+  width: 780px;
+  background-color: #1b8fac;
   color: black;
   background-color: white;
   border-radius: 30px;
@@ -30,6 +34,6 @@
 }
 
 .chat-send-btn:hover {
-  background-color: var(--button-green-hover);
+  background-color: aqua;
   color: var(--button-blue-color);
 }
