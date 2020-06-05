@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./RoomManager.css";
-import "./CreateRoom.css";
 import addIcon from '../../icons/add_circle.png';
 
 const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
@@ -29,7 +28,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
   const addRoomToProfile = async (data) => {};
 
   return (
-    <div className="new-room">
+    <div className="room-create">
       <p1>{statusMessage}</p1>
       <form  onSubmit={addRoom}>
         <input
