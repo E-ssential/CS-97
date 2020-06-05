@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./RoomManager.css";
 import "./CreateRoom.css";
+import addIcon from '../../icons/add_circle.png';
 
 const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
   const [room, setRoom] = useState("");
@@ -30,7 +31,7 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
   return (
     <div className="new-room">
       <p1>{statusMessage}</p1>
-      <form onSubmit={addRoom}>
+      <form className = "roomForm" onSubmit={addRoom}>
         <input
           required
           placeholder="Create your own room"
@@ -38,12 +39,15 @@ const CreateRoom = ({ setStatus, setFetch, statusMessage }) => {
           type="text"
           onChange={(event) => setRoom(event.target.value)}
         />
-        <button className="creator" type="submit">
-          Enter
-        </button>
+        
+        
+        <img className="creator" src={addIcon} type="submit"/>
+        
       </form>
     </div>
   );
 };
+
+
 
 export default CreateRoom;
