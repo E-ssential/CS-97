@@ -97,9 +97,17 @@
 }
 
 .view-list::-webkit-scrollbar {
-  display: none;
+  width: 1em;
 }
-
+ 
+.view-list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.view-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 .view-item {
   height:60px;
   display:grid;

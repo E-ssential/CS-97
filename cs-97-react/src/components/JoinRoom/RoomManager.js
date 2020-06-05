@@ -29,11 +29,11 @@ const RoomManager = ({ userData, checkLogin }) => {
   }, [isFetch]);
 
   return isFetch ? (
-    <div className="room-manager">
+    <div className="room-page">
       <p>Please wait, Loading Chat Rooms...</p>
     </div>
   ) : (
-    <div>
+    <div className="room-page">
       <div className="container">
         <div className="username">
           <p>
