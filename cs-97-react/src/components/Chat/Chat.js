@@ -98,8 +98,8 @@ const Chat = () => {
         :
 
         (
-            <div className="chat-container">
-                <p>THIS IS THE PLACE HOLDER</p>
+            <div className="chat-placeholder">
+                <h1>Select a room to start chatting</h1>
             </div>
 
         )

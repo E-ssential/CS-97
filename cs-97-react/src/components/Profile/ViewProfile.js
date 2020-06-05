@@ -37,6 +37,12 @@ const ViewProfile = ({ userData, checkLogin }) => {
   (
     <div className="profile-page">
       {/* <div className="profile-header"></div> */}
+
+      <div className="profile-header">
+          <h2>My Listings</h2>
+      </div>
+
+
       <div className="profile-body">
       <UserInfo userData={userData} />
       <p>'Please wait, Fetching Data...'</p>
@@ -49,12 +55,15 @@ const ViewProfile = ({ userData, checkLogin }) => {
   
   (
     <div className="profile-page">
-      {/* <div className="profile-header"></div> */}
-      <div className="profile-body">
-        <UserInfo userData={userData} />
+      <div className="profile-header">
+          <UserInfo userData={userData} />
+          <h2>My Listings</h2>
+      </div>
+      
         <UserListing userListings={listings} setFetch={setFetch} setStatus={setStatus} status={status}/>
-        </div>
-        {/* <div className="profile-footer"></div> */}
+      
+
+
     </div>
   );
 };

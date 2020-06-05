@@ -1,4 +1,6 @@
 .chat-container{
+    grid-column-start:2;
+    grid-row-start:2;
     display:grid;
     grid-template-rows: 80px 1fr 80px;
     grid-template-columns: 1fr;
@@ -7,6 +9,7 @@
 }
 
 .chat-body{
+    padding:10px;
     overflow-y:auto;
     display:grid;
     grid-template-columns:1fr;
@@ -30,7 +33,6 @@
     font-size:16px;
 }
 
-
 .chat-user-tag{
     font-size:10px;
     margin:0;
@@ -48,8 +50,6 @@
     display:flex;
     text-align:center;
     justify-content:center;
-    
-    
 }
 
 .chat-messageText-left{

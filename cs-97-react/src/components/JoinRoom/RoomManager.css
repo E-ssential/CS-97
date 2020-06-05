@@ -12,6 +12,9 @@
     display:grid;
     grid-template-columns:1fr;
     grid-auto-rows:60px;
+
+    box-sizing:border-box;
+    padding:5px;
     
 }
 
@@ -45,10 +48,12 @@
     background-color: var(--listing-background-item2);
   }
 
+  .room-item:hover{
+      cursor: pointer;
+  }
   .room-create {
     display:grid;
     grid-template-rows:1fr;
-    padding:5px;
 
   }
   .room-create > form{

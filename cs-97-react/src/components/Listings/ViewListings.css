@@ -97,7 +97,7 @@
 }
 
 .view-list::-webkit-scrollbar {
-  width: 1em;
+  width: 0em;
 }
  
 .view-list::-webkit-scrollbar-track {

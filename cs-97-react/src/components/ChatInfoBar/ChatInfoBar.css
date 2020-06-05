@@ -2,15 +2,15 @@
   background-color: var(--listing-background-item3);
   box-sizing: border-box;
   border-radius: 8px;
+  text-align: center;
+  height: 100%;
+  line-height: 30px;
 }
 
-
-
-
-.gobacktoRoom {
+/* .gobacktoRoom {
   background-color: var(--button-green-color);
   color: black;
   border-radius: 30px;
   font-size: 18px;
   margin-bottom: 32px;
-}
+} */
