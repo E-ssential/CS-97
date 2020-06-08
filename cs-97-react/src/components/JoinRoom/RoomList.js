@@ -8,9 +8,7 @@ const RoomList = ({ allRooms, setRoom, userName }) => {
   return isValid ? (
     <div className="room-list">
         {allRooms.map((room) => (
-          <div className="room-item">
             <RoomItem userName={userName} roomName={room} />
-          </div>
         ))}
      </div>
   ) : (

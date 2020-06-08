@@ -4,9 +4,8 @@ import './ChatInput.css';
 
 const ChatInput = ({message, setMessage, sendMessage}) =>{
 return(
-    <form className="chat-form">
+    <form className="chat-input">
         <input
-        className="chat-input"
         type="text"
         placeholder="Type a message..."
         value={message}
@@ -14,7 +13,7 @@ return(
         onKeyPress={(event) => event.key ==='Enter' ? sendMessage(event) : null}
         />
 
-        <button className="chat-send-btn" onClick={(event) => sendMessage(event)}>Send</button>
+        <button className="chat-input-btn" onClick={(event) => sendMessage(event)}>Send</button>
     </form>
 
     

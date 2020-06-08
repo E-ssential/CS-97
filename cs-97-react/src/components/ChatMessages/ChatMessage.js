@@ -3,7 +3,7 @@ import React from "react";
 import "./ChatMessage.js";
 import "./ChatMessage.css";
 
-const ChatMessage = ({ message: { user, text }, name }) => {
+const ChatMessage = ({ message: { user, text }, name, key }) => {
   let isFromCurrentUser = false;
   const trimmedName = name.trim().toLowerCase();
 
@@ -12,17 +12,21 @@ const ChatMessage = ({ message: { user, text }, name }) => {
   }
 
   return isFromCurrentUser ? (
-    <div className="messageContainerUser justifyEnd">
-      <div className="messageBoxUser messageBoxUserNext">
-        <p className="messageText">{text}</p>
+    <div className="chat-message-right" key={key}>
+      <div className="chat-messageText-right">
+      <p>{text}</p>
       </div>
     </div>
   ) : (
-    <div className="messageContainer justifyStart">
-      <p className="othername">{user}</p>
-      <div className="bubble bubble-bottom-left">
-        <p className="messageText">{text}</p>
+    <div className="chat-message-left" key={key}>
+      <div className="chat-user-tag">{user}</div>
+
+
+      <div className="chat-messageText-left">
+          <p>{text}</p>
       </div>
+
+      
     </div>
   );
 };

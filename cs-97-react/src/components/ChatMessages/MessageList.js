@@ -2,17 +2,18 @@ import React from "react";
 
 import "./MessageList.css";
 import ChatMessage from "./ChatMessage";
-import ScrollToBottom from "react-scroll-to-bottom";
+// import ScrollToBottom from "react-scroll-to-bottom";
 
 const MessageList = ({ messages, name }) => {
   return (
-    <ScrollToBottom className="MessageList">
+    
+      <div className='chat-body'>
       {messages.map((message, i) => (
-        <div className="myMessage" key={i}>
-          <ChatMessage message={message} name={name} />
-        </div>
+          <ChatMessage message={message} name={name} key={i} />
+        
       ))}
-    </ScrollToBottom>
+      </div>
+    
   );
 };
 

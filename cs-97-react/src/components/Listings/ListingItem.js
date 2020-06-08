@@ -12,7 +12,7 @@ function goToChat(listing) {
     withCredentials: true,
   });
 
-  window.location.replace("http://localhost:3000/selectRoom");
+  window.location.replace("http://localhost:3000/chat");
 }
 
 const ListingItem = ({ listingData }) => {

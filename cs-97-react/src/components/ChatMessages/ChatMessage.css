@@ -1,4 +1,4 @@
-.messageContainer {
+/* .messageContainer {
   color: white;
   font-size: 11px;
   padding-right: 5px;
@@ -85,4 +85,31 @@
 .messageText {
   margin-left: 5px;
   padding-bottom: 3px;
+} */
+
+
+/* .chat-message-right{
+  height: 100%;
+  line-height: 30px;
 }
+
+.chat-messageText-left{
+  height: 100%;
+  line-height: 13px;
+} */
+
+.chat-message-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .chat-messageText-right{
+  margin: auto;
+} */
+
+/* .chat-message-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
