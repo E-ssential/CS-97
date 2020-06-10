@@ -16,8 +16,7 @@ The project is broken down into the client side (React Project) and server side 
 
 - For the chat system, we uses SocketIO to help manage the different rooms and send real time messages between the users. 
 
-(EDIT THIS AFTER NEW IMPLEMENTATION)
-- For the listing, we store everything in a local json file.
+- For the listing page, we store the information inside a mongooseDB database. The form makes a post request to server which then stores the item after checking.
 
 ## Setup
 
