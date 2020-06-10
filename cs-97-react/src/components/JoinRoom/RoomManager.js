@@ -33,16 +33,16 @@ const RoomManager = ({ userData, checkLogin, room, setRoom }) => {
     </div>
   ) : (
     <div className="room-manager">
-      <div className="room-status">
-        <p1>{status}</p1>
-      </div>
-      <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
-        
       
       <CreateRoom
       setFetch={setFetch}
       setStatus={setStatus}
       />
+      
+      <RoomList userName={userName} allRooms={roomList} setRoom={setRoom} />
+        
+      
+      
    </div>
   );
 };

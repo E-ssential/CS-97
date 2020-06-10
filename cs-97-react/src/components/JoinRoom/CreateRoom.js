@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./RoomManager.css";
-
+import Xbutton from "../../icons/grayX.png";
 import addIcon from '../../icons/add_circle.png';
-
 const CreateRoom = ({ setStatus, setFetch}) => {
   const [room, setRoom] = useState("");
-
+  const [seen, setSeen] = useState(false);
   // submitData();
   const addRoom = async (e) => {
     e.preventDefault();
@@ -26,12 +25,32 @@ const CreateRoom = ({ setStatus, setFetch}) => {
       });
   };
 
-  const addRoomToProfile = async (data) => {};
+  const toggleForm = (e) => {
+    e.preventDefault();
+    setSeen(!seen);
+  }
 
   return (
     <div className="room-create">
+      <div className='room-create-nav'>
+        <p>Join a room or create your own!</p>
+        <img src={addIcon} className='create-room' alt="Delete Item" onClick={toggleForm}/>
+
+      </div>
       
-      <form  onSubmit={addRoom}>
+
+
+      {
+      
+        seen ? 
+      <div className='create-popup'>
+
+      <div className='room-x-button'>
+        <img src={Xbutton} alt="Delete Item" onClick={toggleForm}/>
+      </div>
+
+      <form  onSubmit={addRoom} className='create-form'>
+
         <input
           required
           placeholder="Create your own room"
@@ -39,11 +58,16 @@ const CreateRoom = ({ setStatus, setFetch}) => {
           type="text"
           onChange={(event) => setRoom(event.target.value)}
         />
-        
-        
-        {/* <button><img className="room-create-img" src={addIcon} onClick={addRoom}/></button> */}
-        
+        <button>Create</button>
       </form>
+      </div>
+
+      :
+      null
+    }
+      
+
+
     </div>
   );
 };
