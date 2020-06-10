@@ -36,4 +36,4 @@ npm start
 
 Make sure both the server and the client are running in order for the app to work accordingly. 
 
-Note: We uses MongoDB hosted on MongoDB Atlas so it might have restriction of who can access it depending on the IP. (Will make the database available to everyone in the future).
+Note: We uses MongoDB hosted on MongoDB Atlas so it might have restriction of who can access it depending on the IP. 
