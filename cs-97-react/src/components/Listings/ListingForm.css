@@ -76,13 +76,14 @@
   border:0;
 	transition-property: box-shadow;
   transition-duration: 0.2s;
+  box-shadow: 0 2px 2px rgba(68, 67, 67, 0.61);
   outline: none;
   border-radius: 8px;
 }
 
 .form-submit:hover{
   background-color: var(--button-green-hover);
-  box-shadow: 0 1px 2px rgba(68, 67, 67, 0.61);
+  
   cursor:pointer;
 
 }

@@ -14,19 +14,17 @@ const ChatMessage = ({ message: { user, text }, name, key }) => {
   return isFromCurrentUser ? (
     <div className="chat-message-right" key={key}>
       <div className="chat-messageText-right">
-      <p>{text}</p>
+        <p>{text}</p>
       </div>
     </div>
   ) : (
+    //
+    //{user}
     <div className="chat-message-left" key={key}>
-      <div className="chat-user-tag">{user}</div>
-
-
       <div className="chat-messageText-left">
-          <p>{text}</p>
+        <p>{text}</p>
       </div>
-
-      
+      <div className="chat-user-tag">{user}</div>
     </div>
   );
 };

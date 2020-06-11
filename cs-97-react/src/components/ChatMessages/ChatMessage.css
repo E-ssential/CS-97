@@ -87,7 +87,6 @@
   padding-bottom: 3px;
 } */
 
-
 /* .chat-message-right{
   height: 100%;
   line-height: 30px;
@@ -98,7 +97,7 @@
   line-height: 13px;
 } */
 
-.chat-message-right{
+.chat-message-right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,8 +107,10 @@
   margin: auto;
 } */
 
-/* .chat-message-left{
+.chat-message-left {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+  line-height: 1px;
+  color: black;
+}
