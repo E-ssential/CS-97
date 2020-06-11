@@ -1,7 +1,8 @@
 .chatInfoBar {
   background-color: var(--listing-background-item3);
+  border-width: 3mm;
+  border-color: navy;
   box-sizing: border-box;
-  border-radius: 8px;
   text-align: center;
   height: 100%;
   line-height: 30px;
